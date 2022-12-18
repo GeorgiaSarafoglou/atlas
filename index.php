@@ -18,7 +18,7 @@
 	<meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>Evolo - StartUp HTML Landing Page Template</title>
+    <title>Atlas</title>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
@@ -29,7 +29,7 @@
 	<link href="css/styles.css" rel="stylesheet">
 	
 	<!-- Favicon  -->
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="images/atlas_logo.png">
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
     
@@ -136,8 +136,8 @@
     </header> <!-- end of header -->
     <!-- end of header -->
 
-    <!-- Services -->
-    <div id="services" class="cards-1">
+    <!-- Grafeio Ypodoxis Vimata kai dunatothtes  -->
+    <div id="office" class="cards-1">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -152,8 +152,14 @@
                     <div class="card">
                         <img class="card-image" src="images/services-icon-1.svg" alt="alternative">
                         <div class="card-body">
-                            <h4 class="card-title">Market Analysis</h4>
-                            <p>Our team of enthusiastic marketers will analyse and evaluate how your company stacks against the closest competitors</p>
+                            <h4 class="card-title">Δημιουργήστε Αγγελία</h4>
+                            <p>Εισάγετε τις προσφερόμενες θέσεις Πρακτικής Άσκησης, συμπληρώνοντας στοιχεία όπως:<br>
+                                - Περιγραφή θέσης, αντικείμενο<br>
+                                - Απαιτούμενα τυπικά προσόντα υποψηφίου<br>
+                                - Γεωγραφική περιοχή εκπόνησης ΠΑ<br>
+                                - Χρονική διάρκεια και επιθυμητή περίοδο εκπόνησης ΠΑ<br>
+                                - Περιορισμένου ή πλήρους ωραρίου κλπ.<br>
+                            </p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -162,8 +168,9 @@
                     <div class="card">
                         <img class="card-image" src="images/services-icon-2.svg" alt="alternative">
                         <div class="card-body">
-                            <h4 class="card-title">Opportunity Scan</h4>
-                            <p>Once the market analysis process is completed our staff will search for opportunities that are in reach</p>
+                            <h4 class="card-title">Δείτε Αιτήσεις Ενδιαφέροντος</h4>
+                            <p>Αφού εισάγετε κάποια θέση πρακτικής άσκησης μπορείτε να δείτε τις αιτήσεις ενδιαφέροντος που έχουν κάνει οι φοιτητές-ριες, καθώς και τα προσόντα τους, 
+                                ώστε να κρίνετε τον-ην κατάλληλο-η για την θέση.</p>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -172,8 +179,9 @@
                     <div class="card">
                         <img class="card-image" src="images/services-icon-3.svg" alt="alternative">
                         <div class="card-body">
-                            <h4 class="card-title">Action Plan</h4>
-                            <p>With all the information in place you will be presented with an action plan that your company needs to follow</p>
+                            <h4 class="card-title">Έγκριση Αίτησης</h4>
+                            <p>Αφού βρείτε τον-ην κατάλληλο-η για την πρακτική άσκηση και δεχτείτε την αίτησή του-ης, τότε μπορείτε να εγκρίνετε την αίτηση για το επόμενο στάδιο. Πλέον η 
+                                αγγελία σας δε θα φαίνεται διαθέσιμη στα αποτελέσματα της αναζήτησης. </p>
                         </div>
                     </div>
                     <!-- end of card -->
