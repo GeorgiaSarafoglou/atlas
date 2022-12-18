@@ -50,7 +50,7 @@
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>
+        <a class="navbar-brand logo-image" href="index.php"><img src="images/atlas_logo.png" alt="alternative" style="width: 143px; height:140px;"></a>
         
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,6 +59,7 @@
         </button>
         <!-- end of mobile menu toggle button -->
 
+        <!-- navigation bar -->
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -90,34 +91,38 @@
                 </li>
             </ul>
             <span class="nav-item social-icons">
-                <span class="fa-stack">
-                    <a href="#your-link">
-                        <i class="fas fa-circle fa-stack-2x facebook"></i>
-                        <i class="fab fa-facebook-f fa-stack-1x"></i>
-                    </a>
-                </span>
-                <span class="fa-stack">
-                    <a href="#your-link">
-                        <i class="fas fa-circle fa-stack-2x twitter"></i>
-                        <i class="fab fa-twitter fa-stack-1x"></i>
-                    </a>
-                </span>
+                <button type="button" class="btn btn-primary" style="border-radius: 0.5rem;background-color:#00bfd8;border-color:#00bfd8">
+                    <i class="fa fa-user"></i> Σύνδεση 
+                </button>
+                <button type="button" class="btn btn-primary" style="border-radius: 0.5rem;"> Εγγραφή </button>
             </span>
         </div>
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
 
-
-    <!-- Header -->
+    <!-- Header - Student info and search -->
     <header id="header" class="header">
         <div class="header-content">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="text-container">
-                            <h1><span class="turquoise">StartUp Landing</span> Page Template Free</h1>
-                            <p class="p-large">Use Evolo free landing page template to promote your business startup and generate leads for the offered services</p>
-                            <a class="btn-solid-lg page-scroll" href="#services">DISCOVER</a>
+                            <h1><span class="turquoise">Είστε φοιτητής-ρια;</span> Αναζητήστε Θέση Πρακτικής Άσκησης</h1>
+                            <p class="p-large">Αναζητήστε θέση πρακτικής άσκησης γράφοντας τον τίτλο της θέσης που θέλετε (π.χ. Web Designer)</p>
+                            
+                            <!-- Search bar -->
+                            <div class="form-group">
+                                <div class="form-outline">
+                                    <input type="search" class="form-control-input" id="search1" style="border-radius: 0.5rem;">
+                                    <label class="label-control" for="search1">Αναζήτηση</label>
+                                    <button class="btn btn-primary" type="submit" style="position: absolute; top: 0; right:0; border-radius: 0.5rem; height: 100%;">
+                                        <i class="fas fa-search"></i>
+                                    </button>  
+                                </div>
+                            </div>
+                            <!--
+                                <a class="btn-solid-lg page-scroll" href="#services">DISCOVER</a>
+                            -->
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6">
@@ -131,67 +136,13 @@
     </header> <!-- end of header -->
     <!-- end of header -->
 
-
-    <!-- Customers -->
-    <div class="slider-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h5>Trusted By</h5>
-                    
-                    <!-- Image Slider -->
-                    <div class="slider-container">
-                        <div class="swiper-container image-slider">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="image-container">
-                                        <img class="img-responsive" src="images/customer-logo-1.png" alt="alternative">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image-container">
-                                        <img class="img-responsive" src="images/customer-logo-2.png" alt="alternative">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image-container">
-                                        <img class="img-responsive" src="images/customer-logo-3.png" alt="alternative">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image-container">
-                                        <img class="img-responsive" src="images/customer-logo-4.png" alt="alternative">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image-container">
-                                        <img class="img-responsive" src="images/customer-logo-5.png" alt="alternative">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="image-container">
-                                        <img class="img-responsive" src="images/customer-logo-6.png" alt="alternative">
-                                    </div>
-                                </div>
-                            </div> <!-- end of swiper-wrapper -->
-                        </div> <!-- end of swiper container -->
-                    </div> <!-- end of slider-container -->
-                    <!-- end of image slider -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of slider-1 -->
-    <!-- end of customers -->
-
-
     <!-- Services -->
     <div id="services" class="cards-1">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Business Growth Services</h2>
-                    <p class="p-heading p-large">We serve small and medium sized companies in all tech related industries with high quality growth services which are presented below</p>
+                    <h2>Γραφείο Πρακτικής Άσκησης</h2>
+                    <p class="p-heading p-large">Ψάχνεις άτομο για πρακτική άσκηση στην εταιρεία σου;</p>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
