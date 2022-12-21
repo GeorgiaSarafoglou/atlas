@@ -66,7 +66,7 @@
                     <a class="nav-link page-scroll" href="#header">Αρχική Σελίδα <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#services">Services</a>
+                    <a class="nav-link page-scroll" href="search.php">Αναζήτηση</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#pricing">Pricing</a>

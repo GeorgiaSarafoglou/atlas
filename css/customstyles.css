@@ -1,0 +1,31 @@
+.main-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 500px;
+}
+
+.main-box div {
+    height: 90%;
+    width: 60%;
+}
+
+.secondary-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondary-box div {
+    height: 60%;
+    width: 100%;
+    min-width: 200px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding:10px;
+}
