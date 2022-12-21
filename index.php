@@ -27,7 +27,10 @@
     <link href="css/swiper.css" rel="stylesheet">
 	<link href="css/magnific-popup.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
-	
+
+    <!-- to use close-open functions for login modal -->
+    <script type="text/javascript" src="scripts.js"></script>
+
 	<!-- Favicon  -->
     <link rel="icon" href="images/atlas_logo.png">
 </head>
@@ -91,14 +94,59 @@
                 </li>
             </ul>
             <span class="nav-item social-icons">
-                <button type="button" class="btn btn-primary" style="border-radius: 0.5rem;background-color:#00bfd8;border-color:#00bfd8">
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;background-color:#00bfd8;border-color:#00bfd8" id="login_button" data-toggle="modal" data-target="#modalLoginForm">
                     <i class="fa fa-user"></i> Σύνδεση 
                 </button>
-                <button type="button" class="btn btn-primary" style="border-radius: 0.5rem;"> Εγγραφή </button>
+                <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;"> Εγγραφή </button>
             </span>
         </div>
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
+
+    <!-- Login modal form -->
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- Συνδεση και close button as x -->
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Σύνδεση</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body mx-3">
+                    <!-- Login Form -->
+                    <form id="loginForm" data-toggle="validator" data-focus="false">
+                            <div class="form-group">
+                                <input type="text" class="form-control-input" id="lname" required>
+                                <label class="label-control" for="lname">Name</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control-input" id="lpassword" required>
+                                <label class="label-control" for="lpassword">Password</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                    </form>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="loggedIn" value="Keep-logged-in" required>Κράτησε με συνδεδεμένο
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <!-- Login Button -->
+                <div class="modal-footer d-flex justify-content-center">
+                    <!-- <button type="button" class="btn btn-primary" style="border-radius: 2rem; width:90%" >Login</button> -->
+                    <button type="submit" class="form-control-submit-button" style="border-radius: 2rem; width:90%">Σύνδεση</button>
+                </div>
+                 <!-- Sign Up Button -->
+                 <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="form-control-submit-button" style="border-radius: 2rem;; width:90%">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Header - Student info and search -->
     <header id="header" class="header">
@@ -107,15 +155,16 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="text-container">
+                            <!-- Are you a Student Text -->
                             <h1><span class="turquoise">Είστε φοιτητής-ρια;</span> Αναζητήστε Θέση Πρακτικής Άσκησης</h1>
                             <p class="p-large">Αναζητήστε θέση πρακτικής άσκησης γράφοντας τον τίτλο της θέσης που θέλετε (π.χ. Web Designer)</p>
                             
                             <!-- Search bar -->
                             <div class="form-group">
                                 <div class="form-outline">
-                                    <input type="search" class="form-control-input" id="search1" style="border-radius: 0.5rem;">
+                                    <input type="search" class="form-control-input" id="search1" style="border-radius: 1rem;">
                                     <label class="label-control" for="search1">Αναζήτηση</label>
-                                    <button class="btn btn-primary" type="submit" style="position: absolute; top: 0; right:0; border-radius: 0.5rem; height: 100%;">
+                                    <button class="btn btn-primary" type="submit" style="position: absolute; top: 0; right:0; border-radius: 1rem; height: 100%;">
                                         <i class="fas fa-search"></i>
                                     </button>  
                                 </div>
