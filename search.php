@@ -45,8 +45,8 @@
     </div>
     <!-- end of preloader -->
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+            <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <!-- Text Logo - Use this if you don't have a graphic logo -->
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
 
@@ -92,15 +92,15 @@
                 </li>
             </ul>
             <span class="nav-item social-icons">
-                <button type="button" class="btn btn-primary" style="border-radius: 0.5rem;background-color:#00bfd8;border-color:#00bfd8">
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;background-color:#00bfd8;border-color:#00bfd8" id="login_button" data-toggle="modal" data-target="#modalLoginForm">
                     <i class="fa fa-user"></i> Σύνδεση 
                 </button>
-                <button type="button" class="btn btn-primary" style="border-radius: 0.5rem;"> Εγγραφή </button>
+                <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;"> Εγγραφή </button>
             </span>
         </div>
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
-
 
  <!-- Header - Student info and search -->
  <header id="header" class="header">
@@ -109,7 +109,6 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="text-container">
-                            
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
@@ -121,36 +120,24 @@
 
     <!-- centered job advertisement board -->
     <div class="main-box">
-        <div class="card">
-            <div class="card-body">
-                <ul>
-                    <li>
-                        <!-- individual job advertisment -->
-                        <div class="secondary-box">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3>Job Title </h3>
-                                        <p> description</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end of individual job advertisement-->
-                    </li>
-                    <li>
-                        <!-- individual job advertisment -->
-                        <div class="secondary-box">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3>Second Job Title </h3>
-                                        <p>Second description</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end of individual job advertisement-->
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <ul>
+            <li>
+                <!-- individual job advertisment -->
+                <div class="job-card">
+                    <h3>Job Title </h3>
+                    <p> description</p>
+                </div>
+                <!-- end of individual job advertisement-->
+            </li>
+            <li>
+                <!-- individual job advertisment -->
+                <div class="job-card">
+                    <h3>Second Job Title</h3>
+                    <p>Second description</p>
+                </div>
+                <!-- end of individual job advertisement-->
+            </li>
+        </ul>
     </div>
     <!-- end of centered job advertisement board -->
 
