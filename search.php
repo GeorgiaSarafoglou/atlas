@@ -128,6 +128,8 @@
         </div>
     </div>
 
+
+    
  <!-- Header - Student info and search -->
  <header id="header" class="header">
         <div class="header-content">
@@ -137,30 +139,52 @@
     <!-- end of header -->
 
     <!-- centered job advertisement board -->
+
+
+    <button type="button" class="btn-favorite">Αποθήκευση
+        <i class="fa fa-heart" style="font-size:18px; color:white;"></i>
+    </button>
     <div class="main-box">
         <jobs>
                 <ul class="joblist">
                     <li class="job">
                         <!-- individual job advertisment -->
                         <div class="job-card">
-                            <h3>Job Title </h3>
-                            <p> description</p>
+                            <h3>Τίτλος θέσης </h3>
+                            <p>Τμήμα</p>
+                            <ul class="job-features">
+                                <li><strong>Περιοχή:</strong> Αθήνα</li>
+                                <li><strong>Τύπος απασχόλησης:</strong> πλήρης</li>
+                                <li><strong>Ημερομηνία ανάρτησης:</strong> 26/12/2022</li>
+                                <li><strong>Διάρκεια:</strong> 3 μήνες</li>
+                            </ul>
                         </div>
                         <!-- end of individual job advertisement-->
                     </li>
                     <li class="job">
                         <!-- individual job advertisment -->
                         <div class="job-card">
-                            <h3>Second Job Title</h3>
-                            <p>Second description</p>
+                            <h3>Τίτλος θέσης </h3>
+                            <p>Τμήμα</p>
+                            <ul class="job-features">
+                                <li><strong>Περιοχή:</strong> Αθήνα</li>
+                                <li><strong>Τύπος απασχόλησης:</strong> πλήρης</li>
+                                <li><strong>Ημερομηνία ανάρτησης:</strong> 26/12/2022</li>
+                                <li><strong>Διάρκεια:</strong> 3 μήνες</li>
+                            </ul>
                         </div>
                         <!-- end of individual job advertisement-->
                     </li>
                 </ul>
         </jobs>
         <divider></divider>
+        
         <filter class="filter">
-            <ul class="filters">
+                <ul class="filters">
+                <li>
+                    <button type="submit" class="form-control-submit-button" style="height: 20%; margin: 10px;">εκκαθάριση φίλτρων</button>
+
+                </li>
                 <li>
                     <div class="form-group">
                         <div class="form-outline">

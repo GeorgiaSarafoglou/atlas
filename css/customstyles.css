@@ -1,7 +1,7 @@
 .main-box {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex: 1 0 0;
     flex-direction: row;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -9,6 +9,12 @@
     margin-right: 10%;
     margin-left: 10%;
     border-radius: 10px;
+}
+
+.job-features {
+    columns: 2;
+    list-style-type: none;
+    margin: 0; padding: 0;
 }
 
 .main-box > filter {
@@ -71,6 +77,19 @@ select.filters:focus{
     border-left: 2px solid #100c62;
     opacity: 0.3;
     height: 400px;
-  }
+}
 
-  
+.btn-favorite{
+    padding: 5px;
+    border-radius: 15px;
+    background-color: rgb(255, 146, 164);
+    border: none;
+}  
+
+.btn-favorite:hover{
+    background-color: rgb(205, 76, 76);
+} 
+
+.btn-favorite:active{
+    background-color: rgb(205, 76, 76);
+}
