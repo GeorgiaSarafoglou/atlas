@@ -72,6 +72,15 @@
                     <a class="nav-link page-scroll" href="search.php">Αναζήτηση</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#student_details">Φοιτητές-ριες</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#office_details">Φορέας Υποδοχής</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="php/under-construction.php">Γραφείο Π.Α</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link page-scroll" href="#contact">Επικοινωνία</a>
                 </li>
             </ul>
@@ -112,6 +121,9 @@
                                 <div class="help-block with-errors"></div>
                             </div>
                     </form>
+                    <div class="form-group">
+                        <a class="turquoise" href="#contact">Ξέχασα τον κωδικό μου</a>
+                    </div>
                     <div class="form-group checkbox">
                         <input type="checkbox" id="loggedIn" value="Keep-logged-in" required>Κράτησε με συνδεδεμένο
                         <div class="help-block with-errors"></div>
@@ -124,7 +136,7 @@
                 </div>
                  <!-- Sign Up Button -->
                  <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" class="form-control-submit-button" style="border-radius: 2rem;; width:90%">Sign up</button>
+                    <button type="submit" class="form-control-signup-button" style="border-radius: 2rem; width:90%;">Εγγραφή</button>
                 </div>
             </div>
         </div>
@@ -139,7 +151,7 @@
                         <div class="text-container">
                             <!-- Are you a Student Text -->
                             <h1><span class="turquoise">Είστε φοιτητής-ρια;</span> Αναζητήστε Θέση Πρακτικής Άσκησης</h1>
-                            <p class="p-large">Αναζητήστε θέση πρακτικής άσκησης γράφοντας τον τίτλο της θέσης που θέλετε (π.χ. Web Designer). <a class="turquoise" href="#student">Δείτε περισσότερα...</a></p>
+                            <p class="p-large">Αναζητήστε θέση πρακτικής άσκησης γράφοντας τον τίτλο της θέσης που θέλετε (π.χ. Web Designer). <a class="turquoise" href="#student_details">Δείτε περισσότερα...</a></p>
                             
                             <!-- Search bar -->
                             <div class="form-group">
@@ -168,7 +180,7 @@
     <!-- end of header -->
 
     <!-- Foreas Ypodoxis Vimata kai dunatothtes  -->
-    <div id="office" class="cards-1">
+    <div id="office_details" class="cards-1">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -224,7 +236,7 @@
     <!-- end of services -->
 
     <!-- φοιτητές δυνατότητες -->
-    <div id="student" class="cards-1">
+    <div id="student_details" class="cards-1">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
