@@ -78,7 +78,7 @@
                     <a class="nav-link page-scroll" href="#office_details">Φορέας Υποδοχής</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#office_details">Γραφείο Π.Α</a>
+                    <a class="nav-link page-scroll" href="php/under-construction.php">Γραφείο Π.Α</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#contact">Επικοινωνία</a>
