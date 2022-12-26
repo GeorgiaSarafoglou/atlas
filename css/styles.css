@@ -410,6 +410,24 @@ input[type='checkbox'] {
 	background-color: transparent;
 	color: #00bfd8;
 }
+/* different colors for login and signup */
+.form-control-signup-button {
+	display: inline-block;
+	width: 100%;
+	height: 3.125rem;
+	border: 1px solid #00bfd8;
+	border-radius: 1.5rem;
+	background-color: #fff;
+	color: #00bfd8;
+	font: 700 0.75rem/1.75rem "Raleway", sans-serif;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.form-control-signup-button:hover {
+	background-color: #a1f4ff;
+	color: #fff;
+}
 
 /* Form Success And Error Message Formatting */
 #rmsgSubmit.h3.text-center.tada.animated,
