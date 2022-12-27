@@ -19,6 +19,16 @@
 
     <!-- Website Title -->
     <title>Atlas</title>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="js/scripts.js"></script> <!-- Custom scripts -->
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
@@ -29,7 +39,7 @@
 	<link href="css/styles.css" rel="stylesheet">
 
     <!-- to use close-open functions for login modal -->
-    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
 
 	<!-- Favicon  -->
     <link rel="icon" href="images/atlas_logo.png">
@@ -89,7 +99,8 @@
                 <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;background-color:#00bfd8;border-color:#00bfd8" id="login_button" data-toggle="modal" data-target="#modalLoginForm">
                     <i class="fa fa-user"></i> Σύνδεση 
                 </button>
-                <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;"> Εγγραφή </button>
+                <!-- Go to signup page -->
+                <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;" onclick="window.location.href = 'php/signup.php';">Εγγραφή </button>
             </span>
         </div>
     </nav> <!-- end of navbar -->
@@ -190,7 +201,6 @@
             </div> <!-- end of row -->
             <div class="row">
                 <div class="col-lg-12">
-
                     <!-- Card -->
                     <div class="card">
                         <img class="card-image" src="images/services-icon-1.svg" alt="alternative">
@@ -404,15 +414,5 @@
         </div> <!-- end of container -->
     </div> <!-- end of footer -->  
     <!-- end of footer -->
-    
-    <!-- Scripts -->
-    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="js/scripts.js"></script> <!-- Custom scripts -->
 </body>
 </html>
