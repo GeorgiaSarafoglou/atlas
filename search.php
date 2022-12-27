@@ -45,8 +45,8 @@
     </div>
     <!-- end of preloader -->
 
-            <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <!-- Navigation -->
+    <nav id="nav" class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
         <!-- Text Logo - Use this if you don't have a graphic logo -->
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
 
@@ -64,31 +64,13 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">Αρχική Σελίδα <span class="sr-only">(current)</span></a>
+                    <a class="nav-link page-scroll" href="index.php">Αρχική Σελίδα <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="search.php">Αναζήτηση</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#pricing">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#request">Request</a>
-                </li>
-
-                <!-- Dropdown Menu -->          
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">About</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">Terms Conditions</span></a>
-                        <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">Privacy Policy</span></a>
-                    </div>
-                </li>
-                <!-- end of dropdown menu -->
-
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#contact">Contact</a>
+                    <a class="nav-link page-scroll" href="#contact">Επικοινωνία</a>
                 </li>
             </ul>
             <span class="nav-item social-icons">
@@ -102,53 +84,155 @@
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
 
+    <!-- Login modal form -->
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- Συνδεση και close button as x -->
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Σύνδεση</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body mx-3">
+                    <!-- Login Form -->
+                    <form id="loginForm" data-toggle="validator" data-focus="false">
+                            <div class="form-group">
+                                <input type="text" class="form-control-input" id="lname" required>
+                                <label class="label-control" for="lname">Name</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control-input" id="lpassword" required>
+                                <label class="label-control" for="lpassword">Password</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                    </form>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="loggedIn" value="Keep-logged-in" required>Κράτησε με συνδεδεμένο
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <!-- Login Button -->
+                <div class="modal-footer d-flex justify-content-center">
+                    <!-- <button type="button" class="btn btn-primary" style="border-radius: 2rem; width:90%" >Login</button> -->
+                    <button type="submit" class="form-control-submit-button" style="border-radius: 2rem; width:90%">Σύνδεση</button>
+                </div>
+                 <!-- Sign Up Button -->
+                 <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="form-control-submit-button" style="border-radius: 2rem;; width:90%">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
  <!-- Header - Student info and search -->
  <header id="header" class="header">
         <div class="header-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="text-container">
-                        </div> <!-- end of text-container -->
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
+
         </div> <!-- end of header-content -->
     </header> <!-- end of header -->
     <!-- end of header -->
 
-
     <!-- centered job advertisement board -->
+
+
+    <button type="button" class="btn-favorite">Αποθήκευση
+        <i class="fa fa-heart" style="font-size:18px; color:white;"></i>
+    </button>
     <div class="main-box">
-        <ul>
-            <li>
-                <!-- individual job advertisment -->
-                <div class="job-card">
-                    <h3>Job Title </h3>
-                    <p> description</p>
-                </div>
-                <!-- end of individual job advertisement-->
-            </li>
-            <li>
-                <!-- individual job advertisment -->
-                <div class="job-card">
-                    <h3>Second Job Title</h3>
-                    <p>Second description</p>
-                </div>
-                <!-- end of individual job advertisement-->
-            </li>
-        </ul>
+        <jobs>
+                <ul class="joblist">
+                    <li class="job">
+                        <!-- individual job advertisment -->
+                        <div class="job-card">
+                            <h3>Τίτλος θέσης </h3>
+                            <p>Τμήμα</p>
+                            <ul class="job-features">
+                                <li><strong>Περιοχή:</strong> Αθήνα</li>
+                                <li><strong>Τύπος απασχόλησης:</strong> πλήρης</li>
+                                <li><strong>Ημερομηνία ανάρτησης:</strong> 26/12/2022</li>
+                                <li><strong>Διάρκεια:</strong> 3 μήνες</li>
+                            </ul>
+                        </div>
+                        <!-- end of individual job advertisement-->
+                    </li>
+                    <li class="job">
+                        <!-- individual job advertisment -->
+                        <div class="job-card">
+                            <h3>Τίτλος θέσης </h3>
+                            <p>Τμήμα</p>
+                            <ul class="job-features">
+                                <li><strong>Περιοχή:</strong> Αθήνα</li>
+                                <li><strong>Τύπος απασχόλησης:</strong> πλήρης</li>
+                                <li><strong>Ημερομηνία ανάρτησης:</strong> 26/12/2022</li>
+                                <li><strong>Διάρκεια:</strong> 3 μήνες</li>
+                            </ul>
+                        </div>
+                        <!-- end of individual job advertisement-->
+                    </li>
+                </ul>
+        </jobs>
+        <divider></divider>
+        
+        <filter class="filter">
+                <ul class="filters">
+                <li>
+                    <button type="submit" class="form-control-submit-button" style="height: 20%; margin: 10px;">εκκαθάριση φίλτρων</button>
+
+                </li>
+                <li>
+                    <div class="form-group">
+                        <div class="form-outline">
+                            <input type="search" class="form-control-input" id="search1" style="border-radius: 1rem;">
+                            <label class="label-control" for="search1">Αναζήτηση</label>
+                            <button class="btn btn-primary" type="submit" style="position: absolute; top: 0; right:0; border-radius: 1rem; height: 100%;">
+                                <i class="fas fa-search"></i>
+                            </button>  
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <select class="filters" name="hours">
+                        <option>Είδος απασχόλησης</option>
+                        <option value="fulltime"> Πλήρης απασχόλησης </option>
+                        <option value="parttime"> Μερικής απασχόλησης </option>
+                    </select>
+                </li>
+                <li>
+                    <select class="filters" name="duration">
+                        <option>Διάρκεια πρακτικής</option>
+                        <option value="fulltime"> 3 μήνες </option>
+                        <option value="parttime">6 μήνες</option>
+                    </select>
+                </li>
+                <li>
+                    <select class="filters">
+                        <option>Πόλη</option>
+                        <option>Λίστα με πόλεις από βάση</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="start">Από:</label>
+                    <input type="date" id="start" name="trip-start"
+                        value="2018-07-22"
+                        min="2018-01-01" max="2018-12-31">
+                </li>
+                <li>
+                    <label for="start">Εώς:</label>
+                    <input type="date" id="start" name="trip-start"
+                        value="2018-07-22"
+                        min="2018-01-01" max="2018-12-31">
+                </li>
+            </ul>   
+        </filter> 
+        
     </div>
     <!-- end of centered job advertisement board -->
-
-
-
-
-
-
-
-
-
 
 
 

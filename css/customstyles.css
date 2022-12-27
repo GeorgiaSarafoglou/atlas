@@ -1,32 +1,95 @@
 .main-box {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    border: 1px solid gray;
-    margin-right: 20%;
-    margin-left: 20%;
+    align-items: flex-start;
+    flex: 1 0 0;
+    flex-direction: row;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    background-color: lightblue;
+    margin-right: 10%;
+    margin-left: 10%;
     border-radius: 10px;
 }
 
-ul {
+.job-features {
+    columns: 2;
+    list-style-type: none;
+    margin: 0; padding: 0;
+}
+
+.main-box > filter {
+    order: 1;
+    padding: 1em;
+    flex:1;
+    justify-content: flex-start;
+}
+
+.main-box > jobs {
+    justify-content: flex-end;
+    order: 3;
+    flex: 3;
+    padding: 1em;
+}
+
+
+.joblist {
     list-style-position: outside;
     list-style-type: none;
     padding: 1px;
-    text-align: left;
-    width: 70%;
+    text-align: center;
+    width: 90%;
 }
 
-li {
+.job {
     padding:15px;
     text-align: left;
-
 }
 
 .job-card {
     padding: 20px;
-    border: 1px solid gray;
     border-radius: 10px;
-
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    justify-content: center;
 }
 
+.filters {
+    list-style-type: none;
+}
+
+select.filters{
+    width: 90%;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+select.filters:focus{
+    outline:none;
+    padding: 5px; 
+    border: 2px solid black;
+}
+
+
+
+.main-box > divider {
+    order: 2;
+    border-left: 2px solid #100c62;
+    opacity: 0.3;
+    height: 400px;
+}
+
+.btn-favorite{
+    padding: 5px;
+    border-radius: 15px;
+    background-color: rgb(255, 146, 164);
+    border: none;
+}  
+
+.btn-favorite:hover{
+    background-color: rgb(205, 76, 76);
+} 
+
+.btn-favorite:active{
+    background-color: rgb(205, 76, 76);
+}
