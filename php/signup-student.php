@@ -111,6 +111,76 @@
                 <div class="progress-bar" role="progressbar" style="width: 48%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
 
+            <!-- Signup Form for Students step 2 -->
+            <div class="container" style="position: relative; width:100%; margin-top:1%;">
+                <div class="card" style="border-width: 3px;">
+
+                    <h6 style="margin-left:3.5%; margin-right:70%; margin-top:1%;">Προσωπικά Στοιχεία :</h6>        
+                
+                    <form id="signup_student_form_2" data-toggle="validator" data-focus="false" style="width: 40%;margin-left: 35%;margin-top:2%;">
+                        <!-- div row to show two inputs side by side -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; right:170%; ">
+                                    <input type="text" class="form-control-input" id="student_name_greek" required>
+                                    <label class="label-control" for="student_name_greek">Όνομα</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div> <!-- end of col -->
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; left:15%; ">
+                                    <input type="text" class="form-control-input" id="student_name" required>
+                                    <label class="label-control" for="student_name">Όνομα (στα Λατινικά)</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div> <!-- end of row -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; right:170%; ">
+                                    <input type="text" class="form-control-input" id="student_lastname_greek" required>
+                                    <label class="label-control" for="student_lastname_greek">Επίθετο</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div> <!-- end of col -->
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; left:15%; ">
+                                    <input type="text" class="form-control-input" id="student_lastname" required>
+                                    <label class="label-control" for="student_lastname">Επίθετο (στα Λατινικά)</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div> <!-- end of row -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; right:170%; ">
+                                    <input type="text" class="form-control-input" id="phone" required>
+                                    <label class="label-control" for="phone">Τηλέφωνο Επικοινωνίας</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; right:170%; ">
+                                    <label for="date_of_birth" style="right:170%;">Ημερομηνία Γέννησης : </label>
+                                    <input type="date" id="date_of_birth" name="date_of_birth" value="2001-01-01" min="1900-01-01" max="2005-01-01" style="margin-right: 30%;" required>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                            </div>
+                            <div class="col-lg-6" style="left: 70%; width:200%;">
+                                <a class="turquoise" href="signup.php">Προηγούμενο βήμα</a>
+                                <button type="submit" class="form-control-submit-button" style="width: 50%; margin-left:2%; margin-bottom:2%;">Συνέχεια</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- end of contact form -->
+                </div>
+            </div>        
+    
         </div>
     </header>
 

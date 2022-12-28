@@ -146,8 +146,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-
-                            <div id="error-message-signup" style="width: 20%; margin-left: 75%; color:red"></div>
+                            <!-- Error message for when no checkbox is checked -->
+                            <div id="error-message-signup" style="width: 20%; margin-left: 75%; color:red"></div><br>
                             <button type="submit" class="form-control-submit-button" style="width: 20%; margin-left: 75%;" id="signupButton1">Συνέχεια</button>
                             
                             <!-- Apply on click to button. On click of submit button redirectToPageByCheckbox() is called -->
