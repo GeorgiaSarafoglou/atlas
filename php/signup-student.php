@@ -114,22 +114,21 @@
             <!-- Signup Form for Students step 2 -->
             <div class="container" style="position: relative; width:100%; margin-top:1%;">
                 <div class="card" style="border-width: 3px;">
-
                     <h6 style="margin-left:3.5%; margin-right:70%; margin-top:1%;">Προσωπικά Στοιχεία :</h6>        
-                
-                    <form id="signup_student_form_2" data-toggle="validator" data-focus="false" style="width: 40%;margin-left: 35%;margin-top:2%;">
+                    <!-- Form inputs -->
+                    <form id="signup_student_form_2" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;">
                         <!-- div row to show two inputs side by side -->
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; right:170%; ">
-                                    <input type="text" class="form-control-input" id="student_name_greek" required>
+                                    <input type="text" class="form-control-input notEmpty" id="student_name_greek" required="">
                                     <label class="label-control" for="student_name_greek">Όνομα</label>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div> <!-- end of col -->
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; left:15%; ">
-                                    <input type="text" class="form-control-input" id="student_name" required>
+                                    <input type="text" class="form-control-input notEmpty" id="student_name" required="">
                                     <label class="label-control" for="student_name">Όνομα (στα Λατινικά)</label>
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -138,14 +137,14 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; right:170%; ">
-                                    <input type="text" class="form-control-input" id="student_lastname_greek" required>
+                                    <input type="text" class="form-control-input notEmpty" id="student_lastname_greek" required="">
                                     <label class="label-control" for="student_lastname_greek">Επίθετο</label>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div> <!-- end of col -->
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; left:15%; ">
-                                    <input type="text" class="form-control-input" id="student_lastname" required>
+                                    <input type="text" class="form-control-input notEmpty" id="student_lastname" required="">
                                     <label class="label-control" for="student_lastname">Επίθετο (στα Λατινικά)</label>
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -154,7 +153,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; right:170%; ">
-                                    <input type="text" class="form-control-input" id="phone" required>
+                                    <input type="text" class="form-control-input notEmpty" id="phone" required="">
                                     <label class="label-control" for="phone">Τηλέφωνο Επικοινωνίας</label>
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -173,15 +172,234 @@
                             </div>
                             <div class="col-lg-6" style="left: 70%; width:200%;">
                                 <a class="turquoise" href="signup.php">Προηγούμενο βήμα</a>
-                                <button type="submit" class="form-control-submit-button" style="width: 50%; margin-left:2%; margin-bottom:2%;">Συνέχεια</button>
+                                <button id="signup-continue-btn-1" type="button" class="form-control-submit-button" style="width: 50%; margin-left:2%; margin-bottom:2%;">Συνέχεια</button>
                             </div>
                         </div>
                     </form>
                     <!-- end of contact form -->
                 </div>
             </div>        
-    
         </div>
     </header>
 
+    <!-- Third step form -->
+    <div id="step3" style="display:none; height:65%;margin-top:5%;">
+        <!-- Title of each step -->
+        <h5>
+            <span style="margin-left: 22%;">
+                <a href="signup.php" style="color: #007bff;"><i class="arrow right">1. Ιδιότητα Χρήστη </a>
+                <span class="arrow" style="margin-left: 3%;color: #007bff;">&#x2192;</span> 
+            </span>
+            <span style="margin-left: 2%;">
+                <a href="#header" style="color: #007bff;"><i class="arrow right">2. Στοιχεία Χρήστη </a>
+                <span class="arrow" style="margin-left: 3%;">&#x2192;</span> 
+            </span>
+            <span style="margin-left: 2%;">
+                <a href="#step3" style="color: #007bff;"><i class="arrow right">3. Στοιχεία Ιδρύματος </a>
+                <span class="arrow" style="margin-left: 3%;">&#x2192;</span> 
+            </span>
+            <span style="margin-left: 2%;">
+                <i class="arrow right">4. Στοιχεία Λογαριασμού
+            </span>
+        </h5>
+        <!-- Progress Bar -->
+        <div class="progress" style="height: 20px; width: 57%; margin-left:21.5%;">
+            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <!-- Signup Form for Students step 3 -->
+        <div class="container" style="position: relative; width:100%; margin-top:1%;">
+            <div class="card" style="border-width: 3px;">
+                <h6 style="margin-left:3.5%; margin-right:70%; margin-top:1%;">Στοιχεία Ιδρύματος:</h6>        
+                <!-- Form inputs -->
+                <form id="signup_student_form_3" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;">
+                    <!-- div row to show two inputs side by side -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group" style="width: 200%; right:170%; ">
+                                <!-- TODO load from database --> 
+                                <select class="form-control-select" id="rselect" required="">
+                                    <option class="select-option" value="" disabled="" selected="">Ίδρυμα</option>
+                                    <option class="select-option" value="ekpa">ΕΚΠΑ</option>
+                                    <option class="select-option" value="assoe">ΑΣΣΟΕ</option>
+                                    <option class="select-option" value="papei">ΠΑΠΕΙ</option>
+                                </select>
+                            </div>
+                        </div> <!-- end of col -->
+                        <div class="col-lg-6">
+                            <div class="form-group" style="width: 200%; left:15%; ">
+                                <input type="text" class="form-control-input notEmpty" id="am" required="">
+                                <label class="label-control" for="am">Αριθμός μητρώου</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div> <!-- end of row -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group" style="width: 200%; right:170%; ">
+                                <!-- TODO load from database --> 
+                                <select class="form-control-select" id="school" required="">
+                                    <option class="select-option" value="" disabled="" selected="">Σχολή</option>
+                                    <option class="select-option" value="ekpa">Θετικών Επιστημών</option>
+                                    <option class="select-option" value="assoe">Θεωρητικών Επιστημών</option>
+                                </select>
+                            </div>
+                        </div> <!-- end of col -->
+                        <div class="col-lg-6">
+                            <div class="form-group" style="width: 200%; left:15%; ">
+                                <input type="text" class="form-control-input notEmpty" id="student_mail" required="">
+                                <label class="label-control" for="student_mail">Ιδρυματικό Email</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div> <!-- end of row -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group" style="width: 200%; right:170%; ">
+                                <!-- TODO load from database --> 
+                                <select class="form-control-select" id="department" required="">
+                                    <option class="select-option" value="" disabled="" selected="">Τμήμα</option>
+                                    <option class="select-option" value="di">ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ</option>
+                                    <option class="select-option" value="ds">ΦΥΣΙΚΗΣ</option>
+                                    <option class="select-option" value="dm">ΜΑΘΗΜΑΤΙΚΟ</option>
+                                </select>
+                            </div>
+                        </div> <!-- end of col -->
+                    </div> <!-- end of row -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                        </div>
+                        <div class="col-lg-6" style="left: 70%; width:200%;">
+                            <a class="turquoise" href="#header">Προηγούμενο βήμα</a>
+                            <button id="signup-continue-btn-2" type="button" class="form-control-submit-button" style="width: 50%; margin-left:2%; margin-bottom:2%;">Συνέχεια</button>
+                        </div>
+                    </div>
+                </form>
+                <!-- end of contact form -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Final step form -->
+    <div id="step4" style="display:none; height:65%;margin-top:0%;">
+        <!-- Title of each step -->
+        <h5>
+            <span style="margin-left: 22%;">
+                <a href="signup.php" style="color: #007bff;"><i class="arrow right">1. Ιδιότητα Χρήστη </a>
+                <span class="arrow" style="margin-left: 3%;color: #007bff;">&#x2192;</span> 
+            </span>
+            <span style="margin-left: 2%;">
+                <a href="#header" style="color: #007bff;"><i class="arrow right">2. Στοιχεία Χρήστη </a>
+                <span class="arrow" style="margin-left: 3%;">&#x2192;</span> 
+            </span>
+            <span style="margin-left: 2%;">
+                <a href="#step3" style="color: #007bff;"><i class="arrow right">3. Στοιχεία Ιδρύματος </a>
+                <span class="arrow" style="margin-left: 3%;">&#x2192;</span> 
+            </span>
+            <span style="margin-left: 2%;">
+                <a href="#step4" style="color: #007bff;"><i class="arrow right">4. Στοιχεία Λογαριασμού </a>
+            </span>
+        </h5>
+        <!-- Progress Bar -->
+        <div class="progress" style="height: 20px; width: 57%; margin-left:21.5%;">
+            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <!-- Signup Form for Students step 4 -->
+        <div class="container" style="position: relative; width:100%; margin-top:1%;">
+            <div class="card" style="border-width: 3px;">
+                <h6 style="margin-left:3.5%; margin-right:70%; margin-top:1%;">Στοιχεία Λογαριασμού:</h6>        
+                <!-- Form inputs -->
+                <form id="signup_student_form_4" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;">
+                    <!-- div row to show two inputs side by side -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group" style="width: 200%; right:170%; ">
+                                <input type="email" class="form-control-input notEmpty" id="Email" required="">
+                                <label class="label-control" for="email">Email</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div> <!-- end of col -->
+                        <div class="col-lg-6">
+                            <div class="form-group" style="width: 200%; left:15%; ">
+                                <input type="email" class="form-control-input notEmpty" id="confirm_email" required="">
+                                <label class="label-control" for="confirm_email">Επιβεβαίωση Email</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div> <!-- end of row -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group" style="width: 200%; right:170%; ">
+                                <input type="password" class="form-control-input notEmpty" id="password" required="">
+                                <label class="label-control" for="password">Κωδικός</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div> <!-- end of col -->
+                        <div class="col-lg-6">
+                            <div class="form-group" style="width: 200%; left:15%; ">
+                                <input type="password" class="form-control-input notEmpty" id="confirm_password" required="">
+                                <label class="label-control" for="confirm_password">Επιβεβαίωση Κωδικού</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div> <!-- end of row -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                        </div>
+                        <!-- TODO submit form and create user, redirect to starting page for students-->
+                        <div class="col-lg-6" style="left: 60%; width:200%;">
+                            <a class="turquoise" href="#step3">Προηγούμενο βήμα</a>
+                            <button id="confirmForm" type="submit" class="form-control-submit-button" style="width: 80%; margin-left:2%; margin-bottom:2%;">Επιβεβαίωση Στοιχείων</button>
+                        </div>
+                    </div>
+                </form>
+                <!-- end of contact form -->
+            </div>
+        </div>
+    </div>
+    <!-- TODO add this to a function -->
+    <!-- scroll down and show hidden divs -->
+    <script>
+        // Get the button and the div
+        var button = document.getElementById("signup-continue-btn-1");
+        var div = document.getElementById("step3");
+        
+        // When the button is clicked, show the div
+        button.addEventListener("click", function() {
+            div.style.display = "block";
+            // Calculate the position of the div relative to the viewport
+            var rect = div.getBoundingClientRect();
+            var top = rect.top;
+            var height = rect.height;
+
+            // Calculate the number of pixels to scroll by
+            var scrollBy = top - (window.innerHeight - height) / 2;
+
+            // Scroll to the div
+            window.scrollBy({ top: scrollBy, behavior: "smooth" });
+        });
+    </script>
+    <script>
+        var button2 = document.getElementById("signup-continue-btn-2");
+        var div2 = document.getElementById("step4");
+        // When the button is clicked, show the div
+        button2.addEventListener("click", function() {
+            div2.style.display = "block";
+            div2.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
+        });
+    </script>
+    <!-- Redirect to starting page -->
+    <script>
+        // Get the form and the button
+        var form = document.getElementById("signup_student_form_4");
+        var button = document.getElementById("confirmForm");
+
+        // When the button is clicked, submit the form and redirect to the target page
+        button.addEventListener("click", function(event) {
+            event.preventDefault();
+            form.submit();
+            window.location = "../index.php";
+        });
+    </script>
 </html>
