@@ -168,10 +168,10 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-6" style="left: 90%; width:200%; margin-top: 5%;">
+                                <a class="turquoise" href="signup.php">Προηγούμενο βήμα</a>
                             </div>
                             <div class="col-lg-6" style="left: 70%; width:200%;">
-                                <a class="turquoise" href="signup.php">Προηγούμενο βήμα</a>
                                 <button id="signup-continue-btn-1" type="button" class="form-control-submit-button" style="width: 50%; margin-left:2%; margin-bottom:2%;">Συνέχεια</button>
                             </div>
                         </div>
@@ -267,10 +267,10 @@
                         </div> <!-- end of col -->
                     </div> <!-- end of row -->
                     <div class="row">
-                        <div class="col-lg-6">
-                        </div>
-                        <div class="col-lg-6" style="left: 70%; width:200%;">
+                        <div class="col-lg-6" style="left: 90%; width:200%; margin-top: 5%;">
                             <a class="turquoise" href="#header">Προηγούμενο βήμα</a>
+                        </div>
+                        <div class="col-lg-6" style="left: 70%; width:200%;">  
                             <button id="signup-continue-btn-2" type="button" class="form-control-submit-button" style="width: 50%; margin-left:2%; margin-bottom:2%;">Συνέχεια</button>
                         </div>
                     </div>
@@ -345,11 +345,11 @@
                         </div>
                     </div> <!-- end of row -->
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6" style="left: 80%; width:200%; margin-top: 5%;">
+                            <a class="turquoise" href="#step3">Προηγούμενο βήμα</a>
                         </div>
                         <!-- TODO submit form and create user, redirect to starting page for students-->
                         <div class="col-lg-6" style="left: 60%; width:200%;">
-                            <a class="turquoise" href="#step3">Προηγούμενο βήμα</a>
                             <button id="confirmForm" type="submit" class="form-control-submit-button" style="width: 80%; margin-left:2%; margin-bottom:2%;">Επιβεβαίωση Στοιχείων</button>
                         </div>
                     </div>
@@ -358,48 +358,11 @@
             </div>
         </div>
     </div>
-    <!-- TODO add this to a function -->
+   
     <!-- scroll down and show hidden divs -->
     <script>
-        // Get the button and the div
-        var button = document.getElementById("signup-continue-btn-1");
-        var div = document.getElementById("step3");
-        
-        // When the button is clicked, show the div
-        button.addEventListener("click", function() {
-            div.style.display = "block";
-            // Calculate the position of the div relative to the viewport
-            var rect = div.getBoundingClientRect();
-            var top = rect.top;
-            var height = rect.height;
-
-            // Calculate the number of pixels to scroll by
-            var scrollBy = top - (window.innerHeight - height) / 2;
-
-            // Scroll to the div
-            window.scrollBy({ top: scrollBy, behavior: "smooth" });
-        });
-    </script>
-    <script>
-        var button2 = document.getElementById("signup-continue-btn-2");
-        var div2 = document.getElementById("step4");
-        // When the button is clicked, show the div
-        button2.addEventListener("click", function() {
-            div2.style.display = "block";
-            div2.scrollIntoView({behavior: "smooth", block: "center", inline: "center"});
-        });
-    </script>
-    <!-- Redirect to starting page -->
-    <script>
-        // Get the form and the button
-        var form = document.getElementById("signup_student_form_4");
-        var button = document.getElementById("confirmForm");
-
-        // When the button is clicked, submit the form and redirect to the target page
-        button.addEventListener("click", function(event) {
-            event.preventDefault();
-            form.submit();
-            window.location = "../index.php";
-        });
+       showAndScrollToStep3();
+       showAndScrollToStep4();
+       submitFormAndRedirect();
     </script>
 </html>
