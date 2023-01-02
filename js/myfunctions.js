@@ -74,4 +74,18 @@ function submitFormAndRedirect() {
         form.submit();
         window.location = "../index.php";
     });
- }
+}
+
+ /* Function to submit form and redirect to starting page */
+function submitFormAndRedirect2() {
+    // Get the form and the button
+    var form = document.getElementById("signup_office_form_4");
+    var button = document.getElementById("confirmForm2");
+  
+    // When the button is clicked, submit the form and redirect to the target page
+    button.addEventListener("click", function(event) {
+        event.preventDefault();
+        form.submit();
+        window.location = "../index.php";
+    });
+}
