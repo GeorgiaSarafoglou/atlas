@@ -53,6 +53,7 @@
     justify-content: center;
 }
 
+
 .filters {
     list-style-type: none;
 }
@@ -80,7 +81,7 @@ select.filters:focus{
 }
 
 .btn-favorite{
-    padding: 5px;
+    padding: 10px;
     border-radius: 15px;
     background-color: rgb(255, 146, 164);
     border: none;
@@ -92,4 +93,18 @@ select.filters:focus{
 
 .btn-favorite:active{
     background-color: rgb(205, 76, 76);
+}
+
+.top-line { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.top-line > h3 {
+    order: 1;
+}
+
+.top-line > button {
+    order: 2;
 }
