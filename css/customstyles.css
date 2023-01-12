@@ -4,10 +4,9 @@
     align-items: flex-start;
     flex: 1 0 0;
     flex-direction: row;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    background-color: lightblue;
-    margin-right: 10%;
-    margin-left: 10%;
+    background-color: white;
+    margin-right: 5%;
+    margin-left: 5%;
     border-radius: 10px;
 }
 
@@ -107,4 +106,37 @@ select.filters:focus{
 
 .top-line > button {
     order: 2;
+}
+
+#left-menu {
+    height: 100%;
+    width: 200px; /* Set the width of the menu */
+    float: left; /* Float the menu to the left of the page */
+    border-right: 1px solid rgb(205, 205, 205); /* Add a border to the right side of the menu */
+    position: fixed; /* Add position: fixed to the menu */
+    /*border-top: 1px solid rgb(205, 205, 205);*/
+}
+
+#left-menu ul {
+    list-style-type: none; /* Remove bullet points from list items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+#left-menu li a {
+    display: block; /* Make the links block-level elements to fill the entire list item */
+    padding: 20px; /* Add some padding to the links */
+    text-decoration: none; /* Remove underlines from links */
+    color: #000; /* Set the text color */
+    border-bottom: 1px solid #ccc; /* Add a border to the bottom of each list item */
+}
+
+#left-menu li a:hover {
+    background-color: #f1f1f1; /* Change the background color on hover */
+}
+
+.job-title{
+    size: 18.72 px;
+    font-size: 1.17em;
+    font-weight: bolder;
 }
