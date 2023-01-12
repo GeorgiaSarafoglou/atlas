@@ -29,7 +29,7 @@
                 <a class="nav-link page-scroll" href="#office_details">Φορέας Υποδοχής</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="php/under-construction.php">Γραφείο Π.Α</a>
+                <a class="nav-link page-scroll" href="under-construction.php">Γραφείο Π.Α</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link page-scroll" href="#contact">Επικοινωνία</a>
@@ -41,7 +41,7 @@
                 <i class="fa fa-user"></i> Σύνδεση 
             </button>
             <!-- Go to signup page -->
-            <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;" onclick="window.location.href = 'php/signup.php';">Εγγραφή </button>
+            <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;" onclick="window.location.href = 'signup.php';">Εγγραφή </button>
         </span>
     </div>
 </nav> <!-- end of navbar -->

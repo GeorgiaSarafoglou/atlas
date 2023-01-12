@@ -35,46 +35,7 @@
         <link rel="icon" href="../images/atlas_logo.png">
     </head>
     <body data-target=".fixed-top">
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-            <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
-
-            <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="../index.php"><img src="../images/atlas_logo.png" alt="alternative" style="width: 143px; height:140px;"></a>
-
-             <!-- navigation bar -->
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../index.php">Αρχική Σελίδα</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../search.php">Αναζήτηση</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../index.php#student_details">Φοιτητές-ριες</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../index.php#office_details">Φορέας Υποδοχής</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="php/under-construction.php">Γραφείο Π.Α <span class="sr-only">(current)</span> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="../index.php#contact">Επικοινωνία</a>
-                    </li>
-                </ul>
-                <span class="nav-item social-icons">
-                    <!-- Trigger the modal with a button -->
-                    <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;background-color:#00bfd8;border-color:#00bfd8" id="login_button" data-toggle="modal" data-target="#modalLoginForm">
-                        <i class="fa fa-user"></i> Σύνδεση 
-                    </button>
-                    <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;"> Εγγραφή </button>
-                </span>
-            </div>
-
-        </nav> <!-- end of navbar -->
-        <!-- end of navigation -->
+    <?php include "navigation.php"; ?>
     </body>
 
     <!-- Header - Student info and search -->
