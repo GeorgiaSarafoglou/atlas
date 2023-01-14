@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+
+    include("connection.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -218,7 +224,7 @@
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; right:170%; ">
                                 <!-- TODO load from database --> 
-                                <select class="form-control-select" id="rselect" required="">
+                                <select class="form-control-select" id="university" required="">
                                     <option class="select-option" value="" disabled="" selected="">Ίδρυμα</option>
                                     <option class="select-option" value="ekpa">ΕΚΠΑ</option>
                                     <option class="select-option" value="assoe">ΑΣΣΟΕ</option>
