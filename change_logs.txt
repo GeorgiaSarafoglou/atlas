@@ -11,3 +11,7 @@
 
 -- Το index.php είναι εκτός φακέλου php 
 -- Γίνανε add οι εικόνες στην αρχική και φτιάχτηκαν κάποια links 
+-- Added student signup 
+            -> (myfunctions.js -> studentSubmitForms())
+            -> connection.php
+            -> signup-student.php -> addEventListener

@@ -4,7 +4,11 @@
     $dbpass = "";
     $dbname = "sdi1900168";
 
-    if(!$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname)){
-        die("Failed to connect to database !");
+    $db = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+
+    // check if the connection was successful
+    if ($db->connect_errno) {
+        die("Failed to connect to database: " . $db->connect_error);
     }
+    
 ?>
