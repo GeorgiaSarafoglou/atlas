@@ -17,22 +17,22 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="index.php">Αρχική Σελίδα <span class="sr-only">(current)</span></a>
+                <a class="nav-link page-scroll" href="../index.php">Αρχική Σελίδα <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link page-scroll" href="search.php">Θέσεις Πρακτικής</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="#student_details">Φοιτητές-ριες</a>
+                <a class="nav-link page-scroll" href="../index.php#student_details">Φοιτητές-ριες</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="#office_details">Φορέας Υποδοχής</a>
+                <a class="nav-link page-scroll" href="../index.php#office_details">Φορέας Υποδοχής</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link page-scroll" href="under-construction.php">Γραφείο Π.Α</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="#contact">Επικοινωνία</a>
+                <a class="nav-link page-scroll" href="../index.php#contact">Επικοινωνία</a>
             </li>
         </ul>
         <span class="nav-item social-icons">
