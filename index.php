@@ -99,7 +99,7 @@
                     <i class="fa fa-user"></i> Σύνδεση 
                 </button>
                 <!-- Go to signup page -->
-                <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;" onclick="window.location.href = 'signup.php';">Εγγραφή </button>
+                <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;" onclick="window.location.href = 'php/signup.php';">Εγγραφή </button>
             </span>
         </div>
     </nav> <!-- end of navbar -->
