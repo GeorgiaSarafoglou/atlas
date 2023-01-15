@@ -15,3 +15,4 @@
             -> (myfunctions.js -> studentSubmitForms())
             -> connection.php
             -> signup-student.php -> addEventListener
+-- Added office signup 
