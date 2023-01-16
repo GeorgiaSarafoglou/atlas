@@ -116,20 +116,20 @@
                 <div class="card" style="border-width: 3px;">
                     <h6 style="margin-left:3.5%; margin-right:70%; margin-top:1%;">Προσωπικά Στοιχεία :</h6>        
                     <!-- Form inputs -->
-                    <form id="signup_office_form_2" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;">
+                    <form class="form-groupo" id="signup_office_form_2" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;">
                         <!-- div row to show two inputs side by side -->
                         <!-- Όνομα -->
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; right:170%; ">
-                                    <input type="text" class="form-control-input notEmpty" id="office_name_greek" required="">
+                                    <input type="text" class="form-control-input notEmpty" id="office_name_greek" name="fname" required="">
                                     <label class="label-control" for="office_name_greek">Όνομα</label>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div> <!-- end of col -->
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; left:15%; ">
-                                    <input type="text" class="form-control-input notEmpty" id="office_name" required="">
+                                    <input type="text" class="form-control-input notEmpty" id="office_name" name="latin_fname" required="">
                                     <label class="label-control" for="office_name">Όνομα (στα Λατινικά)</label>
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -139,14 +139,14 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; right:170%; ">
-                                    <input type="text" class="form-control-input notEmpty" id="office_lastname_greek" required="">
+                                    <input type="text" class="form-control-input notEmpty" id="office_lastname_greek" name="lname" required="">
                                     <label class="label-control" for="office_lastname_greek">Επίθετο</label>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div> <!-- end of col -->
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; left:15%; ">
-                                    <input type="text" class="form-control-input notEmpty" id="office_lastname" required="">
+                                    <input type="text" class="form-control-input notEmpty" id="office_lastname" name="latin_lname" required="">
                                     <label class="label-control" for="office_lastname">Επίθετο (στα Λατινικά)</label>
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -224,14 +224,14 @@
                     </div>
                 </div>   
                 <!-- Form inputs -->
-                <form id="signup_office_form_3" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;">
+                <form class="form-groupo" id="signup_office_form_3" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;">
                     <!-- div row to show two inputs side by side -->
                     <!-- Είδος Φορέα - Χώρα -->
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; right:170%; ">
                                 <!-- TODO load from database --> 
-                                <select class="form-control-select" id="kind" required="">
+                                <select class="form-control-select" id="type" name="type" required="">
                                     <option class="select-option" value="" disabled="" selected="">--Επιλέξτε είδος φορέα--</option>
                                     <option class="select-option" value="ekpa">ΕΚΠΑ</option>
                                     <option class="select-option" value="assoe">ΑΣΣΟΕ</option>
@@ -242,7 +242,7 @@
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; left:15%; ">
                                 <!-- TODO load from database --> 
-                                <select class="form-control-select" id="country" required="">
+                                <select class="form-control-select" id="country" name="country" required="">
                                     <option class="select-option" value="" disabled="" selected="">--Χώρα--</option>
                                     <option class="select-option" value="ekpa">ΕΚΠΑ</option>
                                     <option class="select-option" value="assoe">ΑΣΣΟΕ</option>
@@ -256,7 +256,7 @@
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; right:170%; ">
                                 <!-- TODO load from database --> 
-                                <select class="form-control-select" id="field" required="">
+                                <select class="form-control-select" id="field" name="field" required="">
                                     <option class="select-option" value="" disabled="" selected="">--Επιλέξτε Πεδίο Δραστηριότητας--</option>
                                     <option class="select-option" value="ekpa">Θετικών Επιστημών</option>
                                     <option class="select-option" value="assoe">Θεωρητικών Επιστημών</option>
@@ -265,7 +265,7 @@
                         </div> <!-- end of col -->
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; left:15%; ">
-                                <input type="text" class="form-control-input notEmpty" id="street_no" required="">
+                                <input type="text" class="form-control-input notEmpty" id="street_no" name="street" required="">
                                 <label class="label-control" for="street_no">Οδός-Αριθμός</label>
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -275,14 +275,14 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; right:170%; ">
-                                <input type="text" class="form-control-input notEmpty" id="company_name" required="">
+                                <input type="text" class="form-control-input notEmpty" id="company_name" name="company_name" required="">
                                 <label class="label-control" for="company_name">Επωνυμία</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div> <!-- end of col -->
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; left:15%; ">
-                                <input type="text" class="form-control-input notEmpty" id="tk" required="">
+                                <input type="text" class="form-control-input notEmpty" id="tk" name="tk" required="">
                                 <label class="label-control" for="tk">Τ.Κ.</label>
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -292,15 +292,15 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; right:170%; ">
-                                <input type="text" class="form-control-input notEmpty" id="phone" required="">
-                                <label class="label-control" for="phone">Τηλέφωνο</label>
+                                <input type="text" class="form-control-input notEmpty" id="company_phone" name="company_phone" required="">
+                                <label class="label-control" for="company_phone">Τηλέφωνο</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div> <!-- end of col -->
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; left:15%;">
                                 <!-- TODO load from database --> 
-                                <select class="form-control-select" id="p_unit" required="">
+                                <select class="form-control-select" id="p_unit" name="region" required="">
                                     <option class="select-option" value="" disabled="" selected="">--Επιλέξτε περιφερειακή ενότητα--</option>
                                     <option class="select-option" value="ekpa">ΕΚΠΑ</option>
                                     <option class="select-option" value="assoe">ΑΣΣΟΕ</option>
@@ -313,7 +313,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; right:170%; ">
-                                <input type="text" class="form-control-input notEmpty" id="afm" required="">
+                                <input type="text" class="form-control-input notEmpty" id="afm" name="afm" required="">
                                 <label class="label-control" for="afm">Α.Φ.Μ.</label>
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -321,7 +321,7 @@
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; left:15%;">
                                 <!-- TODO load from database --> 
-                                <select class="form-control-select" id="municipality" required="">
+                                <select class="form-control-select" id="municipality" name="municipality" required="">
                                     <option class="select-option" value="" disabled="" selected="">--Επιλέξτε Καλλικρατικό Δήμο--</option>
                                     <option class="select-option" value="ekpa">ΕΚΠΑ</option>
                                     <option class="select-option" value="assoe">ΑΣΣΟΕ</option>
@@ -334,7 +334,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; right:170%; ">
-                                <input type="text" class="form-control-input notEmpty" id="doy" required="">
+                                <input type="text" class="form-control-input notEmpty" id="doy" name="doy" required="">
                                 <label class="label-control" for="doy">Δ.Ο.Υ.</label>
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -344,8 +344,8 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; right:170%; ">
-                                <input type="text" class="form-control-input notEmpty" id="email" required="">
-                                <label class="label-control" for="doy">Email</label>
+                                <input type="text" class="form-control-input notEmpty" id="company_email" name="company_email" required="">
+                                <label class="label-control" for="company_email">Company email</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div> <!-- end of col -->
@@ -395,19 +395,19 @@
             <div class="card" style="border-width: 3px;">
                 <h6 style="margin-left:3.5%; margin-right:70%; margin-top:1%;">Στοιχεία Λογαριασμού:</h6>        
                 <!-- Form inputs -->
-                <form id="signup_office_form_4" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;">
+                <form class="form-groupo" id="signup_office_form_4" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;" action="submit-office.php" method="POST">
                     <!-- div row to show two inputs side by side -->
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; right:170%; ">
-                                <input type="email" class="form-control-input notEmpty" id="Email" required="">
+                                <input type="email" class="form-control-input notEmpty" id="email" name="email" required="">
                                 <label class="label-control" for="email">Email</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div> <!-- end of col -->
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; left:15%; ">
-                                <input type="email" class="form-control-input notEmpty" id="confirm_email" required="">
+                                <input type="email" class="form-control-input notEmpty" id="confirm_email" name="confirm_email" required="">
                                 <label class="label-control" for="confirm_email">Επιβεβαίωση Email</label>
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -416,14 +416,14 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; right:170%; ">
-                                <input type="password" class="form-control-input notEmpty" id="password" required="">
+                                <input type="password" class="form-control-input notEmpty" id="password" name="password" required="">
                                 <label class="label-control" for="password">Κωδικός</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div> <!-- end of col -->
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; left:15%; ">
-                                <input type="password" class="form-control-input notEmpty" id="confirm_password" required="">
+                                <input type="password" class="form-control-input notEmpty" id="confirm_password" name="confirm_password" required="">
                                 <label class="label-control" for="confirm_password">Επιβεβαίωση Κωδικού</label>
                                 <div class="help-block with-errors"></div>
                             </div>
@@ -448,7 +448,11 @@
     <script>
        showAndScrollToStep3();
        showAndScrollToStep4();
-       submitFormAndRedirect2();
+       document.getElementById("confirmForm2").addEventListener("click", function(event) {
+            event.preventDefault();
+            console.log("here");
+            officeSubmitForms();
+        });
     </script>
     
 </html>

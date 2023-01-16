@@ -90,8 +90,6 @@ function submitFormAndRedirect2() {
     });
 }
 
-
-
 function hideShow() {
     var x = document.getElementById("application-form");
     if (x.style.display === "none") {
@@ -101,23 +99,50 @@ function hideShow() {
     }
 }
 
-function showCheck(){
-    var x = document.getElementById("check");
-    if(document.getElementById("myfile").value != "") {
-        x.style.display = "block";
+function studentSubmitForms() {
+    var forms = document.querySelectorAll(".form-groupf");
+    var data = {};
+    for (var i = 0; i < forms.length; i++) {
+        var formData = new FormData(forms[i]);
+        for (var [name, value] of formData.entries()) {
+            data[name] = value;
+        }
     }
+    console.log(JSON.stringify(data));
+    fetch("submit.php", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+        "Content-Type": "application/json"
+        }
+    })
+     .then(response => response.text())
+     .then(data => {
+       // do something with the response from the PHP script
+     });
 }
 
-function submitApplicationFormPopUp(){
-    // if user is not connected direct them to login page
-
-
-    if(getElementById("myfile").value == ""){
-        //if no file is chosen display error message
-        
+function officeSubmitForms() {
+    var forms = document.querySelectorAll(".form-groupo");
+    var data = {};
+    for (var i = 0; i < forms.length; i++) {
+        var formData = new FormData(forms[i]);
+        for (var [name, value] of formData.entries()) {
+            data[name] = value;
+        }
     }
-    //else popup message for confirmation
-    {
+    
+    console.log(JSON.stringify(data));
 
-    }
+    fetch("submit-office.php", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+        "Content-Type": "application/json"
+        }
+    })
+     .then(response => response.text())
+     .then(data => {
+       // do something with the response from the PHP script
+     });
 }
