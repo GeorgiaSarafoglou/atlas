@@ -27,6 +27,7 @@
 <script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
 <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
 <script src="../js/scripts.js"></script> <!-- Custom scripts -->
+<script src="../js/myfunctions.js"></script>
 
 <!-- Styles -->
 <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
@@ -37,7 +38,7 @@
 <link href="../css/styles.css" rel="stylesheet">
 
 <!-- to use close-open functions for login modal -->
-<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript" src="../js/scripts.js"></script>
 
 <!-- Favicon  -->
 <link rel="icon" href="../images/atlas_logo.png">

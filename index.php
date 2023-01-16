@@ -6,12 +6,7 @@
     /* if we already have a session with an active user, redirect to appriprate page */
     if(isset($_SESSION['user'])){
         /* if user is student redirect to student starting page */
-        if($_SESSION['user']['student'] == true){
-            header("location: startingpage-student.php");
-        }
-        else if($_SESSION['user']['office'] == true){
-            header("location: startingpage-student.php");
-        }
+        header("location: startingpage-student.php");
     }
 
     if(isset($_POST['login_btn'])){
@@ -41,16 +36,16 @@
                     everything else is data we want to add to the session */
                     $_SESSION['user']['id'] = $row["id"];
                     $_SESSION['user']['name'] = $row["fname"];
-                    
-                    if($row['source'] == 'company'){
-                        $_SESSION['user']['company'] = true;
-                        $_SESSION['user']['student'] = false;
-                    }
-                    else if($row['source'] == 'student'){
-                        $_SESSION['user']['student'] = true;
-                        $_SESSION['user']['company'] = false;
 
+                    echo $row["source"];
+                    
+                    $_SESSION['user']['role'] = $row["source"];
+
+                    if($_SESSION['user']['role'] == 'students'){
                         header("location: startingpage-student.php");
+                    }
+                    else{
+                        header("location: php/under-construction.php");
                     }
                 }
             }

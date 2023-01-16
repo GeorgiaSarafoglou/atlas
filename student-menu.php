@@ -68,7 +68,7 @@
                     <a class="nav-link page-scroll" href="index.php">Αρχική Σελίδα <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="search.php">Αναζήτηση</a>
+                    <a class="nav-link page-scroll" href="php/search.php">Αναζήτηση</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#student_details">Φοιτητές-ριες</a>
