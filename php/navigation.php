@@ -4,7 +4,7 @@
     <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
 
     <!-- Image Logo -->
-    <a class="navbar-brand logo-image" href="index.php"><img src="../images/atlas_logo.png" alt="alternative" style="width: 143px; height:140px;"></a>
+    <a class="navbar-brand logo-image" href="../index.php"><img src="../images/atlas_logo.png" alt="alternative" style="width: 143px; height:140px;"></a>
     
     <!-- Mobile Menu Toggle Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">

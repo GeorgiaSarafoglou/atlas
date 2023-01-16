@@ -89,3 +89,35 @@ function submitFormAndRedirect2() {
         window.location = "../index.php";
     });
 }
+
+
+
+function hideShow() {
+    var x = document.getElementById("application-form");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function showCheck(){
+    var x = document.getElementById("check");
+    if(document.getElementById("myfile").value != "") {
+        x.style.display = "block";
+    }
+}
+
+function submitApplicationFormPopUp(){
+    // if user is not connected direct them to login page
+
+
+    if(getElementById("myfile").value == ""){
+        //if no file is chosen display error message
+        
+    }
+    //else popup message for confirmation
+    {
+
+    }
+}

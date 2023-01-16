@@ -71,14 +71,6 @@ select.filters:focus{
 }
 
 
-
-.main-box > divider {
-    order: 2;
-    border-left: 2px solid #100c62;
-    opacity: 0.3;
-    height: 400px;
-}
-
 .btn-favorite{
     padding: 10px;
     border-radius: 15px;
