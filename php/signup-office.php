@@ -156,7 +156,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; right:170%; ">
-                                    <input type="text" class="form-control-input notEmpty" id="phone" required="">
+                                    <input type="text" class="form-control-input notEmpty" id="phone" name="phone" required="">
                                     <label class="label-control" for="phone">Τηλέφωνο Επικοινωνίας</label>
                                     <div class="help-block with-errors"></div>
                                 </div>

@@ -1,3 +1,68 @@
+<?php 
+    require_once 'php/connection.php';
+    
+    session_start();
+
+    /* if we already have a session with an active user, redirect to appriprate page */
+    if(isset($_SESSION['user'])){
+        /* if user is student redirect to student starting page */
+        if($_SESSION['user']['student'] == true){
+            header("location: startingpage-student.php");
+        }
+        else if($_SESSION['user']['office'] == true){
+            header("location: startingpage-student.php");
+        }
+    }
+
+    if(isset($_POST['login_btn'])){
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        $password = strip_tags($_POST['password']);
+
+        if(empty($email)){
+            $errorMsg[] = "Must enter email";
+        }
+        else if(empty($password)){
+            $errorMsg[] = "Must enter password";
+        }
+        else{
+            $stm ="SELECT email, id, fname, password, 'company' as source FROM company WHERE email='$email'
+            UNION
+            SELECT email, id, fname, password, 'students' as source FROM students WHERE email='$email' ";
+            
+            /* executes the query and pulls out the row from the database */
+            $results = $db->query($stm);
+
+            /* check if we actually have some rows returned from the query */
+            if($results->num_rows > 0){
+                $row = $results->fetch_assoc();
+                /* check if password exists in database */
+                if($password == $row['password']){
+                    /* if yes then we can create our session (the superglobal variable $_SESSION with data) first bracket ['user'] is the key 
+                    everything else is data we want to add to the session */
+                    $_SESSION['user']['id'] = $row["id"];
+                    $_SESSION['user']['name'] = $row["fname"];
+                    
+                    if($row['source'] == 'company'){
+                        $_SESSION['user']['company'] = true;
+                        $_SESSION['user']['student'] = false;
+                    }
+                    else if($row['source'] == 'student'){
+                        $_SESSION['user']['student'] = true;
+                        $_SESSION['user']['company'] = false;
+
+                        header("location: startingpage-student.php");
+                    }
+                }
+            }
+            else{
+                $errorMsg[] = "Λάθος email ή κωδικός";
+            }
+           
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,34 +184,34 @@
                 <!-- Modal Body -->
                 <div class="modal-body mx-3">
                     <!-- Login Form -->
-                    <form id="loginForm" data-toggle="validator" data-focus="false">
+                    <form id="loginForm" data-toggle="validator" data-focus="false" method="POST">
                             <div class="form-group">
-                                <input type="text" class="form-control-input" id="lname" required>
-                                <label class="label-control" for="lname">Name</label>
+                                <input type="text" class="form-control-input notEmpty" id="email" name="email" required>
+                                <label class="label-control" for="email">Email</label>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control-input" id="lpassword" required>
-                                <label class="label-control" for="lpassword">Password</label>
+                                <input type="password" class="form-control-input notEmpty" id="password" name="password" required>
+                                <label class="label-control" for="password">Password</label>
                                 <div class="help-block with-errors"></div>
+                            </div> 
+                            <div class="form-group">
+                                <a class="turquoise" href="#contact">Ξέχασα τον κωδικό μου</a>
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="loggedIn" value="Keep-logged-in">Κράτησε με συνδεδεμένο
+                                <div class="help-block with-errors"></div>
+                            </div> 
+                            <!-- Login Button -->
+                            <div class="modal-footer d-flex justify-content-center">
+                                <!-- <button type="button" class="btn btn-primary" style="border-radius: 2rem; width:90%" >Login</button> -->
+                                <button type="submit" name="login_btn" id="login_btn" class="form-control-submit-button" style="border-radius: 2rem; width:90%">Σύνδεση</button>
+                            </div>
+                                <!-- Sign Up Button -->
+                                <div class="modal-footer d-flex justify-content-center">
+                                <button type="submit" class="form-control-signup-button" style="border-radius: 2rem; width:90%;">Εγγραφή</button>
                             </div>
                     </form>
-                    <div class="form-group">
-                        <a class="turquoise" href="#contact">Ξέχασα τον κωδικό μου</a>
-                    </div>
-                    <div class="form-group checkbox">
-                        <input type="checkbox" id="loggedIn" value="Keep-logged-in" required>Κράτησε με συνδεδεμένο
-                        <div class="help-block with-errors"></div>
-                    </div>
-                </div>
-                <!-- Login Button -->
-                <div class="modal-footer d-flex justify-content-center">
-                    <!-- <button type="button" class="btn btn-primary" style="border-radius: 2rem; width:90%" >Login</button> -->
-                    <button type="submit" class="form-control-submit-button" style="border-radius: 2rem; width:90%">Σύνδεση</button>
-                </div>
-                    <!-- Sign Up Button -->
-                    <div class="modal-footer d-flex justify-content-center">
-                    <button type="submit" class="form-control-signup-button" style="border-radius: 2rem; width:90%;">Εγγραφή</button>
                 </div>
             </div>
         </div>
@@ -166,7 +231,7 @@
                             <!-- Search bar -->
                             <div class="form-group">
                                 <div class="form-outline">
-                                    <input type="search" class="form-control-input" id="search1" style="border-radius: 1rem;">
+                                    <input type="search" class="form-control-input notEmpty" id="search1" style="border-radius: 1rem;">
                                     <label class="label-control" for="search1">Αναζήτηση</label>
                                     <button class="btn btn-primary" type="submit" style="position: absolute; top: 0; right:0; border-radius: 1rem; height: 100%;">
                                         <i class="fas fa-search"></i>

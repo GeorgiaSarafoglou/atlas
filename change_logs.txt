@@ -16,3 +16,11 @@
             -> connection.php
             -> signup-student.php -> addEventListener
 -- Added office signup 
+
+======================
+  16/1     ~     Rigas  
+======================
+-- Student login και ανακατευθυνση σε starting page για student
+-- Added logout 
+-- Fixed inputs 
+-- Student starting page is created by including student menu and startingpage-student

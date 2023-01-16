@@ -101,6 +101,7 @@
                         <li><a href="#">Αναζήτηση Θέσεων</a></li>
                         <li><a href="#">Οι Αιτήσεις Μου</a></li>
                         <li><a href="#">Αγαπημένα</a></li>
+                        <li><a class="btn btn-primary" href="php/logout.php">Αποσύνδεση</a></li>
                     </ul>
                 </div>
                 <!-- To start next page we need to create a <div class="col-lg-6"> and add whatever we want to be on center of page -->
