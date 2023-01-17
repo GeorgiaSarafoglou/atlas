@@ -92,9 +92,9 @@
         </div>
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
-    <header class="header" style="height: 100%;">
+    <header class="header" style="height: 80%;">
         <div class="header-content">
-            <div class="row">
+            <div class="row" style="width: 100%;">
                 <!-- vertical menu left of page -->
                 <div id="left-menu">
                     <ul>

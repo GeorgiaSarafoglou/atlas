@@ -45,7 +45,7 @@
 	<!-- Favicon  -->
     <link rel="icon" href="images/atlas_logo.png">
 </head>
-<?php include "student-menu.php" ?>
+    <?php include "student-menu.php" ?>
             <div class="container">
                 <div class="row">
                     <!-- vertical menu left of page -->
