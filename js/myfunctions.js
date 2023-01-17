@@ -146,3 +146,14 @@ function officeSubmitForms() {
        // do something with the response from the PHP script
      });
 }
+
+function ApplicationFormModal(){
+    var file = document.getElementById('myfile').value;
+    var x = document.getElementById("invalid-file");
+    if(file){
+        x.style.display = "none";
+        $("#modalConfirm").modal();
+    }else{
+        x.style.display = "block";
+    }
+}

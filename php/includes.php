@@ -37,7 +37,7 @@
 <link href="../css/styles.css" rel="stylesheet">
 
 <!-- to use close-open functions for login modal -->
-<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript" src="../js/scripts.js"></script>
 
 <!-- Favicon  -->
 <link rel="icon" href="../images/atlas_logo.png">
