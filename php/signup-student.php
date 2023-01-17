@@ -1,3 +1,20 @@
+<?php
+    include "connection.php";
+
+    session_start();
+
+    if(isset($_SESSION['user'])){
+        header("location: index.php");
+    }
+
+    /* this will tell us if the form is posted */
+    if(isset($_REQUEST['register_btn'])){
+        $name = $_REQUEST['name'];
+        
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -343,7 +360,7 @@
                         </div>
                         <!-- TODO submit form and create user, redirect to starting page for students-->
                         <div class="col-lg-6" style="left: 60%; width:200%;">
-                            <button id="confirmForm" type="submit" class="form-control-submit-button" style="width: 80%; margin-left:2%; margin-bottom:2%;">Επιβεβαίωση Στοιχείων</button>
+                            <button id="confirmForm" name="register_btn" type="submit" class="form-control-submit-button" style="width: 80%; margin-left:2%; margin-bottom:2%;">Επιβεβαίωση Στοιχείων</button>
                         </div>
                     </div>
                 </form>

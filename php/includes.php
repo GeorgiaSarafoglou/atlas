@@ -27,6 +27,7 @@
 <script src="../js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
 <script src="../js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
 <script src="../js/scripts.js"></script> <!-- Custom scripts -->
+<script src="../js/myfunctions.js"></script>
 
 <!-- Styles -->
 <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
@@ -34,6 +35,7 @@
 <link href="../css/fontawesome-all.css" rel="stylesheet">
 <link href="../css/swiper.css" rel="stylesheet">
 <link href="../css/magnific-popup.css" rel="stylesheet">
+<link href="../css/customstyles.css" rel="stylesheet">
 <link href="../css/styles.css" rel="stylesheet">
 
 <!-- to use close-open functions for login modal -->
