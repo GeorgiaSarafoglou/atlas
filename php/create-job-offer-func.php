@@ -34,7 +34,7 @@
 
     $stmt = $db->prepare($query);
     $stmt->bind_param("ssiisssisssssii", $title, $subject, $position_available, $duration, $departments, $type, $location, 
-    $payment, $time_period_start, $time_period_end, $description, $insurance, $infastructures, $published, $company_id);
+    $time_period_start, $time_period_end, $payment, $description, $insurance, $infastructures, $published, $company_id);
     $result = $stmt->execute();
 
     /* if it is added in table we return to starting page */
@@ -42,5 +42,6 @@
         header("location: ../index.php");
     }
     else{
+        header("location: ../search.php");
         echo "There was a problem adding the ad\n";
     }

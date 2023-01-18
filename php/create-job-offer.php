@@ -138,13 +138,13 @@
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; right:145%; ">
                                     <label for="start" style="right:170%;">Αρχή Πρακτικής Άσκησης: </label>
-                                    <input type="date" id="time_period_start" name="time_period_start" value="2023-01-31" min="2023-01-31" max="2024-01-01" style="margin-right: 30%;" required>
+                                    <input type="date" id="time_period_start" name="time_period_start" value="2023-01-01" min="2023-01-01" max="2024-01-01" style="margin-right: 30%;" required>
                                 </div>    
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; left: -45%; ">
                                     <label for="end" style="right:170%;">Τέλος Πρακτικής Άσκησης: </label>
-                                    <input type="date" id="time_period_end" name="time_period_end" value="2023-01-31" min="2023-01-31" max="2024-01-01" style="margin-right: 30%;" required>
+                                    <input type="date" id="time_period_end" name="time_period_end" value="2023-01-31" min="2023-01-31" max="2024-04-01" style="margin-right: 30%;" required>
                                 </div>  
                             </div> <!-- end of col -->
                         </div> <!-- end of row -->
