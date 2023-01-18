@@ -33,7 +33,7 @@
     values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
     $stmt = $db->prepare($query);
-    $stmt->bind_param("ssiisssisssssii", $title, $subject, $position_available, $duration, $departments, $type, $location, 
+    $stmt->bind_param("ssiisssssisssii", $title, $subject, $position_available, $duration, $departments, $type, $location, 
     $time_period_start, $time_period_end, $payment, $description, $insurance, $infastructures, $published, $company_id);
     $result = $stmt->execute();
 
