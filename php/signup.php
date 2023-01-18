@@ -141,7 +141,7 @@
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <!-- Script to call disableOtherCheckbox function from myfunctions.js -->
-                                    <script>disableOtherCheckbox()</script>
+                                    <script>disableOtherCheckbox("isStudent", "isOffice")</script>
                                 </div>
                             </div>
                         </div>
