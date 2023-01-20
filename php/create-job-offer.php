@@ -22,6 +22,16 @@
     <?php include "includes.php" ?>
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
+    <!-- Preloader -->
+    <div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+
     <?php include "office-menu.php" ?>
             <div class="container" style="position: relative; width:100%; margin-top:1%;">
                 <div class="card" style="border-width: 2px;">
@@ -223,25 +233,71 @@
                         <script type="text/javascript">
                             window.location = "http://localhost/sdi1900168/atlas/php/watch-jobs-temp.php";
                         </script>
-                        
+
                     <?php 
                         } 
                         else if(isset($_POST['register_btn'])){
-                            /* filter variables */
-                            $title = $_POST["title"];
-                            $subject = $_POST["subject"];
-                            $position_available = filter_input(INPUT_POST, "positions_available", FILTER_VALIDATE_INT);
-                            $duration = filter_input(INPUT_POST, "duration", FILTER_VALIDATE_INT);
-                            $departments = $_POST["departments"];
-                            $type = $_POST["type"];
-                            $location = $_POST["location"];
-                            $payment = filter_input(INPUT_POST, "payment", FILTER_VALIDATE_INT);
-                            $time_period_start = $_POST["time_period_start"];
-                            $time_period_end = $_POST["time_period_end"];
-                            $description = $_POST["description"];
-                            $insurance = $_POST["insurance"];
-                            $infastructures = $_POST["infrastructure"];
-                            $published = true;
+                            $error = "";
+                            if (empty($_POST['title'])) {
+                                $error .= "Title field is required <br>";
+                            }
+                            if (empty($_POST['subject'])) {
+                                $error .= "Email field is required <br>";
+                            }
+                            if (empty($_POST['positions_available'])) {
+                                $error .= "Positions field is required <br>";
+                            }
+                            if (empty($_POST['duration'])) {
+                                $error .= "Duration field is required <br>";
+                            }
+                            if (empty($_POST['departments'])) {
+                                $error .= "Department field is required <br>";
+                            }
+                            if (empty($_POST['type'])) {
+                                $error .= "Type field is required <br>";
+                            }
+                            if (empty($_POST['location'])) {
+                                $error .= "Location field is required <br>";
+                            }
+                            if (empty($_POST['payment'])) {
+                                $error .= "Payment field is required <br>";
+                            }
+                            if (empty($_POST['time_period_start'])) {
+                                $error .= "Start field is required <br>";
+                            }
+                            if (empty($_POST['time_period_end'])) {
+                                $error .= "End field is required <br>";
+                            }
+                            if (empty($_POST['description'])) {
+                                $error .= "Description field is required <br>";
+                            }
+                            if (empty($_POST['insurance'])) {
+                                $error .= "Insurance field is required <br>";
+                            }
+                            if (empty($_POST['infrastructure'])) {
+                                $error .= "Infastructure field is required <br>";
+                            }
+                            if($error){
+                                echo $error;
+                                die;
+                            }
+                            else{
+                                /* filter variables */
+                                $title = $_POST["title"];
+                                $subject = $_POST["subject"];
+                                $position_available = filter_input(INPUT_POST, "positions_available", FILTER_VALIDATE_INT);
+                                $duration = filter_input(INPUT_POST, "duration", FILTER_VALIDATE_INT);
+                                $departments = $_POST["departments"];
+                                $type = $_POST["type"];
+                                $location = $_POST["location"];
+                                $payment = filter_input(INPUT_POST, "payment", FILTER_VALIDATE_INT);
+                                $time_period_start = $_POST["time_period_start"];
+                                $time_period_end = $_POST["time_period_end"];
+                                $description = $_POST["description"];
+                                $insurance = $_POST["insurance"];
+                                $infastructures = $_POST["infrastructure"];
+                                $published = true;
+                            }
 
                             require_once "connection.php";
 
@@ -251,7 +307,8 @@
                             $stmt = $db->prepare($query);
                             $stmt->bind_param("ssiisssssisssii", $title, $subject, $position_available, $duration, $departments, $type, $location, 
                             $time_period_start, $time_period_end, $payment, $description, $insurance, $infastructures, $published, $company_id);
-                            $result = $stmt->execute();?>
+                            $result = $stmt->execute();
+                        ?>
                             <script type="text/javascript">
                                 window.location = "http://localhost/sdi1900168/atlas/php/watch-jobs-active.php";
                             </script> 

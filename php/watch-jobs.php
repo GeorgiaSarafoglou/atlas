@@ -128,7 +128,11 @@
                         <!-- individual job advertisment -->
                         <div class="job-card">
                             <div class="top-line">
-                                <h3><a href="job-details.php"> <?php echo $row['title']; ?> </a></h3>
+                                <form method="POST" action="job-details.php">
+                                <input type="hidden" name="show-submit-application" value=1>
+                                    <input type="hidden" name="ad-id" value="<?php echo $row['id']; ?>">
+                                    <h3><button type="submit" name="show-details" class="job-title-button"> <?php echo $row['title']?> </button></h3>
+                                </form>
                             </div> 
                             <p><?php echo $row['departments']?></p>
                             <ul class="job-features">
