@@ -141,6 +141,10 @@ select.filters:focus{
     transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
+.has-sub-menu{
+    cursor: pointer;
+}
+
 .has-sub-menu::after {
     content: "";
     display: inline-block;
@@ -155,5 +159,5 @@ select.filters:focus{
 
 /* Select the sub-menu items and change their color */
 #left-menu .sub-menu li a {
-    color: blue; /* or any other color value like #f00, rgb(255,0,0) */
+    color: rgb(49, 109, 103); /* or any other color value like #f00, rgb(255,0,0) */
 }

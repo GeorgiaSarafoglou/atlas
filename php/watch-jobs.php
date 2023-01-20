@@ -32,25 +32,6 @@
 
         <?php include "office-menu.php" ?>
         
-        <?php 
-            /* change head name */
-            $head = "Οι Αγγελίες μου";
-            if(!empty($_GET)){
-                if($_GET['ads'] == "1"){
-                    $head = "Δημοσιευμένες";
-                }
-                else if($_GET['ads'] == "0"){
-                    $head = "Προσωρινά Αποθηκευμένες";
-                }
-            }
-        ?>
-
-        <!-- <div class="container" style="position: relative; width:100%; margin-top: 1%; margin-bottom: 1%;">
-            <div class="card" style="border-width: 2px;">
-                <h4 style="margin-left: 40%;"> <?php echo $head; ?> </h4>
-            </div>
-        </div> -->
-        
         <div class="main-box" style="margin-left: 10%; width:100%;">
             <filter class="filter" style="border-right: 1px solid black;">
                 <ul class="filters">
@@ -65,13 +46,6 @@
                                 <label class="label-control" for="search1">Αναζήτηση με Τίτλο</label>  
                             </div>
                         </div>
-                        <li>
-                            <select class="filters" name="ads">
-                                <option value="">Αγγελίες</option>
-                                <option value="1">Δημοσιευμένες</option>
-                                <option value="0">Προσωρινή Αποθήκευση</option>
-                            </select>
-                        </li>
                         <li>
                             <select class="filters" name="hours">
                                 <option value="">Είδος απασχόλησης</option>
@@ -124,7 +98,6 @@
                         $duration = $_GET['duration'];
                         $start_date = $_GET['trip-start'];
                         $end_date = $_GET['trip-end'];
-                        $ads = $_GET['ads'];
                         
                         /* Add the search term to the query, if it's not empty */
                         if (!empty($search)) {
