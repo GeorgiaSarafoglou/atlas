@@ -4,7 +4,6 @@
 <?php include "includes.php"; 
     session_start();
     include "connection.php";
-    include "navigation.php";
     include "student-menu.php";
     include "includes.php";
 ?> 
@@ -56,14 +55,14 @@
                                 </div>
                                 <div style=" display:flex; flex-direction:row; order:2;">
                                     <!-- user can edit only saved applications -->
-                                    <?php if($row['status'] == "saved"){ ?>
+                                    <?php if($row['status'] == "Μη-υποβεβλημένη"){ ?>
                                         <form method="POST" action="update-application.php" style="order:2;">
                                             <input type="hidden" name="application-id" value="<?php echo $row['application_id']; ?>">
                                             <button class="btn btn-primary" style="order:1;" type="submit" name="edit-application">Επεξεργασία</button>
                                         </form>
                                     <?php } ?>
                                     <!-- user can delete only saved and completed applications -->
-                                    <?php if($row['status'] == "saved" || $row['status'] == "completed"){ ?>
+                                    <?php if($row['status'] == "Μη-υποβεβλημένη" || $row['status'] == "Εκκρεμής"){ ?>
                                     <div style="width: 5px; opacity:0; order:2;"></div>
                                     <form method="POST" action="delete-application.php" style="order:3;">
                                         <input type="hidden" name="application-id" value="<?php echo $row['application_id']; ?>">
@@ -100,6 +99,7 @@
                             <p><?php echo $ad['subject']?></p>
                             <ul class="job-features" style="columns:1;">
                                 <li><strong>Κατάσταση: </strong><?php echo$row['status']?></li>
+                                <li><strong><a href="<?php echo "../uploads/".$row['grades'].""; ?>">Αναλυτική βαθμολογία:</strong></a></li>
                                 <li><strong>Σχόλια: <br> <p></strong><?php echo $row['comments']?></p></li>
                                 <li><strong>Ημερομηνία υποβολής:</strong> 26/12/2022</li>
                             </ul>

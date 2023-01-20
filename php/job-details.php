@@ -86,11 +86,11 @@
             
             </div>
         </div>
-        <div id="application-form" style="display:none">
+
            
-            <div class="main-container">
+            <div class="main-container" id="application-form" style="display:none">
                     <!-- form start -->
-                    <form action="submit-application.php" method="POST">
+                    <form action="submit-application.php" method="POST" enctype="multipart/form-data">
                         <div class="top-line" style"justify-content: flex-start;">
                             <h3 >Αίτηση για πρακτική</h3>
                         </div>
@@ -148,7 +148,7 @@
 
     
                 </div>
-            </div>
+      
     </div>
     <!-- end of main box -->
 

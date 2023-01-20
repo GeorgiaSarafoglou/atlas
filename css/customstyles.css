@@ -162,16 +162,22 @@ select.filters:focus{
     border: 0px;
     background-color: rgb(229, 247, 253);
     outline:none;
+    border-radius: 10px;
+    padding:5px;
 }
 
 .job-title-button:focus{
     border: 0px;
     background-color: rgb(229, 247, 253);
     outline:none;
+    border-radius: 10px;
+    padding:5px;
 }
 
 .job-title-button:active{
     border: 0px;
     outline:none;
     background-color: rgb(229, 247, 253);
+    border-radius: 10px;
+    padding:5px;
 }

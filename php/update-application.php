@@ -1,7 +1,6 @@
 <?php include "includes.php"; 
     session_start();
     include "connection.php";
-    include "navigation.php";
     include "student-menu.php";
     include "includes.php";
 ?> 
@@ -9,25 +8,19 @@
 <?php
 
 if(isset($_POST['edit-application'])){
-
-#    $id = $_POST['application-id'];
-#   $updated = "updated";
-#
-# $sql = "UPDATE application SET status= 'updated' WHERE application_id = ".$id."";
-
- #$execute_query = mysqli_query($db, $sql);
-
-    
-  #  echo '<script> window.location = "my-applications.php"; </script>';
-    
+    #get application from its id
+    $sql = "SELECT * FROM application WHERE application_id = ".$_POST['application-id']. ";";
+    $result = mysqli_query($db, $sql);
+    /* check if we have results */
+    $application = mysqli_fetch_assoc($result);
 }
 
 ?>
 
-<div id="application-form" style="background-color: transparent;" >        
+<div class="mainbox" style="background-color: transparent;" >        
     <div class="main-container">
     <!-- form start -->
-    <form action="" method="POST">
+    <form action="edit-application-file.php" method="POST">
         <div class="top-line" style"justify-content: flex-start;">
             <h3 >Αίτηση για πρακτική</h3>
         </div>
@@ -46,11 +39,12 @@ if(isset($_POST['edit-application'])){
             </div>
 
         <div class="form-group">
-            <textarea class="form-control-textarea" id="cmessage" placeholder="Σχόλια" name="comments"></textarea>
+            <textarea class="form-control-textarea" id="cmessage" placeholder="Σχόλια" name="comments"><?php echo $application['comments']?></textarea>
         </div>
         
         <div class="form-group bottom" style="display:flex;justify-content: space-between;">
-            <button type="submit" class="form-control-submit-button" id="save-form-button" name="save-application" >Προσωρινή αποθήκευση</button>
+            <input type="hidden" name="application-id" value="<?php echo $_POST['application-id']; ?>">
+            <button type="submit" class="form-control-submit-button" id="save-form-button" name="save-application-edit">Προσωρινή αποθήκευση</button>
             <button onclick="ApplicationFormModal()" type="button" class="form-control-submit-button"  style="height: 20%; width: 15%; margin: 10px;">Τελική Υποβολή</button>
         </div>
 
@@ -67,8 +61,8 @@ if(isset($_POST['edit-application'])){
                 <div class="top-line">
                     <!-- Confirm Button  -->
                     <div class="modal-footer d-flex justify-content-center" style="order:2;">
-                        <input type="hidden" name="ad-id" value="<?php echo $ad['id']; ?>">
-                        <button type="submit" name="submit-application" class="form-control-submit-button" style="border-radius: 2rem; width:100px; height: 30px;">Ναι</button>
+                        <input type="hidden" name="application-id" value="<?php echo $_POST['application-id']; ?>">
+                        <button type="submit" name="submit-application-edit" class="form-control-submit-button" style="border-radius: 2rem; width:100px; height: 30px;">Ναι</button>
                     </div>
                     <!-- Cancel Button -->
                     <div class="modal-footer d-flex justify-content-center" style="order:1;">
@@ -79,4 +73,6 @@ if(isset($_POST['edit-application'])){
         </div>
     </div>
 </form>
+</div>
+</div>
 <!-- form end -->
