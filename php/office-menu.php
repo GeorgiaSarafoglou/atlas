@@ -71,7 +71,7 @@
                             <a>Παρακολούθηση Αγγελιών <i class="fa fa-caret-down"></i></a>
                             <ul class="sub-menu">
                                 <li><a href="watch-jobs-active.php">Ενεργές Αγγελίες</a></li>
-                                <li><a href="watch-jobs-temp.php">Ληγμένες Αγγελίες</a></li>
+                                <li><a href="watch-jobs-temp.php">Προσωρινά Αποθηκευμένες Αγγελίες</a></li>
                                 <li><a href="watch-jobs.php">Όλες Αγγελίες</a></li>
                             </ul>
                         </li>
