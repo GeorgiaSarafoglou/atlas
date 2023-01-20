@@ -131,7 +131,7 @@
                         /* add application to db with STATUS = SAVED */
                         if (isset($_POST['save-application'])) {
                             $id = $_SESSION['user']['id'];
-                            $sql = "INSERT INTO application(student_id, comments, grades, status) VALUES('$id' , '"  .addslashes($_POST['comments'], ). "', NULL, 'saved' )";
+                            $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id) VALUES('$id' , '"  .addslashes($_POST['comments'], ). "', NULL, 'saved', 2 )";
                             $db->query($sql); ?>
                             <script type="text/javascript">
                                 window.location = "http://localhost/sdi1900168/atlas/php/my-applications.php";
@@ -142,7 +142,7 @@
                         /* add application to db with STATUS = COMPLETED */
                         if (isset($_POST['submit-application'])) {
                             $id = $_SESSION['user']['id'];
-                            $sql = "INSERT INTO application(student_id, comments, grades, status) VALUES('$id' , '" .addslashes($_POST['comments'], ). "', NULL, 'completed' )";
+                            $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id) VALUES('$id' , '" .addslashes($_POST['comments'], ). "', NULL, 'completed', 2 )";
                             $db->query($sql); ?>
                             <script type="text/javascript">
                                 window.location = "http://localhost/sdi1900168/atlas/php/my-applications.php";

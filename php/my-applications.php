@@ -37,17 +37,26 @@
         <jobs>
             <ul class="joblist">
 <?php        while($row = mysqli_fetch_assoc($result)){ ?>
+                    <?php 
+                        #find corresponding ad.
+                        $sql_ad = "SELECT * FROM ads WHERE id = ".$row['ad_id'].";";
+                        $result_ad = mysqli_query($db, $sql_ad);
+                        $ad = mysqli_fetch_assoc($result_ad);
+                        ?>
                     <li class="job">
                         <!-- individual job advertisment -->
                         <div class="job-card">
                             <div class="top-line">
                                 <div class="zoom">
-                                    <h3><a href="job-details.php">Τίτλος θέσης</a></h3>
+                                    <h3><a href="job-details.php"><?php echo $ad['title']?></a></h3>
                                 </div>
                                 <div style=" display:flex; flex-direction:row; order:2;">
                                     <!-- user can edit only saved applications -->
                                     <?php if($row['status'] == "saved"){ ?>
-                                        <button class="btn btn-primary" style="order:1;" >Επεξεργασία</button>
+                                        <form method="POST" action="update-application.php" style="order:2;">
+                                            <input type="hidden" name="application-id" value="<?php echo $row['application_id']; ?>">
+                                            <button class="btn btn-primary" style="order:1;" type="submit" name="edit-application">Επεξεργασία</button>
+                                        </form>
                                     <?php } ?>
                                     <!-- user can delete only saved and completed applications -->
                                     <?php if($row['status'] == "saved" || $row['status'] == "completed"){ ?>
@@ -84,7 +93,7 @@
                                     <?php } ?>
                                 </div>
                             </div> 
-                            <p>Τμήμα</p>
+                            <p><?php echo $ad['subject']?></p>
                             <ul class="job-features" style="columns:1;">
                                 <li><strong>Κατάσταση: </strong><?php echo$row['status']?></li>
                                 <li><strong>Σχόλια: <br> <p></strong><?php echo $row['comments']?></p></li>
