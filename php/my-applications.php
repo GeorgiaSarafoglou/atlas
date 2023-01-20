@@ -48,7 +48,11 @@
                         <div class="job-card">
                             <div class="top-line">
                                 <div class="zoom">
-                                    <h3><a href="job-details.php"><?php echo $ad['title']?></a></h3>
+                                <form method="POST" action="job-details.php">
+                                    <input type="hidden" name="show-submit-application" value=0>
+                                    <input type="hidden" name="ad-id" value="<?php echo $ad['id']; ?>">
+                                    <h3><button type="submit" name="show-details" class="job-title-button"> <?php echo $ad['title']?> </button></h3>
+                                </form>
                                 </div>
                                 <div style=" display:flex; flex-direction:row; order:2;">
                                     <!-- user can edit only saved applications -->

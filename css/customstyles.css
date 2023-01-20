@@ -157,3 +157,21 @@ select.filters:focus{
 #left-menu .sub-menu li a {
     color: blue; /* or any other color value like #f00, rgb(255,0,0) */
 }
+
+.job-title-button{
+    border: 0px;
+    background-color: rgb(229, 247, 253);
+    outline:none;
+}
+
+.job-title-button:focus{
+    border: 0px;
+    background-color: rgb(229, 247, 253);
+    outline:none;
+}
+
+.job-title-button:active{
+    border: 0px;
+    outline:none;
+    background-color: rgb(229, 247, 253);
+}

@@ -4,12 +4,35 @@
 <?php include "includes.php"; 
     session_start();
     include "connection.php";
-    include "navigation.php";
-    include "student-menu.php";
-    include "includes.php";
 ?> 
 
+<?php
+            if(!isset($_SESSION['user'])){
+                include "navigation.php";
+        ?>
+            <header class="header" style="height: 80%;">
+                <div class="header-content">
+                    <div class="row" style="width: 100%;">
+        <?php
+            }
+            elseif($_SESSION['user']['role'] == 'company'){
+                include "office-menu.php";
+            }
+            else{
+                include "student-menu.php";
+            }
+        ?>
 
+
+<?php 
+    #find corresponding ad.
+    if (isset($_POST['show-details'])) {
+        $sql_ad = "SELECT * FROM ads WHERE id = " . $_POST['ad-id'] . ";";
+        $result_ad = mysqli_query($db, $sql_ad);
+        $ad = mysqli_fetch_assoc($result_ad);
+        $ad_id = $ad['id'];
+    }    
+?>
 
     <body data-spy="scroll" data-target=".fixed-top">
         <!-- Preloader -->
@@ -21,50 +44,44 @@
             </div>
         </div> 
         <!-- end of preloader -->
-        <?php include "navigation.php"; ?>
-        <!-- Header - Student info and search -->
-    <header id="header" class="header">
-        <div class="header-content">
-        </div> <!-- end of header-content -->
-    </header> <!-- end of header -->
-    <!-- end of header -->
+
 
     <!-- start of main box -->
     <div class="mainbox">
         <div class="main-container">
             <div class="top-line">
-                <h3>Τίτλος θέσης</h3>
+                <h3><?php echo $ad['title']?></h3>
                 <button type="submit" class="form-control-submit-button" id="favorite">Αποθήκευση
                 </button>
             </div>
-            <p style="font-size: 18px; padding: 5px;">Τμήμα</p>
+            <p style="font-size: 18px; padding: 5px;"><?php echo $ad['subject']?></p>
             <div class="line"></div>
             <div class="details">
                 <ul class="job-features">
-                    <li>Τοποθεσία</li>
-                    <li>Πλήρες/Μερικό ωράριο</li>
-                    <li>Διάρκεια: έναρξη - λήξη</li>
-                    <li>Μισθός</li>
+                    <li><strong>Τοποθεσία:</strong><?php echo $ad['location']?></li>
+                    <li><strong>Ωράριο</strong>:<?php echo $ad['type']?></li>
+                    <li><strong>Έναρξη</strong>:<?php echo $ad['start']?> - <strong>Λήξη</strong>:<?php echo $ad['end']?></li>
+                    <li><strong>Μισθός</strong>:<?php echo $ad['payment']?></li>
                 </ul>
                 <div style="padding: 5px;"></div>
                 <h6>Περιγραφή:</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.</p>
-                <h6>Παροχές:</h6>
-                <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.</p>
+                <p><?php echo $ad['description']?></p>
+                <h6>Αφάλεια:</h6>
+                <p ><?php echo $ad['insurance']?></p>
+                <h6>Υποδομές</h6>
+                <p><?php echo $ad['infrastructure']?></p>
             <div class="bottom">
-                <?php  if(isset($_SESSION['user'])){ ?>
-                    <?php if($_SESSION['user']['role'] == 'students'){ ?>
+                <?php if ($_POST['show-submit-application'] == 1) { ?>
+                <?php if (isset($_SESSION['user'])) { ?>
+                    <?php if ($_SESSION['user']['role'] == 'students') { ?>
                         <button class="form-control-submit-button" style="height: 20%; width: 15%; margin: 10px;" onclick="hideShowApplicationForm()"><a class="nav-link page-scroll" href="#application-form" style="all:unset;">Υποβολή αίτησης</a></button>
-                    <?php }else{ ?>
+                    <?php } else { ?>
                         <button class="form-control-submit-button" data-toggle="modal" data-target="#modalLoginForm" style="height: 20%; width: 15%; margin: 10px;">Υποβολή αίτησης</a></button>    
-                    <?php }?>
-                <?php }else{ ?>
+                    <?php } ?>
+                <?php } else { ?>
                     <button class="form-control-submit-button" data-toggle="modal" data-target="#modalLoginForm" style="height: 20%; width: 15%; margin: 10px;">Υποβολή αίτησης</a></button>    
-                <?php }?>
+                <?php }
+                }?>
             </div>
             
             </div>
@@ -73,7 +90,7 @@
            
             <div class="main-container">
                     <!-- form start -->
-                    <form action="" method="POST">
+                    <form action="submit-application.php" method="POST">
                         <div class="top-line" style"justify-content: flex-start;">
                             <h3 >Αίτηση για πρακτική</h3>
                         </div>
@@ -96,6 +113,7 @@
                         </div>
                         
                         <div class="form-group bottom" style="display:flex;justify-content: space-between;">
+                            <input type="hidden" name="ad-id" value="<?php echo $ad['id']; ?>">
                             <button type="submit" class="form-control-submit-button" id="save-form-button" name="save-application" >Προσωρινή αποθήκευση</button>
                             <button onclick="ApplicationFormModal()" type="button" class="form-control-submit-button"  style="height: 20%; width: 15%; margin: 10px;">Τελική Υποβολή</button>
                         </div>
@@ -127,34 +145,12 @@
                     </form>
                     <!-- form end -->
     
-                    <?php
-                        /* add application to db with STATUS = SAVED */
-                        if (isset($_POST['save-application'])) {
-                            $id = $_SESSION['user']['id'];
-                            $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id) VALUES('$id' , '"  .addslashes($_POST['comments'], ). "', NULL , 'saved', 2 )";
-                            $db->query($sql); ?>
-                            <script type="text/javascript">
-                                window.location = "http://localhost/sdi1900168/atlas/php/my-applications.php";
-                            </script> 
-                    <?php } ?>
-    
-                    <?php
-                        /* add application to db with STATUS = COMPLETED */
-                        if (isset($_POST['submit-application'])) {
-                            $id = $_SESSION['user']['id'];
-                            $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id) VALUES('$id' , '" .addslashes($_POST['comments'], ). "', NULL, 'completed', 2 )";
-                            $db->query($sql); ?>
-                            <script type="text/javascript">
-                                window.location = "http://localhost/sdi1900168/atlas/php/my-applications.php";
-                            </script> 
-                    <?php } ?>
+
     
                 </div>
             </div>
     </div>
     <!-- end of main box -->
-
-
 
 </body>
 

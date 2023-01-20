@@ -67,6 +67,7 @@ if(isset($_POST['edit-application'])){
                 <div class="top-line">
                     <!-- Confirm Button  -->
                     <div class="modal-footer d-flex justify-content-center" style="order:2;">
+                        <input type="hidden" name="ad-id" value="<?php echo $ad['id']; ?>">
                         <button type="submit" name="submit-application" class="form-control-submit-button" style="border-radius: 2rem; width:100px; height: 30px;">Ναι</button>
                     </div>
                     <!-- Cancel Button -->
