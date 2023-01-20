@@ -75,13 +75,12 @@
                 <?php if (isset($_SESSION['user'])) { ?>
                     <?php if ($_SESSION['user']['role'] == 'students') { ?>
                         <button class="form-control-submit-button" style="height: 20%; width: 15%; margin: 10px;" onclick="hideShowApplicationForm()"><a class="nav-link page-scroll" href="#application-form" style="all:unset;">Υποβολή αίτησης</a></button>
-                    <?php } else { ?>
-                        <button class="form-control-submit-button" data-toggle="modal" data-target="#modalLoginForm" style="height: 20%; width: 15%; margin: 10px;">Υποβολή αίτησης</a></button>    
-                    <?php } ?>
-                <?php } else { ?>
-                    <button class="form-control-submit-button" data-toggle="modal" data-target="#modalLoginForm" style="height: 20%; width: 15%; margin: 10px;">Υποβολή αίτησης</a></button>    
+                    <?php }
+                } else { ?>
+                 <button class="form-control-submit-button" data-toggle="modal" data-target="#modalLoginForm" style="height: 20%; width: 15%; margin: 10px;">Υποβολή αίτησης</a></button> 
                 <?php }
-                }?>
+                } ?> 
+
             </div>
             
             </div>
