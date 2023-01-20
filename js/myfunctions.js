@@ -1,7 +1,7 @@
 /* when one checkbox is selected disable the other */
-function disableOtherCheckbox(){
-    var checkbox1 = document.getElementById("isStudent");
-    var checkbox2 = document.getElementById("isOffice");
+function disableOtherCheckbox(id1, id2){
+    var checkbox1 = document.getElementById(id1);
+    var checkbox2 = document.getElementById(id2);
     checkbox1.addEventListener("click", function() {
         checkbox2.disabled = checkbox1.checked;
     });

@@ -24,3 +24,10 @@
 -- Added logout 
 -- Fixed inputs 
 -- Student starting page is created by including student menu and startingpage-student
+
+======================
+  17/1     ~     Rigas  
+======================
+-- Created ads table with one to many relation with company table
+-- Office create job offer and add to table
+-- Updated disableOtherCheckbox() to take as parameters the button ids

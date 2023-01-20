@@ -58,8 +58,8 @@
                 <!-- vertical menu left of page -->
                 <div id="left-menu">
                     <ul>
-                        <li><a href="#">Δημιουργία Αγγελίας</a></li>
-                        <li><a href="#">Παρακολούθηση Αγγελιών</a></li>
+                        <li><a href="create-job-offer.php">Δημιουργία Αγγελίας</a></li>
+                        <li><a href="watch-jobs.php">Παρακολούθηση Αγγελιών</a></li>
                         <li><a href="#">Αιτήσεις Ενδιαφέροντος</a></li>
                         <li><a class="btn btn-primary" href="logout.php">Αποσύνδεση</a></li>
                     </ul>
