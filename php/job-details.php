@@ -81,7 +81,7 @@
                         <div class="line"></div>
                             <div class="attachment">
                                 <div class="label-attach">
-                                    <label for="myfile" name="myfile"><h6>Επισυνάψτε το έγγραφο</h6></label>
+                                    <label for="myfile"<h6>Επισυνάψτε το έγγραφο</h6></label>
                                     <div id="tooltip"><h6><u>αναλυτικής βαθμολογίας</u>:</h6>
                                         <span id="tooltiptext">Η αναλυτική βαθμολογία δίνεται από τη γραμματεία κάθε τμήματος</span>
                                     </div>
@@ -131,7 +131,7 @@
                         /* add application to db with STATUS = SAVED */
                         if (isset($_POST['save-application'])) {
                             $id = $_SESSION['user']['id'];
-                            $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id) VALUES('$id' , '"  .addslashes($_POST['comments'], ). "', NULL, 'saved', 2 )";
+                            $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id) VALUES('$id' , '"  .addslashes($_POST['comments'], ). "', NULL , 'saved', 2 )";
                             $db->query($sql); ?>
                             <script type="text/javascript">
                                 window.location = "http://localhost/sdi1900168/atlas/php/my-applications.php";
