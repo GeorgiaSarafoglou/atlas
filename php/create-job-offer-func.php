@@ -39,7 +39,7 @@
 
     /* if it is added in table we return to starting page */
     if($result){
-        header("location: ../index.php");
+        header("location: watch-jobs.php");
     }
     else{
         header("location: ../search.php");

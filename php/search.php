@@ -116,5 +116,5 @@
 
 
 <footer">
-    <p> Είστε <strong>Φορέας Υποδοχής</strong>; <a href = "./php/signup-office.php" style="color: blue">Προθέστε αγγελία για θέση πρακτικής<a> </p>
+    <p> Είστε <strong>Φορέας Υποδοχής</strong>; <a href = "../php/signup-office.php" style="color: blue">Προθέστε αγγελία για θέση πρακτικής<a> </p>
 </footer>
