@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
     <?php include "includes.php" ?>
+    <script>
+        $(document).ready(function() {
+            $('.sub-menu').hide(); //hide the sub-menu by default
+            $('#left-menu > ul > li:nth-child(2) > a').click(function() { //select the "Παρακολούθηση Αγγελιών" list item
+                $(this).next('.sub-menu').slideToggle(); //show or hide the sub-menu
+            });
+        });
+    </script>
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
    
@@ -59,7 +67,14 @@
                 <div id="left-menu">
                     <ul>
                         <li><a href="create-job-offer.php">Δημιουργία Αγγελίας</a></li>
-                        <li><a href="watch-jobs.php">Παρακολούθηση Αγγελιών</a></li>
+                        <li class="has-sub-menu">
+                            <a>Παρακολούθηση Αγγελιών <i class="fa fa-caret-down"></i></a>
+                            <ul class="sub-menu">
+                                <li><a href="watch-jobs-active.php">Ενεργές Αγγελίες</a></li>
+                                <li><a href="watch-jobs-temp.php">Ληγμένες Αγγελίες</a></li>
+                                <li><a href="watch-jobs.php">Όλες Αγγελίες</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">Αιτήσεις Ενδιαφέροντος</a></li>
                         <li><a class="btn btn-primary" href="logout.php">Αποσύνδεση</a></li>
                     </ul>
