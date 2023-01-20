@@ -158,3 +158,7 @@ function ApplicationFormModal(){
         x.style.display = "block";
     }
 }
+
+function EditApplication(){
+
+}

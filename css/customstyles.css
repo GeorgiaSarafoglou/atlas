@@ -159,5 +159,23 @@ select.filters:focus{
 
 /* Select the sub-menu items and change their color */
 #left-menu .sub-menu li a {
-    color: rgb(49, 109, 103); /* or any other color value like #f00, rgb(255,0,0) */
+    color: blue; /* or any other color value like #f00, rgb(255,0,0) */
+}
+
+.job-title-button{
+    border: 0px;
+    background-color: rgb(229, 247, 253);
+    outline:none;
+}
+
+.job-title-button:focus{
+    border: 0px;
+    background-color: rgb(229, 247, 253);
+    outline:none;
+}
+
+.job-title-button:active{
+    border: 0px;
+    outline:none;
+    background-color: rgb(229, 247, 253);
 }

@@ -33,7 +33,7 @@
         <?php include "office-menu.php" ?>
         
         <div class="main-box" style="margin-left: 10%; width:100%;">
-            <filter class="filter" style="border-right: 1px solid black;">
+            <filter class="filter">
                 <ul class="filters">
                     <form action="" method="GET">
                         <li>
@@ -43,7 +43,10 @@
                         <div class="form-group">
                             <div class="form-outline">
                                 <input type="search" class="form-control-input notEmpty" id="search1" name="search1" style="border-radius: 1rem; width: 90%; margin-left:2%;">
-                                <label class="label-control" for="search1">Αναζήτηση με Τίτλο</label>  
+                                <label class="label-control" for="search1">Αναζήτηση</label>
+                                <button class="btn btn-primary" type="submit" style="position: absolute; top: 0; right:0; border-radius: 1rem; height: 100%; margin-right: 7%;">
+                                    <i class="fas fa-search"></i>
+                                </button>  
                             </div>
                         </div>
                         <li>
@@ -77,9 +80,6 @@
                             <input type="date" id="end" name="trip-end"
                                 value="2018-07-22"
                                 min="2018-01-01" max="2018-12-31">
-                        </li>
-                        <li>
-                            <button id="search_button" name="search_button" type="submit" class="form-control-submit-button" style="height: 20%; margin-top: 15%; width: 60%; margin-left: 40%;">Αναζήτηση</button>
                         </li>
                     </form>
                 </ul>

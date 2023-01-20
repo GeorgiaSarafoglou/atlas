@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <link href="../css/customstyles.css" rel="stylesheet">
-	
     <?php include "includes.php"; ?>
 
 
@@ -38,7 +37,7 @@
             }
         ?>
         
-        <div class="main-box" style="margin-left: 10%; width:100%;">
+        <div class="main-box" style="margin-left: 10%; width:100%; background-color: transparent;" >
             <filter class="filter" style="border-right: 1px solid black;">
                 <ul class="filters">
                     <form action="" method="GET">
@@ -133,7 +132,13 @@
                         <!-- individual job advertisment -->
                         <div class="job-card">
                             <div class="top-line">
-                                <h3><a href="job-details.php"> <?php echo $row['title']?> </a></h3>
+                                <div class="zoom">
+                                    <form method="POST" action="job-details.php">
+                                    <input type="hidden" name="show-submit-application" value=1>
+                                        <input type="hidden" name="ad-id" value="<?php echo $row['id']; ?>">
+                                        <h3><button type="submit" name="show-details" class="job-title-button"> <?php echo $row['title']?> </button></h3>
+                                    </form>
+                                </div>
                             </div> 
                             <p><?php echo $row['departments']?></p>
                             <ul class="job-features">
