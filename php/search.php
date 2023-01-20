@@ -15,9 +15,6 @@
 
 <body data-spy="scroll" data-target=".fixed-top">
     
-    
-
-
     <!-- Preloader -->
     <div class="spinner-wrapper">
         <div class="spinner">
