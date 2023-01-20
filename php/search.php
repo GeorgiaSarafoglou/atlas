@@ -2,7 +2,13 @@
 <html lang="en">
 
 
-    <link href="../css/customstyles.css" rel="stylesheet">
+<?php include "includes.php"; 
+    session_start();
+    include "connection.php";
+    include "navigation.php";
+    include "student-menu.php";
+    include "includes.php";
+?> 
 	
     <?php include "includes.php"; ?>
 
@@ -10,7 +16,7 @@
 <body data-spy="scroll" data-target=".fixed-top">
     
     
-    <?php include "navigation.php"; ?>
+
 
     <!-- Preloader -->
     <div class="spinner-wrapper">

@@ -1,10 +1,11 @@
 .mainbox{
+  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container {
+.main-container {
   margin-right: 15%;
   margin-left: 15%;
   border-radius: 10px;
@@ -25,12 +26,28 @@
     justify-content: flex-end;
 }
 
+
+#save-form-button{
+  height: 20%;
+  width: 15%;
+  margin: 10px;
+  color: #00bfd8;
+	background-color: white;
+  border-color: #00bfd8;
+}
+
+#save-form-button:hover {
+	background-color: #00bfd8;
+  border-color: white;
+  color: white;
+}
+
 #favorite {
 	position: relative;
 	width: 15%;
 	height: 20%;
 	background-color: rgb(255, 119, 119);
-    border-color: white;
+  border-color: white;
 	opacity: 1;
 }
 
@@ -42,7 +59,8 @@
 
 #application-form {
     width: 100%;
-    padding: 50px 0;
+    padding-bottom: 50px;
+    padding-top: 50px;
     text-align: center;
     margin-top: 20px;
     background-color: white;

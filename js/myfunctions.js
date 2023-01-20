@@ -90,7 +90,8 @@ function submitFormAndRedirect2() {
     });
 }
 
-function hideShow() {
+function hideShowApplicationForm() {
+
     var x = document.getElementById("application-form");
     if (x.style.display === "none") {
         x.style.display = "block";
