@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include "includes.php"; ?> 
-
-<script type="text/javascript" src="../js/myfunctions.js"></script>
-<head>
-    <link href="../css/job-details.css" rel="stylesheet">
-    <link href="../css/customstyles.css" rel="stylesheet">
-</head>
+<?php include "includes.php"; 
+    session_start();
+    include "connection.php";
+    include "navigation.php";
+    include "student-menu.php";
+    include "includes.php";
+?> 
 
 
 
@@ -30,8 +30,8 @@
     <!-- end of header -->
 
     <!-- start of main box -->
-    <div class="main-box">
-        <div class="container">
+    <div class="mainbox">
+        <div class="main-container">
             <div class="top-line">
                 <h3>Τίτλος θέσης</h3>
                 <button type="submit" class="form-control-submit-button" id="favorite">Αποθήκευση
@@ -56,76 +56,106 @@
                 ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                 laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in.</p>
             <div class="bottom">
-                <button type="submit" class="form-control-submit-button" style="height: 20%; width: 15%; margin: 10px;" onclick="hideShow()"><a class="nav-link page-scroll" href="#application-form" style="all:unset;">Υποβολή αίτησης</a></button>    
+                <?php  if(isset($_SESSION['user'])){ ?>
+                    <?php if($_SESSION['user']['role'] == 'students'){ ?>
+                        <button class="form-control-submit-button" style="height: 20%; width: 15%; margin: 10px;" onclick="hideShowApplicationForm()"><a class="nav-link page-scroll" href="#application-form" style="all:unset;">Υποβολή αίτησης</a></button>
+                    <?php }else{ ?>
+                        <button class="form-control-submit-button" data-toggle="modal" data-target="#modalLoginForm" style="height: 20%; width: 15%; margin: 10px;">Υποβολή αίτησης</a></button>    
+                    <?php }?>
+                <?php }else{ ?>
+                    <button class="form-control-submit-button" data-toggle="modal" data-target="#modalLoginForm" style="height: 20%; width: 15%; margin: 10px;">Υποβολή αίτησης</a></button>    
+                <?php }?>
             </div>
             
             </div>
         </div>
+        <div id="application-form" style="display:none">
+           
+            <div class="main-container">
+                    <!-- form start -->
+                    <form action="" method="POST">
+                        <div class="top-line" style"justify-content: flex-start;">
+                            <h3 >Αίτηση για πρακτική</h3>
+                        </div>
+    
+                        <div class="line"></div>
+                            <div class="attachment">
+                                <div class="label-attach">
+                                    <label for="myfile" name="myfile"><h6>Επισυνάψτε το έγγραφο</h6></label>
+                                    <div id="tooltip"><h6><u>αναλυτικής βαθμολογίας</u>:</h6>
+                                        <span id="tooltiptext">Η αναλυτική βαθμολογία δίνεται από τη γραμματεία κάθε τμήματος</span>
+                                    </div>
+                                </div>
+                                <div class="input-attach">
+                                    <input type="file" id="myfile" name="myfile"><br> <div id="invalid-file" style="color: red; display:none;">Η επισύναψη αναλυτικής βαθμολογίας είναι υποχρεωτική</div>
+                                </div>
+                            </div>
+    
+                        <div class="form-group">
+                            <textarea class="form-control-textarea" id="cmessage" placeholder="Σχόλια" name="comments"></textarea>
+                        </div>
+                        
+                        <div class="form-group bottom" style="display:flex;justify-content: space-between;">
+                            <button type="submit" class="form-control-submit-button" id="save-form-button" name="save-application" >Προσωρινή αποθήκευση</button>
+                            <button onclick="ApplicationFormModal()" type="button" class="form-control-submit-button"  style="height: 20%; width: 15%; margin: 10px;">Τελική Υποβολή</button>
+                        </div>
+    
+                        <!-- Confirmation modal -->
+                        <div class="modal fade" id="modalConfirm" tabindex="-1" role="dialog" aria-labelledby="modalConfirm" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header text-center">
+                                        <h4 class="modal-title w-100 font-weight-bold">Είστε σίγουροι ότι θέλετε να υποβάλετε την αίτηση οριστικά</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="top-line">
+                                        <!-- Confirm Button  -->
+                                        <div class="modal-footer d-flex justify-content-center" style="order:2;">
+                                            <button type="submit" name="submit-application" class="form-control-submit-button" style="border-radius: 2rem; width:100px; height: 30px;">Ναι</button>
+                                        </div>
+                                        <!-- Cancel Button -->
+                                        <div class="modal-footer d-flex justify-content-center" style="order:1;">
+                                            <a data-toggle="modal" data-target="#modalConfirm" href="">Ακύρωση</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </form>
+                    <!-- form end -->
+    
+                    <?php
+                        /* add application to db with STATUS = SAVED */
+                        if (isset($_POST['save-application'])) {
+                            $id = $_SESSION['user']['id'];
+                            $sql = "INSERT INTO application(student_id, comments, grades, status) VALUES('$id' , '"  .addslashes($_POST['comments'], ). "', NULL, 'saved' )";
+                            $db->query($sql); ?>
+                            <script type="text/javascript">
+                                window.location = "http://localhost/sdi1900168/atlas/php/my-applications.php";
+                            </script> 
+                    <?php } ?>
+    
+                    <?php
+                        /* add application to db with STATUS = COMPLETED */
+                        if (isset($_POST['submit-application'])) {
+                            $id = $_SESSION['user']['id'];
+                            $sql = "INSERT INTO application(student_id, comments, grades, status) VALUES('$id' , '" .addslashes($_POST['comments'], ). "', NULL, 'completed' )";
+                            $db->query($sql); ?>
+                            <script type="text/javascript">
+                                window.location = "http://localhost/sdi1900168/atlas/php/my-applications.php";
+                            </script> 
+                    <?php } ?>
+    
+                </div>
+            </div>
     </div>
     <!-- end of main box -->
 
 
-    <div id="application-form" style="display:none">
-        <div class="main-box">
-        <div class="container">
-                <!-- form start -->
-                <form action="" method="POST">
-                    <div class="top-line" style"justify-content: flex-start;">
-                        <h3 >Αίτηση για πρακτική</h3>
-                    </div>
 
-                    <div class="line"></div>
-                        <div class="attachment">
-                            <div class="label-attach">
-                                <label for="myfile" name="myfile"><h6>Επισυνάψτε το έγγραφο</h6></label>
-                                <div id="tooltip"><h6><u>αναλυτικής βαθμολογίας</u>:</h6>
-                                    <span id="tooltiptext">Η αναλυτική βαθμολογία δίνεται από τη γραμματεία κάθε τμήματος</span>
-                                </div>
-                            </div>
-                            <div class="input-attach">
-                                <input type="file" id="myfile" name="myfile" required><br> <div id="invalid-file" style="color: red; display:none;">Η επισύναψη αναλυτικής βαθμολογίας είναι υποχρεωτική</div>
-                            </div>
-                        </div>
-
-                    <div class="form-group">
-                        <textarea class="form-control-textarea" id="cmessage" placeholder="Σχόλια" name="comments"></textarea>
-                    </div>
-                    
-                    <div class="form-group bottom">
-                        <button onclick="ApplicationFormModal()" type="button" name="submit-form" class="form-control-submit-button"  style="height: 20%; width: 15%; margin: 10px;">Τελική Υποβολή</button>
-                    </div>
-
-                    <!-- Confirmation modal -->
-                    <div class="modal fade" id="modalConfirm" tabindex="-1" role="dialog" aria-labelledby="modalConfirm" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header text-center">
-                                    <h4 class="modal-title w-100 font-weight-bold">Είστε σίγουροι ότι θέλετε να υποβάλετε την αίτηση οριστικά</h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="top-line">
-                                    <!-- Confirm Button  -->
-                                    <div class="modal-footer d-flex justify-content-center" style="order:2;">
-                                        <button type="submit" class="form-control-submit-button" style="border-radius: 2rem; width:100px; height: 30px;">Ναι</button>
-                                    </div>
-                                    <!-- Cancel Button -->
-                                    <div class="modal-footer d-flex justify-content-center" style="order:1;">
-                                        <a data-toggle="modal" data-target="#modalConfirm" href="">Ακύρωση</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </form>
-                <!-- form end -->
-                
-
-            </div>
-        </div>
-    </div>
 </body>
 
    

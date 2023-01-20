@@ -2,7 +2,13 @@
 <html lang="en">
 
 
-    <link href="../css/customstyles.css" rel="stylesheet">
+<?php include "includes.php"; 
+    session_start();
+    include "connection.php";
+    include "navigation.php";
+    include "student-menu.php";
+    include "includes.php";
+?> 
 	
     <?php include "includes.php"; ?>
 
@@ -10,7 +16,7 @@
 <body data-spy="scroll" data-target=".fixed-top">
     
     
-    <?php include "navigation.php"; ?>
+
 
     <!-- Preloader -->
     <div class="spinner-wrapper">
@@ -22,9 +28,9 @@
     </div>
     <!-- end of preloader -->
    
-    <?php include "header.php"; ?>
-
-    <div class="main-box">
+    
+<div class="container">
+    <div class="main-box" style="background-color: transparent;">
         <jobs>
             <ul class="joblist">
                 <li class="job">
@@ -111,10 +117,5 @@
         
     </div>
     <!-- end of centered job advertisement board -->
-
+</div>
 </body>
-
-
-<footer">
-    <p> Είστε <strong>Φορέας Υποδοχής</strong>; <a href = "./php/signup-office.php" style="color: blue">Προθέστε αγγελία για θέση πρακτικής<a> </p>
-</footer>

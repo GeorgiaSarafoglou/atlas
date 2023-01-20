@@ -32,5 +32,5 @@
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
         </div> <!-- end of header-content -->
-    </header> <!-- end of header -->
+</header> <!-- end of header -->
     <!-- end of header -->
