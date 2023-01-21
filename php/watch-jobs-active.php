@@ -161,6 +161,15 @@
                                 <li><strong>Διάρκεια:</strong> <?php echo $row['duration']?> </li>
                                 <li><strong>Δημοσιευμένη:</strong> <?php echo $row['published']?> </li>
                             </ul>
+                            <div class="bottom">
+                                <?php $id=$row['id']; ?>
+                                <button id="edit" name="edit-btn" type="submit" class="form-control-submit-button"
+                                    style="margin-bottom: 1%; margin-top: 3%; width: 20%; left: 60%; height:10%;">
+                                    <a href="job-interest.php?ad-id=<?php echo $row['id'] ?>">
+                                        Αιτήσεις Αγγελίας
+                                    </a>
+                                </button>
+                            </div>
                         </div>
                         <!-- end of individual job advertisement-->
                     </li>

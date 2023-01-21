@@ -149,13 +149,13 @@
                                 <li><strong>Δημοσιευμένη:</strong> <?php echo $row['published']?> </li>
                             </ul>
                             <div class="bottom">
-                                    <?php $id=$row['id']; ?>
-                                    <button id="edit" name="edit-btn" type="submit" class="form-control-submit-button"
-                                        style="margin-bottom: 1%; margin-top: 3%; width: 20%; left: 60%; height:10%;">
-                                        <a href="edit-job.php?edit-id=<?php echo $row['id'] ?>">
-                                            Επεξεργασία Αγγελίας
-                                        </a>
-                                    </button>
+                                <?php $id=$row['id']; ?>
+                                <button id="edit" name="edit-btn" type="submit" class="form-control-submit-button"
+                                    style="margin-bottom: 1%; margin-top: 3%; width: 20%; left: 60%; height:10%;">
+                                    <a href="edit-job.php?edit-id=<?php echo $row['id'] ?>">
+                                        Επεξεργασία Αγγελίας
+                                    </a>
+                                </button>
                             </div>
                         </div>
                         <!-- end of individual job advertisement-->
