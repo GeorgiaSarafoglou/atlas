@@ -84,27 +84,14 @@
                 </li>
                 <li class="input-row">Ίδρυμα:
                 <!-- Departments -->
-                <?php if ($stud['university'] == 'ekpa') { ?>
-                    <select style="padding: 5px 10px; width: 70%" class="form-control-select" id="departments" name="department">
-                        <option class="select-option" value="ekpa" selected>ΕΚΠΑ</option>
-                        <option class="select-option" value="assoe">ΑΣΣΟΕ</option>
-                        <option class="select-option" value="papei">ΠΑΠΕΙ</option>
-                    </select>
+                
+                <select style="padding: 5px 10px; width: 70%" class="form-control-select" id="universities" name="university">
+                    <option class="select-option" value="ekpa" <?php if($stud['university'] == "ekpa") { ?> selected <?php } ?>>ΕΚΠΑ</option>
+                    <option class="select-option" value="assoe" <?php if($stud['university'] == "assoe") { ?> selected <?php } ?>>ΑΣΣΟΕ</option>
+                    <option class="select-option" value="papei" <?php if($stud['university'] == "papei") { ?> selected <?php } ?>>ΠΑΠΕΙ</option>
+                </select>
 
-                <?php }else if($stud['university'] == 'assoe'){ ?>
-                    <select style="padding: 5px 10px; width: 70%" class="form-control-select" id="departments" name="department" >
-                        <option class="select-option" value="ekpa">ΕΚΠΑ</option>
-                        <option class="select-option" value="assoe" selected>ΑΣΣΟΕ</option>
-                        <option class="select-option" value="papei">ΠΑΠΕΙ</option>
-                    </select>
-               <?php }else{ ?>
-                    <select style="padding: 5px 10px; width: 70%" class="form-control-select" id="departments" name="department">
-                        <option class="select-option" value="ekpa">ΕΚΠΑ</option>
-                        <option class="select-option" value="assoe" >ΑΣΣΟΕ</option>
-                        <option class="select-option" value="papei" selected>ΠΑΠΕΙ</option>
-                    </select>
-
-                <?php } ?>
+               
             </li>
                 <li class="input-row">Τμήμα:
                     <input name="department" style="width: 70%" type="text"  value="<?php echo $stud['department'];?>">

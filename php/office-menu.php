@@ -94,8 +94,9 @@
                         <li class="has-sub-menu">
                             <a>Αιτήσεις Ενδιαφέροντος <i class="fa fa-caret-down"></i></a>
                             <ul class="sub-menu">
+                                <li><a href="jobs-pending.php">Εκκρεμείς Αιτήσεις</a></li>
                                 <li><a href="jobs-approved.php">Εγκεκριμένες Αιτήσεις</a></li>
-                                <li><a href="jobs-rejected.php">Απορριφθείσες Αγγελίες</a></li>
+                                <li><a href="jobs-rejected.php">Απορριφθείσες Αιτήσεις</a></li>
                                 <li><a href="jobs-all.php">Όλες οι Αιτήσεις</a></li>
                             </ul>
                         </li>

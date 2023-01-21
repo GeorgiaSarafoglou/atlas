@@ -39,7 +39,7 @@
     <?php include "office-menu.php" ?>
             <div class="container" style="position: relative; width:100%; margin-top:-1%;">
                 <div class="card" style="border-width: 2px; width:110%;">
-                    <h4 style="margin-left: 40%;">Οι Αγγελίες Μου</h4>
+                    <h4 style="margin-left: 40%;">Οι Αιτήσεις Μου</h4>
                 </div>
             </div>
             
@@ -117,7 +117,7 @@
                                                 <button id="reject" name="reject-btn" type="submit" class="reject-button"
                                                     style="height: 30%; margin-right: 10%;">
                                                     <?php $status = "Απορριφθείσα"; ?>
-                                                    <a href="job-functions.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $student['id'] ?>&ap-id=<?php echo $application['application_id'] ?>&status=<?php echo $status; ?>">
+                                                    <a href="job-rejection-func.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $student['id'] ?>&ap-id=<?php echo $application['application_id'] ?>&status=<?php echo $status; ?>">
                                                         Απόρριψη <span><i class="icon-check-sign"></i></span>
                                                     </a>
                                                 </button>
