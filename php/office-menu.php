@@ -9,6 +9,12 @@
                 $(this).next('.sub-menu').slideToggle(); //show or hide the sub-menu
             });
         });
+        $(document).ready(function() {
+            $('.sub-menu').hide(); //hide the sub-menu by default
+            $('#left-menu > ul > li:nth-child(3) > a').click(function() { //select the "Αιτήσεις Ενδιαφέροντος" list item
+                $(this).next('.sub-menu').slideToggle(); //show or hide the sub-menu
+            });
+        });
     </script>
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
@@ -49,13 +55,23 @@
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="../index.php#contact">Επικοινωνία</a>
                 </li>
+
+                <!-- Dropdown Menu -->          
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle page-scroll" href="#profile" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user"></i> Το προφιλ μου
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="edit-company.php"><span class="item-text">Επεξεργασία Προφίλ</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="#notifications"><span class="item-text">Ειδοποιήσεις</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="logout.php"><span class="item-text">Αποσύνδεση</span></a>
+                    </div>
+                </li>
+                <!-- end of dropdown menu -->
+            
             </ul>
-            <span class="nav-item social-icons">
-                <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;background-color:#00bfd8;border-color:#00bfd8" id="login_button" data-toggle="modal" data-target="#modalLoginForm">
-                    <i class="fa fa-user"></i> Το προφιλ μου 
-                </button>
-            </span>
         </div>
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
@@ -75,8 +91,16 @@
                                 <li><a href="watch-jobs.php">Όλες Αγγελίες</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Αιτήσεις Ενδιαφέροντος</a></li>
-                        <li><a class="btn btn-primary" href="logout.php">Αποσύνδεση</a></li>
+                        <li class="has-sub-menu">
+                            <a>Αιτήσεις Ενδιαφέροντος <i class="fa fa-caret-down"></i></a>
+                            <ul class="sub-menu">
+                                <li><a href="jobs-approved.php">Εγκεκριμένες Αιτήσεις</a></li>
+                                <li><a href="jobs-rejected.php">Απορριφθείσες Αγγελίες</a></li>
+                                <li><a href="jobs-all.php">Όλες οι Αιτήσεις</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <!-- To start next page we need to create a <div class="col-lg-6"> and add whatever we want to be on center of page -->
+
+                

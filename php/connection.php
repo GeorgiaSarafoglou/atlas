@@ -1,5 +1,5 @@
 <?php
-    $dbhost = "localhost:3037";
+    $dbhost = "localhost:3307";
     $dbuser = "root";
     $dbpass = "";
     $dbname = "sdi1900168";

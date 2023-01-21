@@ -185,3 +185,47 @@ select.filters:focus{
     border-radius: 10px;
     padding:5px;
 }
+
+.accept-button, .reject-button {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.accept-button {
+    color: green;
+    border: 2px solid green;
+}
+
+.accept-button:before {
+    content: "\2713";
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.accept-button:hover {
+    background-color: lightgreen;
+    cursor: pointer;
+}
+
+.reject-button {
+    color: red;
+    border: 2px solid red;
+}
+
+.reject-button:before {
+    content: "\2717";
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.reject-button:hover {
+    background-color: pink;
+    cursor: pointer;
+}

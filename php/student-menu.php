@@ -74,16 +74,26 @@
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="../index.php#contact">Επικοινωνία</a>
                 </li>
+
+                <!-- Dropdown Menu -->          
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle page-scroll" href="#profile" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user"></i> Το προφιλ μου
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="edit-student.php"><span class="item-text">Επεξεργασία Προφίλ</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="#notifications"><span class="item-text">Ειδοποιήσεις</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="logout.php"><span class="item-text">Αποσύνδεση</span></a>
+                    </div>
+                </li>
+                <!-- end of dropdown menu -->
             </ul>
-            <span class="nav-item social-icons">
-                <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;background-color:#00bfd8;border-color:#00bfd8" id="login_button" data-toggle="modal" data-target="#modalLoginForm">
-                    <i class="fa fa-user"></i> Το προφιλ μου 
-                </button>
-            </span>
         </div>
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
+
     <header class="header" style="height: 80%;">
         <div class="header-content">
             <div class="row" style="width: 100%;">
@@ -93,9 +103,6 @@
                         <li><a href="search.php">Αναζήτηση Θέσεων</a></li>
                         <li><a href="my-applications.php">Οι Αιτήσεις Μου</a></li>
                         <li><a href="#">Αγαπημένα</a></li>
-                        <li><a class="btn btn-primary" href="logout.php">Αποσύνδεση</a></li>
                     </ul>
                 </div>
                 <!-- To start next page we need to create a <div class="col-lg-6"> and add whatever we want to be on center of page -->
-    
-</html>

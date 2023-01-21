@@ -7,7 +7,7 @@
     if(isset($_SESSION['user'])){
         /* if user is student redirect to student starting page */
         if($_SESSION['user']['role'] == 'students'){
-            header("location: startingpage-student.php");
+            header("location: php/startingpage-student.php");
         }
         else if($_SESSION['user']['role'] == 'company'){
             header("location: php/startingpage-office.php");
@@ -44,7 +44,7 @@
                     $_SESSION['user']['role'] = $row["source"];
 
                     if($_SESSION['user']['role'] == 'students'){
-                        header("location: startingpage-student.php");
+                        header("location: php/startingpage-student.php");
                     }
                     else{
                         header("location: php/startingpage-office.php");
@@ -206,7 +206,11 @@
                             </div>
                                 <!-- Sign Up Button -->
                                 <div class="modal-footer d-flex justify-content-center">
-                                <button type="submit" class="form-control-signup-button" style="border-radius: 2rem; width:90%;">Εγγραφή</button>
+                                <button type="submit" class="form-control-signup-button" style="border-radius: 2rem; width:90%;">
+                                    <a href="php/signup.php"> 
+                                        Εγγραφή
+                                    </a>
+                                </button>
                             </div>
                     </form>
                 </div>
