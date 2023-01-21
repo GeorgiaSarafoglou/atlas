@@ -39,7 +39,7 @@
     <?php include "office-menu.php" ?>
             <div class="container" style="position: relative; width:100%; margin-top:-1%;">
                 <div class="card" style="border-width: 2px; width:110%;">
-                    <h4 style="margin-left: 40%;">Απορριφθείσες Αγγελίες</h4>
+                    <h4 style="margin-left: 40%;">Απορριφθείσες Αιτήσεις</h4>
                 </div>
             </div>
             

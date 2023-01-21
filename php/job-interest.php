@@ -78,14 +78,26 @@
                                                 <h5><?php echo $ad['title'];?></h5><br>
                                                 <h6><?php echo $ad['subject']; ?></h6>
                                             </div>
+
                                             <?php 
                                                 if($application['status'] != "Εγκεκριμένη" && $application['status'] != "Απορριφθείσα"){
                                             ?>
-                                                <button class="accept-button" style="height: 30%; margin-left: 69%;"> Αποδοχή </button>
-                                                <button class="reject-button" style="height: 30%; margin-right: 3%;"> Απόρριψη </button>
-                                            <?php 
-                                                }
-                                            ?>
+                                                <button id="accept" name="accept-btn" type="submit" class="accept-button"
+                                                    style="height: 30%; margin-left: 65%;">
+                                                    <?php $status = "Εγκεκριμένη"; ?>
+                                                    <a href="job-functions.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $student['id'] ?>&ap-id=<?php echo $application['application_id'] ?>&status=<?php echo $status; ?>">
+                                                        Αποδοχή <span><i class="icon-check-sign"></i></span>
+                                                    </a>
+                                                </button>
+                                                <button id="reject" name="reject-btn" type="submit" class="reject-button"
+                                                    style="height: 30%; margin-right: 7%;">
+                                                    <?php $status = "Απορριφθείσα"; ?>
+                                                    <a href="job-functions.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $student['id'] ?>&ap-id=<?php echo $application['application_id'] ?>&status=<?php echo $status; ?>">
+                                                        Απόρριψη <span><i class="icon-check-sign"></i></span>
+                                                    </a>
+                                                </button>
+                                            <?php } ?>
+
                                         </div>
                                         <div class="line"></div>
                                         <ul class="job-features" style="height: 100%; columns: 1;">
