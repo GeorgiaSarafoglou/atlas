@@ -98,7 +98,7 @@
                     <!-- job and application information -->
                     <p><?php echo $ad['subject']?></p>
                     <ul class="job-features" style="columns:1;">
-                        <li><strong>Κατάσταση: </strong><?php echo$row['status']?></li>
+                        <li><strong>Κατάσταση: </strong><p style="color: crimson;"><?php echo$row['status']?></p></li>
                         <li><strong><a href="<?php echo "../uploads/".$row['grades'].""; ?>">Αναλυτική βαθμολογία</strong></a></li>
                         <li><strong>Σχόλια:</strong><br><p><?php echo $row['comments'];?></p></li>
                         <li><strong>Λόγοι απόρριψης:</strong><br><p><?php echo $row['rejection_reasons'];?></p></li>
