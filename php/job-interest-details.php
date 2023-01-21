@@ -81,17 +81,16 @@
                                         Αποδοχή <span><i class="icon-check-sign"></i></span>
                                     </a>
                                 </button>
+
                                 <button id="reject" name="reject-btn" type="submit" class="reject-button"
                                     style="height: 30%; margin-right: 3%;">
                                     <?php $status = "Απορριφθείσα"; ?>
-                                    <a href="job-functions.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $student['id'] ?>&ap-id=<?php echo $application['application_id'] ?>&status=<?php echo $status; ?>">
+                                    <a href="job-rejection-func.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $student['id'] ?>&ap-id=<?php echo $application['application_id'] ?>&status=<?php echo $status; ?>">
                                         Απόρριψη <span><i class="icon-check-sign"></i></span>
                                     </a>
                                 </button>
                             <?php } ?>
                             
-                            <!-- <button class="accept-button" type="submit" name="accept" style="height: 30%; margin-left: 300%;"> Αποδοχή <span><i class="icon-check-sign"></i></span></button> -->
-                            <!-- <button class="reject-button" type="submit" name="reject" style="height: 30% ;margin-right: 3%;"> Απόρριψη </button>  -->
                         </div>
                         <div class="line"></div>
                         <p><h6><?php echo "Όνομα αιτούντα/ούσας : "; ?></h6><?php echo $student['fname']." ".$student['lname'] ;?></p>
@@ -102,7 +101,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </header>
 </body>
