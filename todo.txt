@@ -1,2 +1,9 @@
-- Να φτιαχτουν τα φίλτρα στο watch-jobs για όταν δεν έχει αποτελέσματα
-- Το input στην δημιουργία αγγελίας να είναι multiple
+-- add login στο job-details.php για όταν δεν είναι συνδεδεμένος    (DONE)
+-- Redirect after signup for both students and office               (DONE)                                            
+-- Add validation for signup
+-- Phone type in students table change to bigint                    (DONE)
+-- ADD Εκκρεμείς στις Αιτήσεις Μου στο office
+-- Επεξεργασία προφίλ fix univerrsity (αν ειναι ΕΚΠΑ δν αλλαζει)    
+-- grades are null on temporary submit
+-- fix notification css
+-- add notification for office for every application

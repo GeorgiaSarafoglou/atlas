@@ -72,6 +72,7 @@ function submitFormAndRedirect() {
     button.addEventListener("click", function(event) {
         event.preventDefault();
         form.submit();
+        console.log("redirect");
         window.location = "../index.php";
     });
 }
@@ -119,7 +120,7 @@ function studentSubmitForms() {
     })
      .then(response => response.text())
      .then(data => {
-       // do something with the response from the PHP script
+        window.location = "../index.php";
      });
 }
 
@@ -144,7 +145,7 @@ function officeSubmitForms() {
     })
      .then(response => response.text())
      .then(data => {
-       // do something with the response from the PHP script
+        window.location = "../index.php";
      });
 }
 

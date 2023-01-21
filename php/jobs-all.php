@@ -52,7 +52,7 @@
                             $query = "SELECT ads.*, application.*
                                     FROM ads
                                     JOIN application ON ads.id = application.ad_id
-                                    WHERE ads.company_id = '$company_id' ";
+                                    WHERE ads.company_id = '$company_id' AND status!='Μη-υποβεβλημένη' ";
                             $sql = mysqli_query($db, $query);
                             while ($ad = mysqli_fetch_array($sql, MYSQLI_ASSOC)){ 
                         ?>
