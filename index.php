@@ -44,7 +44,7 @@
                     $_SESSION['user']['role'] = $row["source"];
 
                     if($_SESSION['user']['role'] == 'students'){
-                        header("location: php/startingpage-student.php");
+                        header("location: php/startingpage-student.php?user=".$_SESSION['user']['id']."");
                     }
                     else{
                         header("location: php/startingpage-office.php");
