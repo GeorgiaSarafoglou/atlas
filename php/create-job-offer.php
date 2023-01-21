@@ -301,12 +301,12 @@
 
                             require_once "connection.php";
 
-                            $query = "insert into ads (title, subject, positions, duration, departments, type, location, start, end, payment, description, insurance, infrastructure, published, company_id)
-                            values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-
+                            $query = "insert into ads (title, subject, positions, duration, departments, type, location, start, end, payment, description, insurance, infrastructure, published, company_id, date)
+                            values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                            $date = date("Y-m-d");
                             $stmt = $db->prepare($query);
-                            $stmt->bind_param("ssiisssssisssii", $title, $subject, $position_available, $duration, $departments, $type, $location, 
-                            $time_period_start, $time_period_end, $payment, $description, $insurance, $infastructures, $published, $company_id);
+                            $stmt->bind_param("ssiisssssisssiis", $title, $subject, $position_available, $duration, $departments, $type, $location, 
+                            $time_period_start, $time_period_end, $payment, $description, $insurance, $infastructures, $published, $company_id, $date);
                             $result = $stmt->execute();
                         ?>
                             <script type="text/javascript">

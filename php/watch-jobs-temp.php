@@ -144,7 +144,7 @@
                             <ul class="job-features">
                                 <li><strong>Περιοχή:</strong> <?php echo $row['location']?> </li>
                                 <li><strong>Τύπος απασχόλησης:</strong> <?php echo $row['type']?> </li>
-                                <li><strong>Ημερομηνία ανάρτησης:</strong> <?php echo $row['start']?> </li>
+                                <li><strong>Ημερομηνία ανάρτησης:</strong> <?php echo $row['date']?> </li>
                                 <li><strong>Διάρκεια:</strong> <?php echo $row['duration']?> </li>
                                 <li><strong>Δημοσιευμένη:</strong> <?php echo $row['published']?> </li>
                             </ul>
