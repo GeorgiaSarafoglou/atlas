@@ -31,3 +31,30 @@
 -- Created ads table with one to many relation with company table
 -- Office create job offer and add to table
 -- Updated disableOtherCheckbox() to take as parameters the button ids
+
+======================
+  20/1     ~     Geo  
+======================
+Με αγαπη <3
+
+
+- Οι αγγελίες που έχουν 0 θέσεις δεν εμφανίζονται στην αναζήτηση.
+
+- Επεξεργασία στοιχείων και στο student και στο company
+  Στο company το municipality ειναι του ματσ και κατα τη γνωμη μου πρεπει να φυγει γτ εχει ηδη παρα πολλα στοιχεια ( δε το εβαλα στην επεξεργασια)
+
+- NOTIFICATIONS (oh boy )
+
+  ->Νέος πίνακας notifications με student_id και application_id
+  ->Οταν ο φορέας αποδέχεται ή απορρίπτει κάποια αίτηση ενημερώνεται ο πίνακας notifications με νέο row.
+  ->Ο student όταν συνδεθεί και ανοίξει ειδοποιήσεις θα του εμφανιστούν οι αιτήσεις του (δεν είναι τελειοποιημένα τα στοιχεία που εμφανίζονται)
+
+  ->Απόπειρα να περνάω student id στο students μενου => το περιεργο ερρορ με το header
+  ->Το έβαλα στο student starting page μέσω του link αλλά έχει ένα έρρορ καποιες φορές που δε το έχω κοιτάξει.
+    ΑΚΥΡΟ ΤΟ ΕΦΤΙΑΞΑ LMAO 
+
+  notifications.php έχει τις αιτήσεις που προκάλεσαν ειδοποίηση και έχει κουμπί που διαγράφει τα notifications μόνο (όχι την ίδια την αίτηση)
+  
+  από πλευράς κομπανι δεν εχω βάλει ειδοποιήσεις
+  
+

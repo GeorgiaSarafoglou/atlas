@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include "includes.php";?>
 <head>
-    <?php include "includes.php" ?>
     <script>
         $(document).ready(function() {
             $('.sub-menu').hide(); //hide the sub-menu by default
@@ -62,7 +62,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="edit-student.php"><span class="item-text">Επεξεργασία Προφίλ</span></a>
                         <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="#notifications"><span class="item-text">Ειδοποιήσεις</span></a>
+                        <a class="dropdown-item" href="notifications.php"><span class="item-text">Ειδοποιήσεις</span></a>
                         <div class="dropdown-items-divide-hr"></div>
                         <a class="dropdown-item" href="logout.php"><span class="item-text">Αποσύνδεση</span></a>
                     </div>

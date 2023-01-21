@@ -4,7 +4,7 @@
     include "connection.php";
     /* add application to db with STATUS = SAVED */
     if (isset($_POST['save-application'])) {
-    if (!$_POST['myfile']) {
+    if (!isset($_POST['myfile'])) {
 
         $id = $_SESSION['user']['id'];
         $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id, date) VALUES('$id' , '" . addslashes($_POST['comments'], ) . "', NULL , 'Μη-υποβεβλημένη', " . $_POST['ad-id'] . ", '".date("Y-m-d")."')";

@@ -44,6 +44,12 @@
     var_dump($ad['title'], $student['fname'], $application['application_id'], $status);
 
     /* update application status to "Εγκεκριμένη" or "Απορριφθείσα" */
+
+    /*send notification to student */
+    $false = 0;
+    $sql = "INSERT INTO notifications (student_id, application_id, is_read) VALUES('$sid', '$ap_id', $false)";
+    $db->query($sql);
+    
     $sql = "UPDATE application SET status='$status' WHERE application_id='$ap_id' ";
     if ($db->query($sql) === TRUE) {
         echo "Record updated successfully";

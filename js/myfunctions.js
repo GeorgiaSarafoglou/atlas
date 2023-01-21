@@ -159,6 +159,31 @@ function ApplicationFormModal(){
     }
 }
 
-function EditApplication(){
+function EditDetails(){
+
+    var editable = document.getElementById("editable-details");
+    var disabled = document.getElementById("disabled-details");
+    var editbutton = document.getElementById("editButton");
+    var savebutton = document.getElementById("saveButton");
+
+    editable.style.display = "block";
+    disabled.style.display ="none";
+    editbutton.style.display = "none";
+    savebutton.style.display = "block";
 
 }
+
+function SaveDetails(){
+
+    var editable = document.getElementById("editable-details");
+    var disabled = document.getElementById("disabled-details");
+    var editbutton = document.getElementById("editButton");
+    var savebutton = document.getElementById("saveButton");
+
+    editable.style.display = "none";
+    disabled.style.display ="block";
+    editbutton.style.display = "block";
+    savebutton.style.display = "none";
+
+}
+
