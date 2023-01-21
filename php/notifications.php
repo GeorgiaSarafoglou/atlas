@@ -21,7 +21,12 @@
     <!-- end of preloader -->
 
 
+<!-- delet enotifications button -->
 <div class="container">
+<form action="clear-notifications.php" method="POST">
+    <input type="hidden" name="student-id" value = "<?php echo $_SESSION['user']['id']?>">
+    <button type="submit" name="delete-notifications" style="margin-left:7%;">Καθαρισμός ειδοποιήσεων</button>
+</form>
 
     <div class="main-box" style="background-color: transparent;">
     <!-- get data -->
