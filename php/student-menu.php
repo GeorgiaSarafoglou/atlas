@@ -90,7 +90,7 @@
                                 <li><a href="rejected-applications.php">Απορριφθείσες</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Αγαπημένα</a></li>
+                        <li><a href="favorites.php">Αγαπημένα</a></li>
                     </ul>
                 </div>
                 <!-- To start next page we need to create a <div class="col-lg-6"> and add whatever we want to be on center of page -->

@@ -51,8 +51,43 @@
         <div class="main-container">
             <div class="top-line">
                 <h3><?php echo $ad['title']?></h3>
-                <button type="submit" class="form-control-submit-button" id="favorite">Αποθήκευση
-                </button>
+                <?php if(isset($_SESSION['user'])){
+                    /* if logged in */
+                    if ($_SESSION['user']['role'] == 'students') {
+                        /*if user is a student */
+
+                        /*if job is already in jobs favorites */
+                        $sql_fav = "SELECT * FROM favorites WHERE student_id = " . $_SESSION['user']['id'] . " AND ad_id = " . $ad['id'] . ";";
+                        //send query to database
+                        $found = mysqli_query($db, $sql_fav);
+                        /* check if we have results */
+                        $found_rows = mysqli_num_rows($found);
+
+                        if ($found_rows != 0) {
+                            /* button to remove from favorites */
+                            ?>
+                            <div style="order:2; width: 15%; margin-right:10px;">
+                            <form action="add-to-favorites.php" method="POST">
+                                <input type="hidden" name="ad-id" value="<?php echo $ad['id']; ?>">
+                                <button type="submit" class="form-control-submit-button" id="favorite" name="removeFavorite" style="width:100%;">Aφαίρεση από αγαπημένα</button>
+                            </form>
+                        </div>
+                        <?php } else {
+                            ?>
+                        <div style="order:2; width: 15%; margin-right:10px;">
+                            <form action="add-to-favorites.php" method="POST">
+                                <input type="hidden" name="ad-id" value="<?php echo $ad['id']; ?>">
+                                <button type="submit" class="form-control-submit-button" id="favorite" name="addFavorite" style="width:100%;">Προσθήκη στα αγαπημένα</button>
+                            </form>
+                        </div>
+                        <?php
+                        }
+                    }
+                    }else{
+                        /*user is not logged in */ ?>
+                        <button type="submit" class="form-control-submit-button" id="favorite" data-toggle="modal" data-target="#modalLoginForm">Προσθήκη στα αγαπημένα</button>
+
+                        <?php } ?>
             </div>
             <p style="font-size: 18px; padding: 5px;"><?php echo $ad['subject']?></p>
             <div class="line"></div>
