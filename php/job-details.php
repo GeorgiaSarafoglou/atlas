@@ -7,21 +7,21 @@
 ?> 
 
 <?php
-            if(!isset($_SESSION['user'])){
-                include "navigation.php";
-        ?>
-            <header class="header" style="height: 80%;">
-                <div class="header-content">
-                    <div class="row" style="width: 100%;">
-        <?php
-            }
-            elseif($_SESSION['user']['role'] == 'company'){
-                include "office-menu.php";
-            }
-            else{
-                include "student-menu.php";
-            }
-        ?>
+    if(!isset($_SESSION['user'])){
+        include "navigation.php";
+?>
+    <header class="header" style="height: 80%;">
+        <div class="header-content">
+            <div class="row" style="width: 100%;">
+<?php
+    }
+    elseif($_SESSION['user']['role'] == 'company'){
+        include "office-menu.php";
+    }
+    else{
+        include "student-menu.php";
+    }
+?>
 
 
 <?php 
@@ -74,8 +74,18 @@
                 <?php if ($_POST['show-submit-application'] == 1) { ?>
                 <?php if (isset($_SESSION['user'])) { ?>
                     <?php if ($_SESSION['user']['role'] == 'students') { ?>
+                        <?php
+                        #find if student has already applied for this job.
+                        $sql = "SELECT * FROM application WHERE student_id = ".$_SESSION['user']['id']." AND ad_id = ".$ad['id']."";
+                        $exec = mysqli_query($db, $sql);
+                        #is 0 if the student has not applied yet.
+                        $result_rows = mysqli_num_rows($exec);
+                        if($result_rows == 0){
+                        ?>
+
                         <button class="form-control-submit-button" style="height: 20%; width: 15%; margin: 10px;" onclick="hideShowApplicationForm()"><a class="nav-link page-scroll" href="#application-form" style="all:unset;">Υποβολή αίτησης</a></button>
                     <?php }
+                    }
                 } else { ?>
                  <button class="form-control-submit-button" data-toggle="modal" data-target="#modalLoginForm" style="height: 20%; width: 15%; margin: 10px;">Υποβολή αίτησης</a></button> 
                 <?php }

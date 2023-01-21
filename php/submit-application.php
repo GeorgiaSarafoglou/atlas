@@ -4,10 +4,10 @@
     include "connection.php";
     /* add application to db with STATUS = SAVED */
     if (isset($_POST['save-application'])) {
-    if ($_POST['myfile'] === "") {
+    if (!$_POST['myfile']) {
 
         $id = $_SESSION['user']['id'];
-        $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id) VALUES('$id' , '" . addslashes($_POST['comments'], ) . "', NULL , 'Μη-υποβεβλημένη', " . $_POST['ad-id'] . " )";
+        $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id, date) VALUES('$id' , '" . addslashes($_POST['comments'], ) . "', NULL , 'Μη-υποβεβλημένη', " . $_POST['ad-id'] . ", '".date("Y-m-d")."')";
         $db->query($sql);
     }else{
         #file information
@@ -38,12 +38,12 @@
         }  
 
         $id = $_SESSION['user']['id'];
-        $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id) VALUES('$id' , '" . addslashes($_POST['comments'], ) . "', '$fileNameNew' , 'Μη-υποβεβλημένη', " . $_POST['ad-id'] . " )";
+        $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id, date) VALUES('$id' , '" . addslashes($_POST['comments'], ) . "', '$fileNameNew' , 'Μη-υποβεβλημένη', " . $_POST['ad-id'] . ", '".date("Y-m-d")."' )";
         $db->query($sql);
     }  
         ?>
         <script type="text/javascript">
-            window.location = "http://localhost/sdi1900168/atlas/php/my-applications.php";
+          window.location = "http://localhost/sdi1900168/atlas/php/my-applications.php";
         </script> 
 <?php } ?>
 
@@ -82,7 +82,7 @@
         }
 
         $id = $_SESSION['user']['id'];
-        $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id) VALUES('$id' , '" .addslashes($_POST['comments'], ). "', '$fileNameNew ', 'Εκκρεμής',  ".$_POST['ad-id'].")";
+        $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id, date) VALUES('$id' , '" .addslashes($_POST['comments'], ). "', '$fileNameNew ', 'Εκκρεμής',  ".$_POST['ad-id'].", '".date("Y-m-d")."')";
         $db->query($sql); ?>
         <script type="text/javascript">
             window.location = "http://localhost/sdi1900168/atlas/php/my-applications.php";

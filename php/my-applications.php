@@ -100,8 +100,8 @@
                             <ul class="job-features" style="columns:1;">
                                 <li><strong>Κατάσταση: </strong><?php echo$row['status']?></li>
                                 <li><strong><a href="<?php echo "../uploads/".$row['grades'].""; ?>">Αναλυτική βαθμολογία</strong></a></li>
-                                <li><strong>Σχόλια: <br> <p></strong><?php echo $row['comments']?></p></li>
-                                <li><strong>Ημερομηνία υποβολής:</strong> 26/12/2022</li>
+                                <li><strong>Σχόλια: <br> <p></strong><?php echo $row['comments'];?></p></li>
+                                <li><strong>Ημερομηνία υποβολής:</strong> <?php echo $row['date']; ?> </li>
                             </ul>
                         </div>
                         <!-- end of individual job advertisement-->
