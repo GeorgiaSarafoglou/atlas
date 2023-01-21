@@ -94,7 +94,7 @@
                 <?php 
                     include "connection.php";
                     
-                    $query = "SELECT * FROM ads WHERE published = 1" ;
+                    $query = "SELECT * FROM ads WHERE published = 1 AND positions != 0";
 
                     if(!empty($_GET)){
                         /* get the values */

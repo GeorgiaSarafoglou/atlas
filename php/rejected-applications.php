@@ -101,7 +101,7 @@
                         <li><strong>Κατάσταση: </strong><p style="color: crimson;"><?php echo$row['status']?></p></li>
                         <li><strong><a href="<?php echo "../uploads/".$row['grades'].""; ?>">Αναλυτική βαθμολογία</strong></a></li>
                         <li><strong>Σχόλια:</strong><br><p><?php echo $row['comments'];?></p></li>
-                        <li><strong>Λόγοι απόρριψης:</strong><br><p><?php echo $row['rejection_reasons'];?></p></li>
+                        <li><strong>Λόγοι απόρριψης:</strong><br><p><?php echo $row['rejection_reason'];?></p></li>
                         <li><strong>Ημερομηνία υποβολής:</strong> <?php echo $row['date']; ?> </li>
                     </ul>
                     <!-- end of job and application information -->

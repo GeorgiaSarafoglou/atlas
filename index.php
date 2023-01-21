@@ -7,7 +7,7 @@
     if(isset($_SESSION['user'])){
         /* if user is student redirect to student starting page */
         if($_SESSION['user']['role'] == 'students'){
-            header("location: php/startingpage-student.php");
+            header("location: php/startingpage-student.php?user=".$_SESSION['user']['id']."");
         }
         else if($_SESSION['user']['role'] == 'company'){
             header("location: php/startingpage-office.php");

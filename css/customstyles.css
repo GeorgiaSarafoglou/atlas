@@ -229,3 +229,15 @@ select.filters:focus{
     background-color: pink;
     cursor: pointer;
 }
+
+.notification {
+    position: absolute;
+    top: 9%;
+    right: 2%;
+    padding: 5px 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+}
