@@ -230,23 +230,22 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; right:170%; ">
-                                <!-- TODO load from database --> 
                                 <select class="form-control-select" id="type" name="type" required="">
                                     <option class="select-option" value="" disabled="" selected="">--Επιλέξτε είδος φορέα--</option>
-                                    <option class="select-option" value="ekpa">ΕΚΠΑ</option>
-                                    <option class="select-option" value="assoe">ΑΣΣΟΕ</option>
-                                    <option class="select-option" value="papei">ΠΑΠΕΙ</option>
+                                    <option class="select-option" value="idiotikos">Ιδιωτικός</option>
+                                    <option class="select-option" value="dimosios">Δημόσιος</option>
                                 </select>
                             </div>
                         </div> <!-- end of col -->
                         <div class="col-lg-6">
                             <div class="form-group" style="width: 200%; left:15%; ">
-                                <!-- TODO load from database --> 
                                 <select class="form-control-select" id="country" name="country" required="">
                                     <option class="select-option" value="" disabled="" selected="">--Χώρα--</option>
-                                    <option class="select-option" value="ekpa">ΕΚΠΑ</option>
-                                    <option class="select-option" value="assoe">ΑΣΣΟΕ</option>
-                                    <option class="select-option" value="papei">ΠΑΠΕΙ</option>
+                                    <option class="select-option" value="gr">Ελλάδα</option>
+                                    <option class="select-option" value="alb">Αλβανία</option>
+                                    <option class="select-option" value="ger">Γερμανία</option>
+                                    <option class="select-option" value="fr">Γαλλία</option>
+                                    <option class="select-option" value="ru">Ρωσσία</option>
                                 </select>
                             </div>
                         </div>
@@ -258,8 +257,10 @@
                                 <!-- TODO load from database --> 
                                 <select class="form-control-select" id="field" name="field" required="">
                                     <option class="select-option" value="" disabled="" selected="">--Επιλέξτε Πεδίο Δραστηριότητας--</option>
-                                    <option class="select-option" value="ekpa">Θετικών Επιστημών</option>
-                                    <option class="select-option" value="assoe">Θεωρητικών Επιστημών</option>
+                                    <option class="select-option" value="search">Έρευνα</option>
+                                    <option class="select-option" value="software">Ανάπτυξη λογισμικού</option>
+                                    <option class="select-option" value="webaps">Ανάπτυξη Εφαρμογών Διαδικτύου</option>
+                                    <option class="select-option" value="security">Προστασεία και Ασφάλεια</option>
                                 </select>
                             </div>
                         </div> <!-- end of col -->
@@ -302,9 +303,14 @@
                                 <!-- TODO load from database --> 
                                 <select class="form-control-select" id="p_unit" name="region" required="">
                                     <option class="select-option" value="" disabled="" selected="">--Επιλέξτε περιφερειακή ενότητα--</option>
-                                    <option class="select-option" value="ekpa">ΕΚΠΑ</option>
-                                    <option class="select-option" value="assoe">ΑΣΣΟΕ</option>
-                                    <option class="select-option" value="papei">ΠΑΠΕΙ</option>
+                                    <option class="select-option" value="drama">Π.Ε. Δράμας</option>
+                                    <option class="select-option" value="euros">Π.Ε. Έβρου</option>
+                                    <option class="select-option" value="kavala">Π.Ε. Καβάλας</option>
+                                    <option class="select-option" value="thessaloniki">Μ.Ε. Θεσσαλονίκης</option>
+                                    <option class="select-option" value="kozani">Π.Ε. Κοζάνης</option>
+                                    <option class="select-option" value="larissa">Π.Ε. Λάρισας</option>
+                                    <option class="select-option" value="voiotia">Π.Ε. Βοιωτίας</option>
+                                    <option class="select-option" value="attiki">Π.Ε. Δυτικής Αττικής</option>
                                 </select>
                             </div>
                         </div> <!-- end of col -->
@@ -323,9 +329,10 @@
                                 <!-- TODO load from database --> 
                                 <select class="form-control-select" id="municipality" name="municipality" required="">
                                     <option class="select-option" value="" disabled="" selected="">--Επιλέξτε Καλλικρατικό Δήμο--</option>
-                                    <option class="select-option" value="ekpa">ΕΚΠΑ</option>
-                                    <option class="select-option" value="assoe">ΑΣΣΟΕ</option>
-                                    <option class="select-option" value="papei">ΠΑΠΕΙ</option>
+                                    <option class="select-option" value="dafni">Δήμος Δάφνης</option>
+                                    <option class="select-option" value="umitos">Δήμος Υμηττού</option>
+                                    <option class="select-option" value="kesariani">Δήμος Καισαριανής</option>
+                                    <option class="select-option" value="korudallos">Δήμος Κορυδαλλού</option>
                                 </select>
                             </div>
                         </div> <!-- end of col -->
