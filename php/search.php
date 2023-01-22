@@ -43,6 +43,14 @@
                 include "student-menu.php";
             }
         ?>
+
+</div>
+        <div class="container" style="position: relative; width:100%; margin-top:-1%;">
+            <div class="card" style="border-width: 2px; width:110%;">
+                <h4 style="margin-left: 40%;">Θέσεις πρακτικής</h4>
+            </div>
+        </div>
+        <div class="row" style="width: 100%;">
         
         <div class="main-box" style="margin-left: 10%; width:100%; background-color: transparent;" >
             <filter class="filter" style="border-right: 1px solid black;">

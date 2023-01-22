@@ -16,10 +16,11 @@
     <link href="../css/customstyles.css" rel="stylesheet">
 	
     <?php include "includes.php"; ?>
+    
 
-
+    
     <body data-spy="scroll" data-target=".fixed-top">
-
+        
         <!-- Preloader -->
         <div class="spinner-wrapper">
             <div class="spinner">
@@ -29,29 +30,16 @@
             </div>
         </div>
         <!-- end of preloader -->
-
+        
         <?php include "office-menu.php" ?>
-        
-        <?php 
-            /* change head name */
-            $head = "Οι Αγγελίες μου";
-            if(!empty($_GET)){
-                if($_GET['ads'] == "1"){
-                    $head = "Δημοσιευμένες";
-                }
-                else if($_GET['ads'] == "0"){
-                    $head = "Προσωρινά Αποθηκευμένες";
-                }
-            }
-        ?>
-
-        <!-- <div class="container" style="position: relative; width:100%; margin-top: 1%; margin-bottom: 1%;">
-            <div class="card" style="border-width: 2px;">
-                <h4 style="margin-left: 40%;"> <?php echo $head; ?> </h4>
+</div>
+        <div class="container" style="position: relative; width:100%; margin-top:-1%;">
+            <div class="card" style="border-width: 2px; width:110%;">
+                <h4 style="margin-left: 40%;">Ενεργές Αγγελίες</h4>
             </div>
-        </div> -->
-        
-        <div class="main-box" style="margin-left: 10%; width:100%;">
+        </div>
+        <div class="row" style="width: 100%;">
+        <div class="main-box" style="margin-left: 10%; width:100%;background-color: transparent;border:none;">
             <filter class="filter" style="border-right: 1px solid black;">
                 <ul class="filters">
                     <form action="" method="GET">

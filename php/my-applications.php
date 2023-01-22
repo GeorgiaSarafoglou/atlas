@@ -20,10 +20,18 @@
     </div> 
     <!-- end of preloader -->
 
+    <div class="container" style="position: relative; width:100%; margin-top:-1%;">
+        <div class="card" style="border-width: 2px; width:110%;">
+            <h4 style="margin-left: 40%;">Οι Αιτήσεις Μου</h4>
+        </div>
+    </div>
 
-<div class="container">
+</div>
 
-    <div class="main-box" style="background-color: transparent;">
+
+    <div class="container" style="position: relative; width:110%; margin-top:1%;">
+        <div class="card" style="border-width: 2px; width: 110%; height: 100%;  margin-bottom:1%;background-color: transparent;border:none;">
+            <jobs style="width: 110%;">
     <!-- get data -->
     <?php
     $sql = "SELECT * FROM application WHERE student_id = ".$_SESSION['user']['id'].";";
@@ -33,7 +41,7 @@
     $result_rows = mysqli_num_rows($result);
     if($result_rows > 0){
         /* print data to html */ ?>
-        <jobs>
+
             <ul class="joblist">
 <?php        while($row = mysqli_fetch_assoc($result)){ ?>
                     <?php 
@@ -112,7 +120,9 @@
                                     }
                                 ?>
                                 <?php echo$row['status']?></p></li>
+                                <?php if($row['grades']){ ?>
                                 <li><strong><a href="<?php echo "../uploads/".$row['grades'].""; ?>">Αναλυτική βαθμολογία</strong></a></li>
+                                <?php } ?>
                                 <li><strong>Σχόλια: <br> <p></strong><?php echo $row['comments'];?></p></li>
                                 <li><strong>Ημερομηνία υποβολής:</strong> <?php echo $row['date']; ?> </li>
                             </ul>

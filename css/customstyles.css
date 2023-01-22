@@ -241,3 +241,13 @@ select.filters:focus{
     background: red;
     color: white;
 }
+
+
+.head-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: white;
+    border-radius: 10px;
+}

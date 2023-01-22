@@ -20,9 +20,18 @@
     </div> 
     <!-- end of preloader -->
 
+    <div class="container" style="position: relative; width:100%; margin-top:-1%;">
+        <div class="card" style="border-width: 2px; width:110%;">
+            <h4 style="margin-left: 40%;">Αγαπημένα</h4>
+        </div>
+    </div>
 
-    <div class="container">
-    <div class="main-box" style="background-color: transparent;">
+</div>
+
+    <div class="container" style="position: relative; width:110%; margin-top:1%;">
+        <div class="card" style="border-width: 2px; width: 110%; height: 100%;  margin-bottom:1%;background-color: transparent;border:none;">
+            <jobs style="width: 110%;">
+
     <!-- get data -->
     <?php
     $sql = "SELECT * FROM favorites WHERE student_id = ".$_SESSION['user']['id'].";";
@@ -30,9 +39,7 @@
     $result = mysqli_query($db, $sql);
     /* check if we have results */
     $result_rows = mysqli_num_rows($result);
-    if ($result_rows > 0) {
         /* print data to html */?>
-        <jobs>
             <ul class="joblist">
     <?php while ($row = mysqli_fetch_assoc($result)) {
         #get corresponding job
@@ -67,9 +74,7 @@
             </ul>
             </jobs>
         </div>
-    <?php } else {
-        echo '<div class="job-card"><h4>Δεν έχετε κάποια αγγελία στα αγαπημένα.</h4></div>';
-    }?>
+
 
 
 
