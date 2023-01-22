@@ -75,6 +75,9 @@
 
     <header class="header" style="height: 80%;">
         <div class="header-content">
+            <div class="row" style="width: 50%; margin-left: 10%; overflow: hidden;">
+                <?php include 'breadcrumbs.php' ?>
+            </div>
             <div class="row" style="width: 100%;">
                 <!-- vertical menu left of page -->
                 <div id="left-menu">
@@ -83,7 +86,7 @@
                         <li class="has-sub-menu">
                             <a>Οι Αιτήσεις μου <i class="fa fa-caret-down"></i></a>
                             <ul class="sub-menu">
-                                <li><a href="my-applications.php"">Όλες οι Αιτήσεις</a></li>
+                                <li><a href="my-applications.php">Όλες οι Αιτήσεις</a></li>
                                 <li><a href="saved-applications.php">Αποθηκευμένες Αιτήσεις</a></li>
                                 <li><a href="pending-applications.php">Εκκρεμείς</a></li>
                                 <li><a href="accepted-applications.php">Εγκεκριμένες</a></li>

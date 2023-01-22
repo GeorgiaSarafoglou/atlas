@@ -8,7 +8,7 @@
         $sql = "UPDATE application SET status = 'Μη-υποβεβλημένη', comments = '$comments'  WHERE application_id = $id ";
         $db->query($sql); ?>
         <script type="text/javascript">
-            window.location = "http://localhost/sdi1900168/atlas/php/my-applications.php";
+            window.location = "http://localhost/sdi1900168/atlas/php/saved-applications.php";
         </script> 
 <?php }
     $id = $_POST['application-id'];
@@ -18,6 +18,6 @@
         $sql = "UPDATE application SET status = 'Εκκρεμής', comments = '$comments' WHERE application_id = $id ";
         $db->query($sql); ?>
         <script type="text/javascript">
-            window.location = "http://localhost/sdi1900168/atlas/php/my-applications.php";
+            window.location = "http://localhost/sdi1900168/atlas/php/pending-applications.php";
         </script> 
 <?php } ?>
