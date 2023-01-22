@@ -64,7 +64,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="edit-company.php"><span class="item-text">Επεξεργασία Προφίλ</span></a>
                         <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="#notifications"><span class="item-text">Ειδοποιήσεις</span></a>
+                        <a class="dropdown-item" href="company-notifications.php"><span class="item-text">Ειδοποιήσεις</span></a>
                         <div class="dropdown-items-divide-hr"></div>
                         <a class="dropdown-item" href="logout.php"><span class="item-text">Αποσύνδεση</span></a>
                     </div>

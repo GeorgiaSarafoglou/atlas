@@ -4,8 +4,7 @@
     include "connection.php";
     /* add application to db with STATUS = SAVED */
     if (isset($_POST['save-application'])) {
-    if (!isset($_POST['myfile'])) {
-
+    if ($_FILES['myfile']['size'] == 0) {
         $id = $_SESSION['user']['id'];
         $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id, date) VALUES('$id' , '" . addslashes($_POST['comments'], ) . "', NULL , 'Μη-υποβεβλημένη', " . $_POST['ad-id'] . ", '".date("Y-m-d")."')";
         $db->query($sql);
@@ -83,7 +82,22 @@
 
         $id = $_SESSION['user']['id'];
         $sql = "INSERT INTO application(student_id, comments, grades, status, ad_id, date) VALUES('$id' , '" .addslashes($_POST['comments'], ). "', '$fileNameNew ', 'Εκκρεμής',  ".$_POST['ad-id'].", '".date("Y-m-d")."')";
-        $db->query($sql); ?>
+        $db->query($sql);
+        
+        $application_id = mysqli_insert_id($db);
+        #insert notification for company
+        $sql_com = "SELECT * FROM ads WHERE id = " . $_POST['ad-id'] . "; ";
+        $result_ad = mysqli_query($db, $sql_com);
+        $ad = mysqli_fetch_assoc($result_ad);
+
+        $company_id = $ad['company_id'];
+
+
+        $false = 0;
+        $sql_not = "INSERT INTO company_notifications(company_id, application_id, is_read) VALUES('$company_id', '$application_id', '$false')";
+        $db->query($sql_not);
+        
+        ?>
         <script type="text/javascript">
             window.location = "http://localhost/sdi1900168/atlas/php/my-applications.php";
         </script> 

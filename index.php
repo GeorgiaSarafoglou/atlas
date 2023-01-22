@@ -10,7 +10,7 @@
             header("location: php/startingpage-student.php?user=".$_SESSION['user']['id']."");
         }
         else if($_SESSION['user']['role'] == 'company'){
-            header("location: php/startingpage-office.php");
+            header("location: php/startingpage-office.php?user=".$_SESSION['user']['id']."");
         }
     }
 
@@ -47,7 +47,7 @@
                         header("location: php/startingpage-student.php?user=".$_SESSION['user']['id']."");
                     }
                     else{
-                        header("location: php/startingpage-office.php");
+                        header("location: php/startingpage-office.php?user=".$_SESSION['user']['id']."");
                     }
                 }
             }
