@@ -112,7 +112,9 @@
                                     }
                                 ?>
                                 <?php echo$row['status']?></p></li>
+                                <?php if($row['grades']){ ?>
                                 <li><strong><a href="<?php echo "../uploads/".$row['grades'].""; ?>">Αναλυτική βαθμολογία</strong></a></li>
+                                <?php } ?>
                                 <li><strong>Σχόλια: <br> <p></strong><?php echo $row['comments'];?></p></li>
                                 <li><strong>Ημερομηνία υποβολής:</strong> <?php echo $row['date']; ?> </li>
                             </ul>
