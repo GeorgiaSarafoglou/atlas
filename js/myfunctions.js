@@ -106,13 +106,3 @@ function SaveDetails(){
     savebutton.style.display = "none";
 
 }
-
-function validateOfficeForm(){
-    var email = document.getElementById('email').value;
-    var email_error = document.getElementById("email-error");   
-    if(email){
-        pass_error.style.display = "block";
-    }else{
-        pass_error.style.display = "block";
-    }
-}

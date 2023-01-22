@@ -108,7 +108,7 @@
                 <div class="card" style="border-width: 3px;">
                     <h6 style="margin-left:3.5%; margin-right:70%; margin-top:1%;">Προσωπικά Στοιχεία :</h6>        
                     <!-- Form inputs -->
-                    <form class="form-groupf" id="student-signup-form" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;" method="POST">
+                    <form action="submit.php" class="form-groupf" id="student-signup-form" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;" method="POST">
                         <!-- div row to show two inputs side by side -->
                         <div class="row">
                             <div class="col-lg-6">
@@ -145,7 +145,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; right:170%; ">
-                                    <input type="text" class="form-control-input notEmpty" id="phone" name="phone" required="">
+                                    <input type="number" class="form-control-input notEmpty" id="phone" name="phone" required="">
                                     <label class="label-control" for="phone">Τηλέφωνο Επικοινωνίας</label>
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -183,7 +183,7 @@
                             </div> <!-- end of col -->
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; left:15%; ">
-                                    <input type="text" class="form-control-input notEmpty" id="am" name="am" required="">
+                                    <input type="number" class="form-control-input notEmpty" id="am" name="am" required="">
                                     <label class="label-control" for="am">Αριθμός μητρώου</label>
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -264,27 +264,6 @@
                 </div>
             </div>        
         </div>
-
-        <?php
-            if(isset($_POST['register_btn'])){
-                // insert the data into the database
-                $query= "insert into students (fname, lname, latin_fname, latin_lname, phone, date_of_birth, university, school, department, am, email, password) values (?,?,?,?,?,?,?,?,?,?,?,?)";
-                
-                $stmt = $db->prepare($query);
-                $stmt->bind_param("ssssssssssss", $_POST["fname"],$_POST["lname"],$_POST["latin_fname"],$_POST["latin_lname"],$_POST["phone"],$_POST["date_of_birth"],$_POST["university"],$_POST["school"],$_POST["department"],$_POST["am"],$_POST["email"],$_POST["password"]);
-                $result = $stmt->execute();
-
-                if($result){
-        ?>            
-                <script>
-                    window.location.replace("http://localhost/sdi1900168/atlas/index.php");
-                </script>
-        <?php        
-            } else {
-                    echo "There was a problem adding the user.";
-                }
-            }
-        ?>
             
     </header>
 </html>
