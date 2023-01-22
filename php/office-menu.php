@@ -78,7 +78,10 @@
 
     <header class="header" style="height: 80%;">
         <div class="header-content">
-            <div class="row" style="width: 100%;">
+            <div class="row" style="width: 50%; margin-left: 10%; overflow: hidden; height: 10%;">
+                <?php include 'breadcrumbs.php' ?>
+            </div>
+            <div class="row" style="width: 100%; margin-top: 1%;">
                 <!-- vertical menu left of page -->
                 <div id="left-menu">
                     <ul>
