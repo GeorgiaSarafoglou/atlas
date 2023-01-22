@@ -40,7 +40,7 @@
         <div class="row" style="width: 100%;">
         
         <div class="main-box" style="margin-left: 10%; width:100%; background-color: transparent;border:none;">
-            <filter class="filter">
+            <filter class="filter" style="border-right: 1px solid black;">
                 <ul class="filters">
                     <form action="" method="GET">
                         <li>
@@ -51,9 +51,6 @@
                             <div class="form-outline">
                                 <input type="search" class="form-control-input notEmpty" id="search1" name="search1" style="border-radius: 1rem; width: 90%; margin-left:2%;">
                                 <label class="label-control" for="search1">Αναζήτηση</label>
-                                <button class="btn btn-primary" type="submit" style="position: absolute; top: 0; right:0; border-radius: 1rem; height: 100%; margin-right: 7%;">
-                                    <i class="fas fa-search"></i>
-                                </button>  
                             </div>
                         </div>
                         <li>
@@ -79,14 +76,17 @@
                         <li>
                             <label for="start">Από:</label>
                             <input type="date" id="start" name="trip-start"
-                                value="2018-07-22"
-                                min="2018-01-01" max="2018-12-31">
+                                value="2023-01-01"
+                                min="2023-01-01" max="2024-12-31">
                         </li>
                         <li>
                             <label for="end">Εώς:</label>
                             <input type="date" id="end" name="trip-end"
-                                value="2018-07-22"
-                                min="2018-01-01" max="2018-12-31">
+                                value="2025-01-01"
+                                min="2023-01-01" max="2025-01-01">
+                        </li>
+                        <li>
+                            <button id="search_button" name="search_button" type="submit" class="form-control-submit-button" style="height: 20%; margin-top: 15%; width: 60%; margin-left: 40%;">Αναζήτηση</button>
                         </li>
                     </form>
                 </ul>
@@ -105,20 +105,33 @@
                         $duration = $_GET['duration'];
                         $start_date = $_GET['trip-start'];
                         $end_date = $_GET['trip-end'];
-                        
+                     
                         /* Add the search term to the query, if it's not empty */
                         if (!empty($search)) {
                             $query .= " AND title LIKE '%$search%'";
+                            echo $search." ";
                         }
                         
                         /* Add the employment type filter to the query, if it's not "" */
                         if ($employment_type != "") {
                             $query .= " AND type = '$employment_type'";
+                            echo $employment_type." ";
                         }
                         
                         /* Add the duration filter to the query, if it's not "" */
                         if ($duration != "") {
                             $query .= " AND duration = '$duration'";
+                            echo $duration." ";
+                        }
+
+                        if($start_date != ""){
+                            $query .= " AND start >= '$start_date'";
+                            echo $start_date."-";
+                        }
+
+                        if($end_date != ""){
+                            $query .= " AND start <= '$end_date'";
+                            echo $end_date;
                         }
                     }
 
