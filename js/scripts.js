@@ -155,6 +155,18 @@
 		}
     });
 
+    /* Student Signup Validator */
+    $("#student-signup-form").validator().on("submit", function(event) {
+    	if (event.isDefaultPrevented()) {
+            // handle the invalid form...
+            rformError();
+            rsubmitMSG(false, "Please fill all fields!");
+        } else {
+            // everything looks good!
+            event.preventDefault();
+        //    studentSubmitForms();
+        }
+    });
 
     /* Request Form */
     $("#requestForm").validator().on("submit", function(event) {

@@ -7,12 +7,6 @@
         header("location: index.php");
     }
 
-    /* this will tell us if the form is posted */
-    if(isset($_REQUEST['register_btn'])){
-        $name = $_REQUEST['name'];
-        
-    }
-
 ?>
 
 <!DOCTYPE html>
@@ -104,36 +98,17 @@
 
     <header id="header" class="header">
         <div class="header-content">
-            <br><br>
-            <!-- Title of each step -->
-            <h5>
-                <span style="margin-left: 22%;">
-                    <a href="signup.php" style="color: #007bff;"><i class="arrow right">1. Ιδιότητα Χρήστη </a>
-                    <span class="arrow" style="margin-left: 3%;color: #007bff;">&#x2192;</span> 
-                </span>
-                <span style="margin-left: 2%;">
-                    <a href="signup.php" style="color: #007bff;"><i class="arrow right">2. Στοιχεία Χρήστη </a>
-                    <span class="arrow" style="margin-left: 3%;">&#x2192;</span> 
-                </span>
-                <span style="margin-left: 2%;">
-                    <i class="arrow right">3. Στοιχεία Ιδρύματος
-                    <span class="arrow" style="margin-left: 3%;">&#x2192;</span> 
-                </span>
-                <span style="margin-left: 2%;">
-                    <i class="arrow right">4. Στοιχεία Λογαριασμού
-                </span>
-            </h5>
-            <!-- Progress Bar -->
-            <div class="progress" style="height: 20px; width: 57%; margin-left:21.5%;">
-                <div class="progress-bar" role="progressbar" style="width: 48%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="container" style="position: relative; width:100%; margin-top:1%;">
+                <div class="card" style="border-width: 3px; display: flex; align-items: center; justify-content: center;">
+                    <h4>Εγγραφή Φοιτητή-ριας</h4>  
+                </div>
             </div>
-
-            <!-- Signup Form for Students step 2 -->
+            <!-- Signup Form for Students -->
             <div class="container" style="position: relative; width:100%; margin-top:1%;">
                 <div class="card" style="border-width: 3px;">
                     <h6 style="margin-left:3.5%; margin-right:70%; margin-top:1%;">Προσωπικά Στοιχεία :</h6>        
                     <!-- Form inputs -->
-                    <form class="form-groupf" id="signup_student_form_2" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;">
+                    <form class="form-groupf" id="student-signup-form" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;" method="POST">
                         <!-- div row to show two inputs side by side -->
                         <div class="row">
                             <div class="col-lg-6">
@@ -184,12 +159,104 @@
                                 </div>    
                             </div>
                         </div>
+
                         <div class="row">
-                            <div class="col-lg-6" style="left: 90%; width:200%; margin-top: 5%;">
-                                <a class="turquoise" href="signup.php">Προηγούμενο βήμα</a>
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; right:170%; margin-top: 20%; margin-bottom: 15%;">
+                                    <h6>Στοιχεία Ιδρύματος:</h6>
+                                </div>
                             </div>
-                            <div class="col-lg-6" style="left: 70%; width:200%;">
-                                <button id="signup-continue-btn-1" type="button" class="form-control-submit-button" style="width: 50%; margin-left:2%; margin-bottom:2%;">Συνέχεια</button>
+                        </div>
+                        
+                        <!-- div row to show two inputs side by side -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; right:170%; ">
+                                    <!-- TODO load from database --> 
+                                    <select class="form-control-select" id="university" name="university" required="">
+                                        <option class="select-option" value="" disabled="" selected="">Ίδρυμα</option>
+                                        <option class="select-option" value="ekpa">ΕΚΠΑ</option>
+                                        <option class="select-option" value="assoe">ΑΣΣΟΕ</option>
+                                        <option class="select-option" value="papei">ΠΑΠΕΙ</option>
+                                    </select>
+                                </div>
+                            </div> <!-- end of col -->
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; left:15%; ">
+                                    <input type="text" class="form-control-input notEmpty" id="am" name="am" required="">
+                                    <label class="label-control" for="am">Αριθμός μητρώου</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div> <!-- end of row -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; right:170%; ">
+                                    <!-- TODO load from database --> 
+                                    <select class="form-control-select" id="school" name="school" required="">
+                                        <option class="select-option" value="" disabled="" selected="">Σχολή</option>
+                                        <option class="select-option" value="natural">Θετικών Επιστημών</option>
+                                        <option class="select-option" value="theoretical">Θεωρητικών Επιστημών</option>
+                                    </select>
+                                </div>
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; right:170%; ">
+                                    <!-- TODO load from database --> 
+                                    <select class="form-control-select" id="department" name="department" required="">
+                                        <option class="select-option" value="" disabled="" selected="">Τμήμα</option>
+                                        <option class="select-option" value="DI">ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ</option>
+                                        <option class="select-option" value="DP">ΦΥΣΙΚΗΣ</option>
+                                        <option class="select-option" value="DM">ΜΑΘΗΜΑΤΙΚΟ</option>
+                                    </select>
+                                </div>
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; right:170%; margin-top: 20%; margin-bottom: 15%;">
+                                    <h6>Στοιχεία Λογαριασμού:</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; right:170%; ">
+                                    <input type="email" class="form-control-input notEmpty" id="Email" name="email" required="">
+                                    <label class="label-control" for="email">Email</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div> <!-- end of col -->
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; left:15%; ">
+                                    <input type="email" class="form-control-input notEmpty" id="confirm_email" name="confirm_email" required="">
+                                    <label class="label-control" for="confirm_email">Επιβεβαίωση Email</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div> <!-- end of row -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; right:170%; ">
+                                    <input type="password" class="form-control-input notEmpty" id="password" name="password" required="">
+                                    <label class="label-control" for="password">Κωδικός</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div> <!-- end of col -->
+                            <div class="col-lg-6">
+                                <div class="form-group" style="width: 200%; left:15%; ">
+                                    <input type="password" class="form-control-input notEmpty" id="confirm_password" name="confirm_password" required="">
+                                    <label class="label-control" for="confirm_password">Επιβεβαίωση Κωδικού</label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div> <!-- end of row -->
+
+                        <div class="row">
+                            <div class="col-lg-6" style="left: 110%; width:200%; margin-top:10%; margin-bottom: 3%;">
+                                <button id="confirmForm" name="register_btn" type="submit" class="form-control-submit-button" style="width: 80%; margin-left:2%; margin-bottom:2%;">Επιβεβαίωση Στοιχείων</button>
                             </div>
                         </div>
                     </form>
@@ -197,185 +264,27 @@
                 </div>
             </div>        
         </div>
+
+        <?php
+            if(isset($_POST['register_btn'])){
+                // insert the data into the database
+                $query= "insert into students (fname, lname, latin_fname, latin_lname, phone, date_of_birth, university, school, department, am, email, password) values (?,?,?,?,?,?,?,?,?,?,?,?)";
+                
+                $stmt = $db->prepare($query);
+                $stmt->bind_param("ssssssssssss", $_POST["fname"],$_POST["lname"],$_POST["latin_fname"],$_POST["latin_lname"],$_POST["phone"],$_POST["date_of_birth"],$_POST["university"],$_POST["school"],$_POST["department"],$_POST["am"],$_POST["email"],$_POST["password"]);
+                $result = $stmt->execute();
+
+                if($result){
+        ?>            
+                <script>
+                    window.location.replace("http://localhost/sdi1900168/atlas/index.php");
+                </script>
+        <?php        
+            } else {
+                    echo "There was a problem adding the user.";
+                }
+            }
+        ?>
+            
     </header>
-
-    <!-- Third step form -->
-    <div id="step3" style="display:none; height:65%;margin-top:5%;">
-        <!-- Title of each step -->
-        <h5>
-            <span style="margin-left: 22%;">
-                <a href="signup.php" style="color: #007bff;"><i class="arrow right">1. Ιδιότητα Χρήστη </a>
-                <span class="arrow" style="margin-left: 3%;color: #007bff;">&#x2192;</span> 
-            </span>
-            <span style="margin-left: 2%;">
-                <a href="#header" style="color: #007bff;"><i class="arrow right">2. Στοιχεία Χρήστη </a>
-                <span class="arrow" style="margin-left: 3%;">&#x2192;</span> 
-            </span>
-            <span style="margin-left: 2%;">
-                <a href="#step3" style="color: #007bff;"><i class="arrow right">3. Στοιχεία Ιδρύματος </a>
-                <span class="arrow" style="margin-left: 3%;">&#x2192;</span> 
-            </span>
-            <span style="margin-left: 2%;">
-                <i class="arrow right">4. Στοιχεία Λογαριασμού
-            </span>
-        </h5>
-        <!-- Progress Bar -->
-        <div class="progress" style="height: 20px; width: 57%; margin-left:21.5%;">
-            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-
-        <!-- Signup Form for Students step 3 -->
-        <div class="container" style="position: relative; width:100%; margin-top:1%;">
-            <div class="card" style="border-width: 3px;">
-                <h6 style="margin-left:3.5%; margin-right:70%; margin-top:1%;">Στοιχεία Ιδρύματος:</h6>        
-                <!-- Form inputs -->
-                <form class="form-groupf" id="signup_student_form_3" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;">
-                    <!-- div row to show two inputs side by side -->
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group" style="width: 200%; right:170%; ">
-                                <!-- TODO load from database --> 
-                                <select class="form-control-select" id="university" name="university" required="">
-                                    <option class="select-option" value="" disabled="" selected="">Ίδρυμα</option>
-                                    <option class="select-option" value="ekpa">ΕΚΠΑ</option>
-                                    <option class="select-option" value="assoe">ΑΣΣΟΕ</option>
-                                    <option class="select-option" value="papei">ΠΑΠΕΙ</option>
-                                </select>
-                            </div>
-                        </div> <!-- end of col -->
-                        <div class="col-lg-6">
-                            <div class="form-group" style="width: 200%; left:15%; ">
-                                <input type="text" class="form-control-input notEmpty" id="am" name="am" required="">
-                                <label class="label-control" for="am">Αριθμός μητρώου</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                    </div> <!-- end of row -->
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group" style="width: 200%; right:170%; ">
-                                <!-- TODO load from database --> 
-                                <select class="form-control-select" id="school" name="school" required="">
-                                    <option class="select-option" value="" disabled="" selected="">Σχολή</option>
-                                    <option class="select-option" value="natural">Θετικών Επιστημών</option>
-                                    <option class="select-option" value="theoretical">Θεωρητικών Επιστημών</option>
-                                </select>
-                            </div>
-                        </div> <!-- end of col -->
-                    </div> <!-- end of row -->
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group" style="width: 200%; right:170%; ">
-                                <!-- TODO load from database --> 
-                                <select class="form-control-select" id="department" name="department" required="">
-                                    <option class="select-option" value="" disabled="" selected="">Τμήμα</option>
-                                    <option class="select-option" value="DI">ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ</option>
-                                    <option class="select-option" value="DP">ΦΥΣΙΚΗΣ</option>
-                                    <option class="select-option" value="DM">ΜΑΘΗΜΑΤΙΚΟ</option>
-                                </select>
-                            </div>
-                        </div> <!-- end of col -->
-                    </div> <!-- end of row -->
-                    <div class="row">
-                        <div class="col-lg-6" style="left: 90%; width:200%; margin-top: 5%;">
-                            <a class="turquoise" href="#header">Προηγούμενο βήμα</a>
-                        </div>
-                        <div class="col-lg-6" style="left: 70%; width:200%;">  
-                            <button id="signup-continue-btn-2" type="button" class="form-control-submit-button" style="width: 50%; margin-left:2%; margin-bottom:2%;">Συνέχεια</button>
-                        </div>
-                    </div>
-                </form>
-                <!-- end of contact form -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Final step form -->
-    <div id="step4" style="display:none; height:65%;margin-top:0%;">
-        <!-- Title of each step -->
-        <h5>
-            <span style="margin-left: 22%;">
-                <a href="signup.php" style="color: #007bff;"><i class="arrow right">1. Ιδιότητα Χρήστη </a>
-                <span class="arrow" style="margin-left: 3%;color: #007bff;">&#x2192;</span> 
-            </span>
-            <span style="margin-left: 2%;">
-                <a href="#header" style="color: #007bff;"><i class="arrow right">2. Στοιχεία Χρήστη </a>
-                <span class="arrow" style="margin-left: 3%;">&#x2192;</span> 
-            </span>
-            <span style="margin-left: 2%;">
-                <a href="#step3" style="color: #007bff;"><i class="arrow right">3. Στοιχεία Ιδρύματος </a>
-                <span class="arrow" style="margin-left: 3%;">&#x2192;</span> 
-            </span>
-            <span style="margin-left: 2%;">
-                <a href="#step4" style="color: #007bff;"><i class="arrow right">4. Στοιχεία Λογαριασμού </a>
-            </span>
-        </h5>
-        <!-- Progress Bar -->
-        <div class="progress" style="height: 20px; width: 57%; margin-left:21.5%;">
-            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-
-        <!-- Signup Form for Students step 4 -->
-        <div class="container" style="position: relative; width:100%; margin-top:1%;">
-            <div class="card" style="border-width: 3px;">
-                <h6 style="margin-left:3.5%; margin-right:70%; margin-top:1%;">Στοιχεία Λογαριασμού:</h6>        
-                <!-- Form inputs -->
-                <form class="form-groupf" id="signup_student_form_4" data-toggle="validator" data-focus="false" novalidate="true" style="width: 40%;margin-left: 35%;margin-top:2%;" action="submit.php" method="POST">
-                    <!-- div row to show two inputs side by side -->
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group" style="width: 200%; right:170%; ">
-                                <input type="email" class="form-control-input notEmpty" id="Email" name="email" required="">
-                                <label class="label-control" for="email">Email</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div> <!-- end of col -->
-                        <div class="col-lg-6">
-                            <div class="form-group" style="width: 200%; left:15%; ">
-                                <input type="email" class="form-control-input notEmpty" id="confirm_email" name="confirm_email" required="">
-                                <label class="label-control" for="confirm_email">Επιβεβαίωση Email</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                    </div> <!-- end of row -->
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group" style="width: 200%; right:170%; ">
-                                <input type="password" class="form-control-input notEmpty" id="password" name="password" required="">
-                                <label class="label-control" for="password">Κωδικός</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div> <!-- end of col -->
-                        <div class="col-lg-6">
-                            <div class="form-group" style="width: 200%; left:15%; ">
-                                <input type="password" class="form-control-input notEmpty" id="confirm_password" name="confirm_password" required="">
-                                <label class="label-control" for="confirm_password">Επιβεβαίωση Κωδικού</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                        </div>
-                    </div> <!-- end of row -->
-                    <div class="row">
-                        <div class="col-lg-6" style="left: 80%; width:200%; margin-top: 5%;">
-                            <a class="turquoise" href="#step3">Προηγούμενο βήμα</a>
-                        </div>
-                        <!-- TODO submit form and create user, redirect to starting page for students-->
-                        <div class="col-lg-6" style="left: 60%; width:200%;">
-                            <button id="confirmForm" name="register_btn" type="submit" class="form-control-submit-button" style="width: 80%; margin-left:2%; margin-bottom:2%;">Επιβεβαίωση Στοιχείων</button>
-                        </div>
-                    </div>
-                </form>
-                <!-- end of contact form -->
-            </div>
-        </div>
-    </div>
-   
-    <!-- scroll down and show hidden divs -->
-    <script>
-        showAndScrollToStep3();
-        showAndScrollToStep4();
-        document.getElementById("confirmForm").addEventListener("click", function(event) {
-            event.preventDefault();
-            studentSubmitForms();
-        });
-    </script>
 </html>

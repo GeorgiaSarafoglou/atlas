@@ -3,10 +3,6 @@
 
     include("connection.php");
 
-   
-    $_POST = json_decode(file_get_contents('php://input'), true);
-    
-
     // insert the data into the database
     $query= "insert into students (fname, lname, latin_fname, latin_lname, phone, date_of_birth, university, school, department, am, email, password) values (?,?,?,?,?,?,?,?,?,?,?,?)";
     
@@ -16,6 +12,7 @@
 
     if($result){
         echo "User has been added successfully";
+        header("location: ../index.php");
     } else {
         echo "There was a problem adding the user.";
     }
