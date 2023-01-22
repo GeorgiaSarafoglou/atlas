@@ -115,6 +115,6 @@ if (isset($_POST['save-application-edit'])) {
         $db->query($sql);
     }
 
-header("location:my-applications.php");
+    header("location:my-applications.php");
 
 ?>

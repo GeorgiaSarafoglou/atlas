@@ -32,6 +32,7 @@ if(isset($_POST['edit-application'])){
                 <input type="hidden" name="application-id" value="<?php echo $_POST['application-id']; ?>">
                 <button class="form-control-submit-button" type="submit" name="delete-grade-file" style="width:25%; height: 10%;" id="favorite"> Διαγραφή αρχείου αναλυτικής βαθμολογίας </button>
             </form>
+            <input type="hidden" name="updatefile" value="<?php echo $application['grades']; ?>">
             <?php } else { ?>
                 <div class="attachment">
                     <div class="label-attach">
@@ -54,7 +55,7 @@ if(isset($_POST['edit-application'])){
             <button type="submit" class="form-control-submit-button" id="save-form-button" name="save-application-edit">Προσωρινή αποθήκευση</button>
             <?php if($application['grades'] != NULL){?>
                 <!-- if file exists -->
-                <button  data-toggle="modal" data-target="#modalConfirm" type="button" class="form-control-submit-button"  style="height: 20%; width: 15%; margin: 10px;">Τελική Υποβολή</button>
+                <button onclick="ApplicationFormModalWithFile()" type="button" class="form-control-submit-button" style="height: 20%; width: 15%; margin: 10px;">Τελική Υποβολή</button>
                 <?php }else{ ?>
                 <!-- if file didnt exist -->
                 <button onclick="ApplicationFormModal()" type="button" class="form-control-submit-button"  style="height: 20%; width: 15%; margin: 10px;">Τελική Υποβολή</button>

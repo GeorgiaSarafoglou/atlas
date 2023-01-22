@@ -75,7 +75,7 @@
 
     <header class="header" style="height: 80%;">
         <div class="header-content">
-            <div class="row" style="width: 100%;">
+            <div class="row" style="width: 100%; flex-direction: column;">
                 <!-- vertical menu left of page -->
                 <div id="left-menu">
                     <ul>
@@ -93,4 +93,5 @@
                         <li><a href="favorites.php">Αγαπημένα</a></li>
                     </ul>
                 </div>
+    
                 <!-- To start next page we need to create a <div class="col-lg-6"> and add whatever we want to be on center of page -->

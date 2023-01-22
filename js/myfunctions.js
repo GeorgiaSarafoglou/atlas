@@ -160,6 +160,10 @@ function ApplicationFormModal(){
     }
 }
 
+function ApplicationFormModalWithFile(){
+    $("#modalConfirm").modal();
+}
+
 function EditDetails(){
 
     var editable = document.getElementById("editable-details");
