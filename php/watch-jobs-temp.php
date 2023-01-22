@@ -37,8 +37,9 @@
                 <h4 style="margin-left: 40%;"> <?php echo $head; ?> </h4>
             </div>
         </div> -->
+
         
-        <div class="main-box" style="margin-left: 10%; width:100%;">
+        <div class="main-box" style="margin-left: 10%; width:100%;background-color: transparent;border:none;">
             <filter class="filter" style="border-right: 1px solid black;">
                 <ul class="filters">
                     <form action="" method="GET">

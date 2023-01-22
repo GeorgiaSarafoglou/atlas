@@ -75,7 +75,7 @@
 
     <header class="header" style="height: 80%;">
         <div class="header-content">
-            <div class="row" style="width: 100%; flex-direction: column;">
+            <div class="row" style="width: 100%;">
                 <!-- vertical menu left of page -->
                 <div id="left-menu">
                     <ul>

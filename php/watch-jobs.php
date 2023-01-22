@@ -32,7 +32,7 @@
 
         <?php include "office-menu.php" ?>
         
-        <div class="main-box" style="margin-left: 10%; width:100%;">
+        <div class="main-box" style="margin-left: 10%; width:100%; background-color: transparent;border:none;">
             <filter class="filter">
                 <ul class="filters">
                     <form action="" method="GET">

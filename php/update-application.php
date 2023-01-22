@@ -20,23 +20,23 @@ if(isset($_POST['edit-application'])){
 <div class="mainbox" style="background-color: transparent;" >        
     <div class="main-container">
     <!-- form start -->
-    <form action="edit-application-file.php" method="POST" enctype="multipart/form-data">
-        <div class="top-line" style"justify-content: flex-start;">
-            <h3 >Αίτηση για πρακτική</h3>
-        </div>
-
-        <div class="line"></div>
-        <?php if ($application['grades'] != NULL) { ?>
-            <li style="margin-bottom: 10px;"><strong><a href="<?php echo "../uploads/".$application['grades'].""; ?>">Αναλυτική βαθμολογία</strong></a></li>
-            <form  method="POST" action="edit-appliaction-file.php">
-                <input type="hidden" name="application-id" value="<?php echo $_POST['application-id']; ?>">
-                <button class="form-control-submit-button" type="submit" name="delete-grade-file" style="width:25%; height: 10%;" id="favorite"> Διαγραφή αρχείου αναλυτικής βαθμολογίας </button>
-            </form>
-            <input type="hidden" name="updatefile" value="<?php echo $application['grades']; ?>">
-            <?php } else { ?>
+    <div class="top-line" style"justify-content: flex-start;">
+        <h3 >Αίτηση για πρακτική</h3>
+    </div>
+    
+    <div class="line"></div>
+    <?php if ($application['grades'] != NULL) { ?>
+        <li style="margin-bottom: 10px;"><strong><a href="<?php echo "../uploads/".$application['grades'].""; ?>">Αναλυτική βαθμολογία</strong></a></li>
+        <form  method="POST" action="delete-grades.php">
+            <input type="hidden" name="application-id" value="<?php echo $_POST['application-id']; ?>">
+            <button class="form-control-submit-button" type="submit" name="delete-grade-file" style="width:25%; height: 10%;" id="favorite"> Διαγραφή αρχείου αναλυτικής βαθμολογίας </button>
+        </form>
+        <form action="edit-application-file.php" method="POST" enctype="multipart/form-data">
+        <?php } else { ?>
+            <form action="edit-application-file.php" method="POST" enctype="multipart/form-data">
                 <div class="attachment">
                     <div class="label-attach">
-                        <label for="myfile"<h6>Επισυνάψτε το έγγραφο</h6></label>
+                        <label for="myfile"><h6>Επισυνάψτε το έγγραφο</h6></label>
                         <div id="tooltip"><h6><u>αναλυτικής βαθμολογίας</u>:</h6>
                             <span id="tooltiptext">Η αναλυτική βαθμολογία δίνεται από τη γραμματεία κάθε τμήματος</span>
                         </div>
@@ -45,26 +45,27 @@ if(isset($_POST['edit-application'])){
                         <input type="file" id="myfile" name="updatefile"><br> <div id="invalid-file" style="color: red; display:none;">Η επισύναψη αναλυτικής βαθμολογίας είναι υποχρεωτική</div>
                     </div>
                 </div>
-            <?php } ?>
-        <div class="form-group">
-            <textarea class="form-control-textarea" id="cmessage" placeholder="Σχόλια" name="comments"><?php echo $application['comments']?></textarea>
-        </div>
-        
-        <div class="form-group bottom" style="display:flex;justify-content: space-between;">
-            <input type="hidden" name="application-id" value="<?php echo $_POST['application-id']; ?>">
-            <button type="submit" class="form-control-submit-button" id="save-form-button" name="save-application-edit">Προσωρινή αποθήκευση</button>
-            <?php if($application['grades'] != NULL){?>
-                <!-- if file exists -->
-                <button onclick="ApplicationFormModalWithFile()" type="button" class="form-control-submit-button" style="height: 20%; width: 15%; margin: 10px;">Τελική Υποβολή</button>
-                <?php }else{ ?>
-                <!-- if file didnt exist -->
-                <button onclick="ApplicationFormModal()" type="button" class="form-control-submit-button"  style="height: 20%; width: 15%; margin: 10px;">Τελική Υποβολή</button>
-            <?php } ?>
-            </div>
-
-    <!-- Confirmation modal -->
-    <div class="modal fade" id="modalConfirm" tabindex="-1" role="dialog" aria-labelledby="modalConfirm" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+                <?php } ?>
+                <div class="form-group">
+                    <textarea class="form-control-textarea" id="cmessage" placeholder="Σχόλια" name="comments"><?php echo $application['comments']?></textarea>
+                </div>
+                
+                
+                <div class="form-group bottom" style="display:flex;justify-content: space-between;">
+                    <input type="hidden" name="application-id" value="<?php echo $_POST['application-id']; ?>">
+                    <button type="submit" class="form-control-submit-button" id="save-form-button" name="save-application-edit">Προσωρινή αποθήκευση</button>
+                    <?php if($application['grades'] != NULL){?>
+                        <!-- if file exists -->
+                        <button data-toggle="modal" data-target="#modalConfirm" type="button" class="form-control-submit-button" style="height: 20%; width: 15%; margin: 10px;">Τελική Υποβολή</button>
+                        <?php }else{ ?>
+                            <!-- if file didnt exist -->
+                            <button onclick="ApplicationFormModal()" type="button" class="form-control-submit-button"  style="height: 20%; width: 15%; margin: 10px;">Τελική Υποβολή</button>
+                            <?php } ?>
+                        </div>
+                        
+                        <!-- Confirmation modal -->
+                        <div class="modal fade" id="modalConfirm" tabindex="-1" role="dialog" aria-labelledby="modalConfirm" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <h4 class="modal-title w-100 font-weight-bold">Είστε σίγουροι ότι θέλετε να υποβάλετε την αίτηση οριστικά</h4>
@@ -87,6 +88,6 @@ if(isset($_POST['edit-application'])){
         </div>
     </div>
 </form>
+
 </div>
 </div>
-<!-- form end -->

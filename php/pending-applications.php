@@ -25,6 +25,7 @@
         </div>
     </div>
 
+</div>
 
     <div class="container" style="position: relative; width:110%; margin-top:1%;">
         <div class="card" style="border-width: 2px; width: 110%; height: 100%;  margin-bottom:1%;background-color: transparent;border:none;">
