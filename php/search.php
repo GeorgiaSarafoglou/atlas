@@ -1,5 +1,12 @@
 <?php 
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    if(isset($_POST['search1'])){
+        $searchValue = $_POST['search1'];
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -118,6 +125,9 @@
                         if ($duration != "") {
                             $query .= " AND duration = '$duration'";
                         }
+                    }
+                    else if(isset($searchValue)){
+                        $query = "SELECT * FROM ads WHERE published = 1 AND positions != 0 AND title LIKE '%$searchValue%' ";
                     }
 
                     if(isset($_GET['clear_filters'])){

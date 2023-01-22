@@ -24,18 +24,18 @@
                             <p class="p-large">Αναζητήστε θέση πρακτικής άσκησης γράφοντας τον τίτλο της θέσης που θέλετε (π.χ. Web Designer). <a class="turquoise" href="#student_details">Δείτε περισσότερα...</a></p>
                             
                             <!-- Search bar -->
-                            <div class="form-group">
-                                <div class="form-outline">
-                                    <input type="search" class="form-control-input" id="search1" style="border-radius: 1rem;">
-                                    <label class="label-control" for="search1">Αναζήτηση</label>
-                                    <button class="btn btn-primary" type="submit" style="position: absolute; top: 0; right:0; border-radius: 1rem; height: 100%;">
-                                        <i class="fas fa-search"></i>
-                                    </button>  
+                            <form action="search.php" method="POST">
+                                <div class="form-group">
+                                    <div class="form-outline">
+                                        <input type="search" class="form-control-input" id="search1" name="search1" style="border-radius: 1rem;">
+                                        <label class="label-control" for="search1">Αναζήτηση</label>
+                                        <button class="btn btn-primary" type="submit" name="btn-search" style="position: absolute; top: 0; right:0; border-radius: 1rem; height: 100%;">
+                                            <i class="fas fa-search"></i>
+                                        </button>  
+                                    </div>
                                 </div>
-                            </div>
-                            <!--
-                                <a class="btn-solid-lg page-scroll" href="#services">DISCOVER</a>
-                            -->
+                            </form>
+                           
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6">

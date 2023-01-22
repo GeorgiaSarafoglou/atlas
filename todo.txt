@@ -11,4 +11,4 @@
 Αίτησης μόνο αν ο φοιτητής ανήκει σε τμήμα που ζητάει η αγγελία
 -- Add breadcrumbs  
 -- Η αναζήτηση να δείχνει τα σωστά                                  (DONE)       
--- starting page search να δουλευει
+-- starting page search να δουλευει                                 (DONE)
