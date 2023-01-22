@@ -32,13 +32,14 @@
 
         <?php include "office-menu.php" ?>
 
-        <!-- <div class="container" style="position: relative; width:100%; margin-top: 1%; margin-bottom: 1%;">
-            <div class="card" style="border-width: 2px;">
-                <h4 style="margin-left: 40%;"> <?php echo $head; ?> </h4>
+        </div>
+        <div class="container" style="position: relative; width:100%; margin-top:-1%;">
+            <div class="card" style="border-width: 2px; width:110%;">
+                <h4 style="margin-left: 40%;">Προσωρινά αποθηκευμένες αγγελίες</h4>
             </div>
-        </div> -->
+        </div>
+        <div class="row" style="width: 100%;">
 
-        
         <div class="main-box" style="margin-left: 10%; width:100%;background-color: transparent;border:none;">
             <filter class="filter" style="border-right: 1px solid black;">
                 <ul class="filters">
