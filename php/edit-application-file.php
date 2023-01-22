@@ -9,7 +9,7 @@ if (isset($_POST['save-application-edit'])) {
         $id = $_SESSION['user']['id'];
         $sql = "UPDATE application SET status = 'Μη-υποβεβλημένη', comments = '$comments'  WHERE application_id = $id ";
         $db->query($sql);
-        header("location:my-applications.php");
+        header("location:saved-applications.php");
     } else {
         #file information
         $file = $_FILES['updatefile'];
@@ -40,7 +40,7 @@ if (isset($_POST['save-application-edit'])) {
 
         $sql = "UPDATE application SET status = 'Μη-υποβεβλημένη', comments = '$comments', grades = '$fileNameNew'  WHERE application_id = $id ";
         $db->query($sql);
-        header("location:my-applications.php");
+        header("location:saved-applications.php");
  }
 }
     $id = $_POST['application-id'];
