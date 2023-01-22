@@ -170,7 +170,7 @@
                                 <select class="form-control-select" id="country" name="country" required="">
                                     <option class="select-option" value="" disabled="" selected="">--Χώρα--</option>
                                     <option class="select-option" value="gr">Ελλάδα</option>
-                                    <option class="select-option" value="alb">Αλβανία</option>
+                                    <option class="select-option" value="alb">Κύπρος</option>
                                     <option class="select-option" value="ger">Γερμανία</option>
                                     <option class="select-option" value="fr">Γαλλία</option>
                                     <option class="select-option" value="ru">Ρωσσία</option>

@@ -270,7 +270,7 @@
                     <div class="card">
                         <img class="card-image" src="images/services-icon-1.svg" alt="alternative">
                         <div class="card-body">
-                            <h4 class="card-title">Δημιουργήστε Αγγελία</h4>
+                            <h4 class="card-title"><a style="color:00bfd8" data-toggle="modal" data-target="#modalLoginForm">Δημιουργήστε Αγγελία</a></h4>
                             <p>Εισάγετε τις προσφερόμενες θέσεις Πρακτικής Άσκησης, συμπληρώνοντας στοιχεία όπως:<br>
                                 - Περιγραφή θέσης, αντικείμενο<br>
                                 - Απαιτούμενα τυπικά προσόντα υποψηφίου<br>
@@ -286,7 +286,7 @@
                     <div class="card">
                         <img class="card-image" src="images/services-icon-2.svg" alt="alternative">
                         <div class="card-body">
-                            <h4 class="card-title">Δείτε Αιτήσεις Ενδιαφέροντος</h4>
+                            <h4 class="card-title" ><a style="color:00bfd8" data-toggle="modal" data-target="#modalLoginForm">Δείτε Αιτήσεις Ενδιαφέροντος</a></h4>
                             <p>Αφού εισάγετε κάποια θέση πρακτικής άσκησης μπορείτε να δείτε τις αιτήσεις ενδιαφέροντος που έχουν κάνει οι φοιτητές-ριες, καθώς και τα προσόντα τους, 
                                 ώστε να κρίνετε τον-ην κατάλληλο-η για την θέση.</p>
                         </div>
@@ -297,7 +297,7 @@
                     <div class="card">
                         <img class="card-image" src="images/services-icon-3.svg" alt="alternative">
                         <div class="card-body">
-                            <h4 class="card-title">Έγκριση Αίτησης</h4>
+                            <h4 class="card-title"<a style="color:00bfd8" data-toggle="modal" data-target="#modalLoginForm">Έγκριση Αίτησης</a></h4>
                             <p>Αφού βρείτε τον-ην κατάλληλο-η για την πρακτική άσκηση και δεχτείτε την αίτησή του-ης, τότε μπορείτε να εγκρίνετε την αίτηση για το επόμενο στάδιο. Πλέον η 
                                 αγγελία σας δε θα φαίνεται διαθέσιμη στα αποτελέσματα της αναζήτησης. </p>
                         </div>
@@ -326,7 +326,7 @@
                     <div class="card">
                         <img class="card-image" src="images/services-icon-1.svg" alt="alternative">
                         <div class="card-body">
-                            <h4 class="card-title">Αναζητήστε τη θέση που σας ενδιαφέρει</h4>
+                            <h4 class="card-title"><a>Αναζητήστε τη θέση που σας ενδιαφέρει</h4>
                             <p>Μπορείτε να ψάξετε τη θέση που σας ενδιαφέρει με βάση διάφορα κριτήρια όπως:<br>
                                 - Το τμήμα<br>
                                 - Τη διάρκεια (3μηνη, 6μηνη)<br>

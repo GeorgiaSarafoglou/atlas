@@ -33,6 +33,7 @@
     <!-- end of preloader -->
 
     <?php include "office-menu.php" ?>
+    </div>
             <div class="container" style="position: relative; width:100%; margin-top:1%;">
                 <div class="card" style="border-width: 2px;">
                     <h4 style="margin-left: 40%;">Δημιουργία Αγγελίας</h4>
