@@ -93,7 +93,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 200%; right:150%; margin-top: 13%;">
-                                    <a href="../index.php" class="turquoise" style="margin-bottom: 2%; margin-top: 8%; height: 40%; width: 60%;"> Επιστροφή στην Αρχική </a>
+                                    <a href="../../index.php" class="turquoise" style="margin-bottom: 2%; margin-top: 8%; height: 40%; width: 60%;"> Επιστροφή στην Αρχική </a>
                                 </div>
                             </div> <!-- end of col -->
                             <div class="col-lg-6">
@@ -113,6 +113,26 @@
                     if(!empty($_POST['reason'])){
                         $reason = $_POST['reason'];
 
+                         /* get ad */
+                        $query = "SELECT * FROM ads WHERE published = 1 AND id='$ad_id' " ;
+                        $sql = mysqli_query($db, $query);
+                        $ad = mysqli_fetch_array($sql, MYSQLI_ASSOC);
+
+                        /* get student */
+                        $query2 = "SELECT * FROM students WHERE id='$sid' " ;
+                        $sql2 = mysqli_query($db, $query2);
+                        $student = mysqli_fetch_array($sql2, MYSQLI_ASSOC);
+
+                        var_dump($ad['title'], $student['fname'], $application['application_id'], $status);
+
+                        
+                        /*send notification to student */
+                        $false = 0;
+                        $sql = "INSERT INTO notifications (student_id, application_id, is_read) VALUES('$sid', '$ap_id', $false)";
+                        $db->query($sql);
+                        
+                        /* update application status to "Εγκεκριμένη" or "Απορριφθείσα" */
+
                         $sql = "UPDATE application SET 
                                 status = '$status',
                                 rejection_reason = '$reason'
@@ -120,7 +140,7 @@
 
                         $query_run = mysqli_query($db, $sql);
                         if($query_run){
-                            echo '<script type="text/javascript">window.location = "http://localhost/sdi1900168/atlas/php/jobs-rejected.php"</script>';
+                            echo '<script type="text/javascript">window.location = "http://localhost/sdi1900168/atlas/php/jobs/jobs-rejected.php"</script>';
                         }
                     }
                     else{

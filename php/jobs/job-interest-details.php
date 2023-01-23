@@ -22,7 +22,7 @@
     /* id of ad */
     $ad_id = $_GET['ad-id'];
     
-    require_once "connection.php";
+    require_once "../connection.php";
     
     /* get ad */
     $query = "SELECT * FROM ads WHERE published = 1 AND id='$ad_id' " ;
@@ -77,7 +77,7 @@
                                 <button id="accept" name="accept-btn" type="submit" class="accept-button"
                                     style="height: 30%; margin-left: 70%;">
                                     <?php $status = "Εγκεκριμένη"; ?>
-                                    <a href="job-functions.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $student['id'] ?>&ap-id=<?php echo $application['application_id'] ?>&status=<?php echo $status; ?>">
+                                    <a href="http://localhost/sdi1900168/atlas/php/jobs/job-functions.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $student['id'] ?>&ap-id=<?php echo $application['application_id'] ?>&status=<?php echo $status; ?>">
                                         Αποδοχή <span><i class="icon-check-sign"></i></span>
                                     </a>
                                 </button>
@@ -85,7 +85,7 @@
                                 <button id="reject" name="reject-btn" type="submit" class="reject-button"
                                     style="height: 30%; margin-right: 3%;">
                                     <?php $status = "Απορριφθείσα"; ?>
-                                    <a href="job-rejection-func.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $student['id'] ?>&ap-id=<?php echo $application['application_id'] ?>&status=<?php echo $status; ?>">
+                                    <a href="http://localhost/sdi1900168/atlas/php/jobs/job-rejection-func.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $student['id'] ?>&ap-id=<?php echo $application['application_id'] ?>&status=<?php echo $status; ?>">
                                         Απόρριψη <span><i class="icon-check-sign"></i></span>
                                     </a>
                                 </button>

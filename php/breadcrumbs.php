@@ -147,6 +147,8 @@
             }
             else if($previous_page == 'job-interest.php'){
                 $breadcrumb = 'Αρχική Σελίδα > Εκκρεμείς Αιτήσεις > Απόρριψη Αίτησης > Λεπτομέρειες Αίτησης';
+            }else{
+                $breadcrumb = "";
             }
             break;
         case 'job-rejection-func.php':
@@ -161,7 +163,7 @@
             }
             break;
         case 'job-interest.php':
-            if($previous_page == 'watch-jobs-active.php'){
+            if($previous_page == '1'){
                 $breadcrumb = 'Αρχική Σελίδα > Εκκρεμείς Αιτήσεις > Απόρριψη Αίτησης';
             }
             break;
