@@ -93,11 +93,23 @@
 
                
             </li>
+            
+            <?php if ($stud['school'] == 'natural') { ?>
+                <li class="input-row">Θεματική περιοχή::
+                <select style="padding: 5px 10px; width: 70%" class="form-control-select" id="school" name="school" required="">
+                    <option class="select-option" value="natural" selected>Θετικών Επιστημών</option>
+                    <option class="select-option" value="theoretical">Θεωρητικών Επιστημών</option>
+                </select>
+                <?php }else if($stud['school'] == 'theoretical'){ ?>
+                <li class="input-row">Θεματική περιοχή::
+                    <select style="padding: 5px 10px; width: 70%" class="form-control-select" id="school" name="school" required="">
+                        <option class="select-option" value="natural" >Θετικών Επιστημών</option>
+                        <option class="select-option" value="theoretical" selected>Θεωρητικών Επιστημών</option>
+                    </select>
+                    <?php } ?>
+                </li>
                 <li class="input-row">Τμήμα:
                     <input name="department" style="width: 70%" type="text"  value="<?php echo $stud['department'];?>">
-                </li>
-                <li class="input-row">Θεματική περιοχή:
-                    <input name="school" style="width: 70%" type="text"  value="<?php echo $stud['school'];?>">
                 </li>
                 <li class="input-row">Αριθμός μητρώου:
                     <input name='am' style="width: 70%" type="text" value="<?php echo $stud['am'];?>">
@@ -152,14 +164,23 @@
                     </select>
 
                 <?php } ?>
-
-    
+            </li>
+                <?php if ($stud['school'] == 'natural') { ?>
+                <li class="input-row">Θεματική περιοχή:
+                <select style="padding: 5px 10px; width: 70%" class="form-control-select" id="school" name="school" required="" disabled>
+                    <option class="select-option" value="natural" selected>Θετικών Επιστημών</option>
+                    <option class="select-option" value="theoretical">Θεωρητικών Επιστημών</option>
+                </select>
+                <?php }else if($stud['school'] == 'theoretical'){ ?>
+                    <li class="input-row">Θεματική περιοχή:
+                    <select style="padding: 5px 10px; width: 70%" class="form-control-select" id="school" name="school" required="" disabled>
+                        <option class="select-option" value="natural" >Θετικών Επιστημών</option>
+                        <option class="select-option" value="theoretical" selected>Θεωρητικών Επιστημών</option>
+                    </select>
+               <?php } ?>
             </li>
             <li class="input-row">Τμήμα:
                 <input style="width: 70%" type="text"  value="<?php echo $stud['department'];?>" disabled>
-            </li>
-            <li class="input-row">Θεματική περιοχή:
-                <input style="width: 70%" type="text"  value="<?php echo $stud['school'];?>" disabled>
             </li>
             <li class="input-row">Αριθμός μητρώου:
                 <input name='am' style="width: 70%" type="text" value="<?php echo $stud['am'];?>" disabled>
