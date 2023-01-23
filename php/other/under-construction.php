@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-       <?php 
-            include "../includes.php";
-       ?>
+
     </head>
     <body data-target=".fixed-top">
-    <?php include "../navigation.php"; ?>
+    <?php include "../includes.php"; ?>
+    <?php 
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+?>
+
+
+<body data-spy="scroll" data-target=".fixed-top">
+
+<!-- Preloader -->
+<div class="spinner-wrapper">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+<!-- end of preloader -->
+
+<?php
+    if(!isset($_SESSION['user'])){
+        include "../navigation.php"; ?>
+        <header id="header" class="header">
+        <div class="header-content"> <?php
+
+?>
+<?php
+    }
+    elseif($_SESSION['user']['role'] == 'company'){
+        include "../office-menu.php";
+        ?>
+        </div> <?php
+    }
+    else{
+        include "../student-menu.php"; ?>
+        </div> <?php
+    }
+?>
     </body>
 
-    <!-- Header - Student info and search -->
-    <header id="header" class="header">
-        <div class="header-content">
             <div class="container">
                 <div class="row">
                     <!-- -->

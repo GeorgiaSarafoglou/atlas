@@ -136,7 +136,7 @@
                             <div class="help-block with-errors"></div>
                         </div> 
                         <div class="form-group">
-                            <a class="turquoise" href="#contact">Ξέχασα τον κωδικό μου</a>
+                            <a class="turquoise" href="http://localhost/sdi1900168/atlas/index.php#contact">Ξέχασα τον κωδικό μου</a>
                         </div>
                         <div class="form-group checkbox">
                             <input type="checkbox" id="loggedIn" value="Keep-logged-in">Κράτησε με συνδεδεμένο

@@ -51,7 +51,7 @@
                     <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/php/other/under-construction.php">Γραφείο Π.Α</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/indexindex.php#contact">Επικοινωνία</a>
+                    <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/index.php#contact">Επικοινωνία</a>
                 </li>
 
                 <!-- Dropdown Menu -->          

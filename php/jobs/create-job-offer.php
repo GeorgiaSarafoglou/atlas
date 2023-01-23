@@ -89,10 +89,28 @@
                             <div class="col-lg-6">
                                 <div class="form-group" style="width: 270%; right:145%; ">  
                                     <select class="form-control-select" id="departments" name="departments">
-                                        <option class="select-option" value="all" disabled="" selected="">Ίδρυμα</option>
-                                        <option class="select-option" value="ekpa">ΕΚΠΑ</option>
-                                        <option class="select-option" value="assoe">ΑΣΣΟΕ</option>
-                                        <option class="select-option" value="papei">ΠΑΠΕΙ</option>
+                                        <option class="select-option" value="all" disabled="" selected="">Τμήμα</option>
+                                        <option value="Τμήμα Αρχιτεκτόνων Μηχανικών"> Τμήμα Αρχιτεκτόνων Μηχανικών </option>
+                                        <option value=" Βιολογίας"> Βιολογίας</option>
+                                        <option value="Γεωπονίας"> Γεωπονίας</option>
+                                        <option value="Επιστήμης και Τεχνολογίας Τροφίμων"> Επιστήμης και Τεχνολογίας Τροφίμων </option>
+                                        <option value=" Τεχνολόγων Γεωπόνων"> Τεχνολόγων Γεωπόνων</option>
+                                        <option value="Οργάνωσης και Διοίκησης Επιχειρήσεων"> Οργάνωσης και Διοίκησης Επιχειρήσεων</option>
+                                        <option value="Διοικητικής Επιστήμης και Τεχνολογίας"> Διοικητικής Επιστήμης και Τεχνολογίας</option>
+                                        <option value=" Πολιτικών Μηχανικών"> Πολιτικών Μηχανικών</option>
+                                        <option value="Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών"> Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών</option>
+                                        <option value="Κοινωνιολογίας"> Κοινωνιολογίας </option>
+                                        <option value="Εφαρμοσμένων Μαθηματικών και Φυσικών Επιστημών "> Εφαρμοσμένων Μαθηματικών και Φυσικών Επιστημών </option>
+                                        <option value="Μηχανολόγων Μηχανικών">Μηχανολόγων Μηχανικών</option>
+                                        <option value="Νομικής ">Νομικής  </option>
+                                        <option value="Αγγλικής Γλώσσας και Φιλολογίας ">Αγγλικής Γλώσσας και Φιλολογίας </option>
+                                        <option value="Πληροφορικής">Πληροφορικής</option>
+                                        <option value="Πληροφορικής και Τηλεπικοινωνιών ">Πληροφορικής και Τηλεπικοινωνιών </option>
+                                        <option value="Μηχανικών Πληροφορικής και Υπολογιστών">Μηχανικών Πληροφορικής και Υπολογιστών</option>
+                                        <option value="Ψηφιακών Συστημάτων">Ψηφιακών Συστημάτων</option>
+                                        <option value="Φιλολογίας ">Φιλολογίας </option>
+                                        <option value="Χημείας ">Χημείας</option>
+                                        <option value="Ψυχολογίας">Ψυχολογίας</option>
                                     </select>
                                 </div>
                             </div> <!-- end of col -->

@@ -98,6 +98,7 @@
                     <li><strong>Έναρξη</strong>:<?php echo $ad['start']?> - <strong>Λήξη</strong>:<?php echo $ad['end']?></li>
                     <li><strong>Μισθός</strong>:<?php echo $ad['payment']?></li>
                 </ul>
+                <p><strong>Τμήμα:</strong><?php echo $ad['departments']?></p>
                 <div style="padding: 5px;"></div>
                 <h6>Περιγραφή:</h6>
                 <p><?php echo $ad['description']?></p>

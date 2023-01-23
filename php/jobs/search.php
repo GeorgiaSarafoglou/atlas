@@ -82,22 +82,48 @@
                         </li>
                         <li>
                         <select class="filters" name="city">
-                                <option value="">Πόλη</option>
-                                <option value="Αθήνα">Αθήνα</option>
-                                <option value="Θεσσαλονίκη">Θεσσαλονίκη</option>
-                                <option value="Πάτρα">Πάτρα</option>
-                                <option value="Ηράκλειο">Ηράκλειο</option>
-                                <option value="Λάρισσα">Λάρισσα</option>
-                                <option value="Βόλος">Βόλος</option>
-                                <option value="Ιωάννινα">Ιωάννινα</option>
-                                <option value="Τρίκαλα">Τρίκαλα</option>
-                                <option value="Χαλκίδα">Χαλκίδα</option>
-                                <option value="Σέρρες">Σέρρες</option>
-                                <option value="Αλεξανδρούπολη">Αλεξανδρούπολη</option>
-                                <option value="Ξάνθη">Ξάνθη</option>
-                                <option value="Κατερίνη">Κατερίνη</option>
-                                <option value="Καλαμάτα">Καλαμάτα</option>
+                            <option value="">Πόλη</option>
+                            <option value="Αθήνα">Αθήνα</option>
+                            <option value="Θεσσαλονίκη">Θεσσαλονίκη</option>
+                            <option value="Πάτρα">Πάτρα</option>
+                            <option value="Ηράκλειο">Ηράκλειο</option>
+                            <option value="Λάρισσα">Λάρισσα</option>
+                            <option value="Βόλος">Βόλος</option>
+                            <option value="Ιωάννινα">Ιωάννινα</option>
+                            <option value="Τρίκαλα">Τρίκαλα</option>
+                            <option value="Χαλκίδα">Χαλκίδα</option>
+                            <option value="Σέρρες">Σέρρες</option>
+                            <option value="Αλεξανδρούπολη">Αλεξανδρούπολη</option>
+                            <option value="Ξάνθη">Ξάνθη</option>
+                            <option value="Κατερίνη">Κατερίνη</option>
+                            <option value="Καλαμάτα">Καλαμάτα</option>
                             </select>
+                        </li>
+                        <li>
+                        <select class="filters" name="department">
+                            <option value="">Τμήμα</option>
+                            <option value="Τμήμα Αρχιτεκτόνων Μηχανικών"> Τμήμα Αρχιτεκτόνων Μηχανικών </option>
+                            <option value=" Βιολογίας"> Βιολογίας</option>
+                            <option value="Γεωπονίας"> Γεωπονίας</option>
+                            <option value="Επιστήμης και Τεχνολογίας Τροφίμων"> Επιστήμης και Τεχνολογίας Τροφίμων </option>
+                            <option value=" Τεχνολόγων Γεωπόνων"> Τεχνολόγων Γεωπόνων</option>
+                            <option value="Οργάνωσης και Διοίκησης Επιχειρήσεων"> Οργάνωσης και Διοίκησης Επιχειρήσεων</option>
+                            <option value="Διοικητικής Επιστήμης και Τεχνολογίας"> Διοικητικής Επιστήμης και Τεχνολογίας</option>
+                            <option value=" Πολιτικών Μηχανικών"> Πολιτικών Μηχανικών</option>
+                            <option value="Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών"> Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών</option>
+                            <option value="Κοινωνιολογίας"> Κοινωνιολογίας </option>
+                            <option value="Εφαρμοσμένων Μαθηματικών και Φυσικών Επιστημών "> Εφαρμοσμένων Μαθηματικών και Φυσικών Επιστημών </option>
+                            <option value="Μηχανολόγων Μηχανικών">Μηχανολόγων Μηχανικών</option>
+                            <option value="Νομικής ">Νομικής  </option>
+                            <option value="Αγγλικής Γλώσσας και Φιλολογίας ">Αγγλικής Γλώσσας και Φιλολογίας </option>
+                            <option value="Πληροφορικής">Πληροφορικής</option>
+                            <option value="Πληροφορικής και Τηλεπικοινωνιών ">Πληροφορικής και Τηλεπικοινωνιών </option>
+                            <option value="Μηχανικών Πληροφορικής και Υπολογιστών">Μηχανικών Πληροφορικής και Υπολογιστών</option>
+                            <option value="Ψηφιακών Συστημάτων">Ψηφιακών Συστημάτων</option>
+                            <option value="Φιλολογίας ">Φιλολογίας </option>
+                            <option value="Χημείας ">Χημείας</option>
+                            <option value="Ψυχολογίας">Ψυχολογίας</option>
+                        </select>
                         </li>
                         <li>
                             <label for="start">Από:</label>
@@ -132,6 +158,8 @@
                         $start_date = $_GET['trip-start'];
                         $end_date = $_GET['trip-end'];
                         $city = $_GET['city'];
+                        $department = $_GET['department'];
+
                         /* Add the search term to the query, if it's not empty */
                         if (!empty($search)) {
                             $query .= " AND title LIKE '%$search%'";
@@ -150,7 +178,12 @@
                         if ($city != "") {
                             $query .= " AND location LIKE '%$city%'";
                             echo $duration." ";
-                        }       
+                        }
+                        /* Add the department filter to the query, if it's not "" */
+                        if ($department != "") {
+                            $query .= " AND departments = '$department'";
+                            echo $duration." ";
+                        }             
                     }
                     else if(isset($searchValue)){
                         $query = "SELECT * FROM ads WHERE published = 1 AND positions != 0 AND title LIKE '%$searchValue%' ";
@@ -176,7 +209,7 @@
                                     </form>
                                 </div>
                             </div> 
-                            <p><?php if($row['departments'] == "ekpa") { echo "ΕΚΠΑ"; } elseif ($row['departments'] == "assoe"){ echo "ΑΣΣΟΕ"; } else { echo "ΠΑΠΕΙ"; }?></p>
+                            <p><?php echo $row['departments']?></p>
                             <ul class="job-features">
                                 <li><strong>Περιοχή:</strong> <?php echo $row['location']?> </li>
                                 <li><strong>Τύπος απασχόλησης:</strong> <?php if($row['type'] == "part-time") { echo "Μερική Απασχόληση"; } else { echo "Πλήρης Απασχόληση"; }?> </li>
