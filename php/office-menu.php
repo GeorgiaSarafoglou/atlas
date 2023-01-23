@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include "includes.php" ?>
+    <?php include "../includes.php" ?>
     <script>
         $(document).ready(function() {
             $('.sub-menu').hide(); //hide the sub-menu by default
@@ -25,7 +25,7 @@
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="../index.php"><img src="../images/atlas_logo.png" alt="alternative" style="width: 143px; height:140px;"></a>
+        <a class="navbar-brand logo-image" href="../../index.php"><img src="../../images/atlas_logo.png" alt="alternative" style="width: 143px; height:140px;"></a>
         
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,22 +38,22 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="../index.php">Αρχική Σελίδα <span class="sr-only">(current)</span></a>
+                    <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/index.php">Αρχική Σελίδα <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="search.php">Θέσεις Πρακτικής</a>
+                    <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/php/jobs/search.php">Θέσεις Πρακτικής</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="../index.php#student_details">Φοιτητές-ριες</a>
+                    <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/index.php#student_details">Φοιτητές-ριες</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="../index.php#office_details">Φορέας Υποδοχής</a>
+                    <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/index.php#office_details">Φορέας Υποδοχής</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="under-construction.php">Γραφείο Π.Α</a>
+                    <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/php/other/under-construction.php">Γραφείο Π.Α</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="../index.php#contact">Επικοινωνία</a>
+                    <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/index.php#contact">Επικοινωνία</a>
                 </li>
 
                 <!-- Dropdown Menu -->          
@@ -62,11 +62,11 @@
                         <i class="fa fa-user"></i> Το προφιλ μου
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="edit-company.php"><span class="item-text">Επεξεργασία Προφίλ</span></a>
+                        <a class="dropdown-item" href="http://localhost/sdi1900168/atlas/php/edit-user-details/edit-company.php"><span class="item-text">Επεξεργασία Προφίλ</span></a>
                         <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="company-notifications.php"><span class="item-text">Ειδοποιήσεις</span></a>
+                        <a class="dropdown-item" href="http://localhost/sdi1900168/atlas/php/notifications/company-notifications.php"><span class="item-text">Ειδοποιήσεις</span></a>
                         <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="logout.php"><span class="item-text">Αποσύνδεση</span></a>
+                        <a class="dropdown-item" href="http://localhost/sdi1900168/atlas/php/logout.php"><span class="item-text">Αποσύνδεση</span></a>
                     </div>
                 </li>
                 <!-- end of dropdown menu -->
@@ -85,22 +85,22 @@
                 <!-- vertical menu left of page -->
                 <div id="left-menu">
                     <ul>
-                        <li><a href="create-job-offer.php">Δημιουργία Αγγελίας</a></li>
+                        <li><a href="http://localhost/sdi1900168/atlas/php/jobs/create-job-offer.php">Δημιουργία Αγγελίας</a></li>
                         <li class="has-sub-menu">
                             <a>Παρακολούθηση Αγγελιών <i class="fa fa-caret-down"></i></a>
                             <ul class="sub-menu">
-                                <li><a href="watch-jobs-active.php">Ενεργές Αγγελίες</a></li>
-                                <li><a href="watch-jobs-temp.php">Προσωρινά Αποθηκευμένες Αγγελίες</a></li>
-                                <li><a href="watch-jobs.php">Όλες Αγγελίες</a></li>
+                                <li><a href="http://localhost/sdi1900168/atlas/php/jobs/watch-jobs-active.php">Ενεργές Αγγελίες</a></li>
+                                <li><a href="http://localhost/sdi1900168/atlas/php/jobs/watch-jobs-temp.php">Προσωρινά Αποθηκευμένες Αγγελίες</a></li>
+                                <li><a href="http://localhost/sdi1900168/atlas/php/jobs/watch-jobs.php">Όλες Αγγελίες</a></li>
                             </ul>
                         </li>
                         <li class="has-sub-menu">
                             <a>Αιτήσεις Ενδιαφέροντος <i class="fa fa-caret-down"></i></a>
                             <ul class="sub-menu">
-                                <li><a href="jobs-pending.php">Εκκρεμείς Αιτήσεις</a></li>
-                                <li><a href="jobs-approved.php">Εγκεκριμένες Αιτήσεις</a></li>
-                                <li><a href="jobs-rejected.php">Απορριφθείσες Αιτήσεις</a></li>
-                                <li><a href="jobs-all.php">Όλες οι Αιτήσεις</a></li>
+                                <li><a href="http://localhost/sdi1900168/atlas/php/jobs/jobs-pending.php">Εκκρεμείς Αιτήσεις</a></li>
+                                <li><a href="http://localhost/sdi1900168/atlas/php/jobs/jobs-approved.php">Εγκεκριμένες Αιτήσεις</a></li>
+                                <li><a href="http://localhost/sdi1900168/atlas/php/jobs/jobs-rejected.php">Απορριφθείσες Αιτήσεις</a></li>
+                                <li><a href="http://localhost/sdi1900168/atlas/php/jobs/jobs-all.php">Όλες οι Αιτήσεις</a></li>
                             </ul>
                         </li>
                     </ul>

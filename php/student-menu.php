@@ -24,7 +24,7 @@
         <!-- Text Logo - Use this if you don't have a graphic logo -->
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="../index.php"><img src="../images/atlas_logo.png" alt="alternative" style="width: 143px; height:140px;"></a>
+        <a class="navbar-brand logo-image" href="../../index.php"><img src="../../images/atlas_logo.png" alt="alternative" style="width: 143px; height:140px;"></a>
         
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,22 +36,22 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="../index.php">Αρχική Σελίδα <span class="sr-only">(current)</span></a>
+                    <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/index.php">Αρχική Σελίδα <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="search.php">Θέσεις Πρακτικής</a>
+                    <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/php/jobs/search.php">Θέσεις Πρακτικής</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="../index.php#student_details">Φοιτητές-ριες</a>
+                    <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/index.php#student_details">Φοιτητές-ριες</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="../index.php#office_details">Φορέας Υποδοχής</a>
+                    <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/index.php#office_details">Φορέας Υποδοχής</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="under-construction.php">Γραφείο Π.Α</a>
+                    <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/php/other/under-construction.php">Γραφείο Π.Α</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="../index.php#contact">Επικοινωνία</a>
+                    <a class="nav-link page-scroll" href="http://localhost/sdi1900168/atlas/indexindex.php#contact">Επικοινωνία</a>
                 </li>
 
                 <!-- Dropdown Menu -->          
@@ -60,11 +60,11 @@
                         <i class="fa fa-user"></i> Το προφιλ μου
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="edit-student.php"><span class="item-text">Επεξεργασία Προφίλ</span></a>
+                        <a class="dropdown-item" href="http://localhost/sdi1900168/atlas/php/edit-user-details/edit-student.php"><span class="item-text">Επεξεργασία Προφίλ</span></a>
                         <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="notifications.php"><span class="item-text">Ειδοποιήσεις</span></a>
+                        <a class="dropdown-item" href="http://localhost/sdi1900168/atlas/php/notifications/notifications.php"><span class="item-text">Ειδοποιήσεις</span></a>
                         <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="logout.php"><span class="item-text">Αποσύνδεση</span></a>
+                        <a class="dropdown-item" href="http://localhost/sdi1900168/atlas/php/logout.php"><span class="item-text">Αποσύνδεση</span></a>
                     </div>
                 </li>
                 <!-- end of dropdown menu -->
@@ -76,24 +76,24 @@
     <header class="header" style="height: 80%;">
         <div class="header-content">
             <div class="row" style="width: 50%; margin-left: 10%; overflow: hidden; height: 10%;">
-                <?php include 'breadcrumbs.php' ?>
+                <?php include '../breadcrumbs.php' ?>
             </div>
             <div class="row" style="width: 100%; margin-top: 1%;">
                 <!-- vertical menu left of page -->
                 <div id="left-menu">
                     <ul>
-                        <li><a href="search.php">Αναζήτηση Θέσεων</a></li>
+                        <li></li>
                         <li class="has-sub-menu">
                             <a>Οι Αιτήσεις μου <i class="fa fa-caret-down"></i></a>
                             <ul class="sub-menu">
-                                <li><a href="my-applications.php">Όλες οι Αιτήσεις</a></li>
-                                <li><a href="saved-applications.php">Αποθηκευμένες Αιτήσεις</a></li>
-                                <li><a href="pending-applications.php">Εκκρεμείς</a></li>
-                                <li><a href="accepted-applications.php">Εγκεκριμένες</a></li>
-                                <li><a href="rejected-applications.php">Απορριφθείσες</a></li>
+                                <li><a href="http://localhost/sdi1900168/atlas/php/applications/my-applications.php">Όλες οι Αιτήσεις</a></li>
+                                <li><a href="http://localhost/sdi1900168/atlas/php/applications/saved-applications.php">Αποθηκευμένες Αιτήσεις</a></li>
+                                <li><a href="http://localhost/sdi1900168/atlas/php/applications/pending-applications.php">Εκκρεμείς</a></li>
+                                <li><a href="http://localhost/sdi1900168/atlas/php/applications/accepted-applications.php">Εγκεκριμένες</a></li>
+                                <li><a href="http://localhost/sdi1900168/atlas/php/applications/rejected-applications.php">Απορριφθείσες</a></li>
                             </ul>
                         </li>
-                        <li><a href="favorites.php">Αγαπημένα</a></li>
+                        <li><a href="http://localhost/sdi1900168/atlas/php/jobs/favorites.php">Αγαπημένα</a></li>
                     </ul>
                 </div>
     

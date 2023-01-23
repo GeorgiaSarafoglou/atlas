@@ -7,10 +7,10 @@
     if(isset($_SESSION['user'])){
         /* if user is student redirect to student starting page */
         if($_SESSION['user']['role'] == 'students'){
-            header("location: php/startingpage-student.php?user=".$_SESSION['user']['id']."");
+            header("location: php/starting-pages/startingpage-student.php?user=".$_SESSION['user']['id']."");
         }
         else if($_SESSION['user']['role'] == 'company'){
-            header("location: php/startingpage-office.php?user=".$_SESSION['user']['id']."");
+            header("location: php/starting-pages/startingpage-office.php?user=".$_SESSION['user']['id']."");
         }
     }
 
@@ -44,10 +44,10 @@
                     $_SESSION['user']['role'] = $row["source"];
 
                     if($_SESSION['user']['role'] == 'students'){
-                        header("location: php/startingpage-student.php?user=".$_SESSION['user']['id']."");
+                        header("location: php/starting-pages/startingpage-student.php?user=".$_SESSION['user']['id']."");
                     }
                     else{
-                        header("location: php/startingpage-office.php?user=".$_SESSION['user']['id']."");
+                        header("location: php/starting-pages/startingpage-office.php?user=".$_SESSION['user']['id']."");
                     }
                 }
             }
@@ -140,7 +140,7 @@
                     <a class="nav-link page-scroll" href="index.php">Αρχική Σελίδα <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="php/search.php">Θέσεις Πρακτικής</a>
+                    <a class="nav-link page-scroll" href="php/jobs/search.php">Θέσεις Πρακτικής</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#student_details">Φοιτητές-ριες</a>
@@ -149,7 +149,7 @@
                     <a class="nav-link page-scroll" href="#office_details">Φορέας Υποδοχής</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="php/under-construction.php">Γραφείο Π.Α</a>
+                    <a class="nav-link page-scroll" href="php/other/under-construction.php">Γραφείο Π.Α</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#contact">Επικοινωνία</a>
@@ -161,7 +161,7 @@
                     <i class="fa fa-user"></i> Σύνδεση 
                 </button>
                 <!-- Go to signup page -->
-                <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;" onclick="window.location.href = 'php/signup.php';">Εγγραφή </button>
+                <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;" onclick="window.location.href = 'http://localhost/sdi1900168/atlas/php/sign-up/signup.php';">Εγγραφή </button>
             </span>
         </div>
     </nav> <!-- end of navbar -->
@@ -230,7 +230,7 @@
                             <p class="p-large">Αναζητήστε θέση πρακτικής άσκησης γράφοντας τον τίτλο της θέσης που θέλετε (π.χ. Web Designer). <a class="turquoise" href="#student_details">Δείτε περισσότερα...</a></p>
                             
                             <!-- Search bar -->
-                            <form action="php/search.php" method="POST">
+                            <form action="php/jobs/search.php" method="POST">
                                 <div class="form-group">
                                     <div class="form-outline">
                                         <input type="search" class="form-control-input notEmpty" id="search1" name="search1" style="border-radius: 1rem;">
@@ -270,7 +270,7 @@
                     <div class="card">
                         <img class="card-image" src="images/services-icon-1.svg" alt="alternative">
                         <div class="card-body">
-                            <h4 class="card-title"><a style="color:00bfd8" data-toggle="modal" data-target="#modalLoginForm">Δημιουργήστε Αγγελία</a></h4>
+                            <h4 class="card-title"><a data-toggle="modal" data-target="#modalLoginForm" ><u style="cursor: pointer; color:00bfd8">Δημιουργήστε Αγγελία</u></a></h4>
                             <p>Εισάγετε τις προσφερόμενες θέσεις Πρακτικής Άσκησης, συμπληρώνοντας στοιχεία όπως:<br>
                                 - Περιγραφή θέσης, αντικείμενο<br>
                                 - Απαιτούμενα τυπικά προσόντα υποψηφίου<br>
@@ -286,7 +286,7 @@
                     <div class="card">
                         <img class="card-image" src="images/services-icon-2.svg" alt="alternative">
                         <div class="card-body">
-                            <h4 class="card-title" ><a style="color:00bfd8" data-toggle="modal" data-target="#modalLoginForm">Δείτε Αιτήσεις Ενδιαφέροντος</a></h4>
+                            <h4 class="card-title" ><a style="color:00bfd8" data-toggle="modal" data-target="#modalLoginForm"><u style="cursor: pointer; color:00bfd8">Δείτε Αιτήσεις Ενδιαφέροντος</u></a></h4>
                             <p>Αφού εισάγετε κάποια θέση πρακτικής άσκησης μπορείτε να δείτε τις αιτήσεις ενδιαφέροντος που έχουν κάνει οι φοιτητές-ριες, καθώς και τα προσόντα τους, 
                                 ώστε να κρίνετε τον-ην κατάλληλο-η για την θέση.</p>
                         </div>
@@ -297,7 +297,7 @@
                     <div class="card">
                         <img class="card-image" src="images/services-icon-3.svg" alt="alternative">
                         <div class="card-body">
-                            <h4 class="card-title"<a style="color:00bfd8" data-toggle="modal" data-target="#modalLoginForm">Έγκριση Αίτησης</a></h4>
+                            <h4 class="card-title"<a style="color:00bfd8" data-toggle="modal" data-target="#modalLoginForm"><u style="cursor: pointer; color:00bfd8">Έγκριση Αίτησης</u></a></h4>
                             <p>Αφού βρείτε τον-ην κατάλληλο-η για την πρακτική άσκηση και δεχτείτε την αίτησή του-ης, τότε μπορείτε να εγκρίνετε την αίτηση για το επόμενο στάδιο. Πλέον η 
                                 αγγελία σας δε θα φαίνεται διαθέσιμη στα αποτελέσματα της αναζήτησης. </p>
                         </div>

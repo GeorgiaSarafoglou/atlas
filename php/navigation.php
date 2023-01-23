@@ -9,10 +9,10 @@
     if(isset($_SESSION['user'])){
         /* if user is student redirect to student starting page */
         if($_SESSION['user']['role'] == 'students'){
-            header("location: startingpage-student.php?user=".$_SESSION['user']['id']."");
+            header("location: http://localhost/sdi1900168/atlas/php/starting-pages/startingpage-student.php?user=".$_SESSION['user']['id']."");
         }
         else if($_SESSION['user']['role'] == 'company'){
-            header("location: startingpage-office.php?user=".$_SESSION['user']['id']."");
+            header("location: http://localhost/sdi1900168/atlas/php/starting-pages/startingpage-office.php?user=".$_SESSION['user']['id']."");
         }
     }
 
@@ -46,10 +46,10 @@
                     $_SESSION['user']['role'] = $row["source"];
 
                     if($_SESSION['user']['role'] == 'students'){
-                        header("location: startingpage-student.php?user=".$_SESSION['user']['id']."");
+                        header("location: http://localhost/sdi1900168/atlas/php/starting-pages/startingpage-student.php?user=".$_SESSION['user']['id']."");
                     }
                     else{
-                        header("location: startingpage-office.php?user=".$_SESSION['user']['id']."");
+                        header("location: http://localhost/sdi1900168/atlas/php/starting-pages/startingpage-office.php?user=".$_SESSION['user']['id']."");
                     }
                 }
             }
@@ -67,7 +67,7 @@
     <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
 
     <!-- Image Logo -->
-    <a class="navbar-brand logo-image" href="../index.php"><img src="../images/atlas_logo.png" alt="alternative" style="width: 143px; height:140px;"></a>
+    <a class="navbar-brand logo-image" href="../index.php"><img src="../../images/atlas_logo.png" alt="alternative" style="width: 143px; height:140px;"></a>
     
     <!-- Mobile Menu Toggle Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,22 +80,22 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="../index.php">Αρχική Σελίδα <span class="sr-only">(current)</span></a>
+                <a class="nav-link page-scroll" href="../../index.php">Αρχική Σελίδα <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="search.php">Θέσεις Πρακτικής</a>
+                <a class="nav-link page-scroll" href="../jobs/search.php">Θέσεις Πρακτικής</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="../index.php#student_details">Φοιτητές-ριες</a>
+                <a class="nav-link page-scroll" href="../../index.php#student_details">Φοιτητές-ριες</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="../index.php#office_details">Φορέας Υποδοχής</a>
+                <a class="nav-link page-scroll" href="../../index.php#office_details">Φορέας Υποδοχής</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="under-construction.php">Γραφείο Π.Α</a>
+                <a class="nav-link page-scroll" href="../other/under-construction.php">Γραφείο Π.Α</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link page-scroll" href="../index.php#contact">Επικοινωνία</a>
+                <a class="nav-link page-scroll" href="../../index.php#contact">Επικοινωνία</a>
             </li>
         </ul>
         <span class="nav-item social-icons">
@@ -104,7 +104,7 @@
                 <i class="fa fa-user"></i> Σύνδεση 
             </button>
             <!-- Go to signup page -->
-            <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;" onclick="window.location.href = 'signup.php';">Εγγραφή </button>
+            <button type="button" class="btn btn-primary" style="border-radius: 0.6rem;" onclick="window.location.href = 'http://localhost/sdi1900168/atlas/php/sign-up/signup.php';">Εγγραφή </button>
         </span>
     </div>
 </nav> <!-- end of navbar -->

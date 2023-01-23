@@ -5,10 +5,9 @@
     $temp_current = explode($delimiter, $current_page);
     $current_page = $temp_current[0];
 
-    $previous_page = basename($_SERVER['HTTP_REFERER']);
+    $previous_page = basename(isset($_SERVER['HTTP_REFERER']));
     $temp = explode($delimiter, $previous_page);
     $previous_page = $temp[0];
-    
     switch ($current_page) {
         case 'index.php':
             $breadcrumb = '';
@@ -23,6 +22,7 @@
             $breadcrumb = 'Αρχική Σελίδα > Θέσεις Πρακτικής';
             break;
         case 'job-details.php':
+            
             if($previous_page == 'job-details.php'){
                 $breadcrumb = 'Αρχική Σελίδα > Θέσεις Πρακτικής > Λεπτομέρειες Θέσης > Αγαπημένα';
             }
@@ -32,11 +32,12 @@
             else if($previous_page == 'watch-jobs-temp.php'){
                 $breadcrumb = 'Αρχική Σελίδα > Προσωρινές Αγγελίες > Λεπτομέρειες Θέσης';
             }
-            else{
+            else if($previous_page == 'watch-jobs-active.php'){
+                $breadcrumb = 'Αρχική Σελίδα > Ενεργές Αγγελίες > Λεπτομέρειες Θέσης';
+            }
+            else if($previous_page == 'favorites.php'){
                 $breadcrumb = 'Αρχική Σελίδα > Αγαπημένα';
             }
-            break;
-
             $breadcrumb = 'Αρχική Σελίδα > Θέσεις Πρακτικής > Λεπτομέρειες Θέσης';
             break;
         case 'my-applications.php':
@@ -169,7 +170,7 @@
             $breadcrumb = '';
     }
 
-    //echo $previous_page. '>' .$current_page;
-    echo $breadcrumb;
+  //  echo $previous_page. '>' .$current_page;
+   echo $breadcrumb;
 ?>
 <br>
