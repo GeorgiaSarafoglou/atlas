@@ -185,7 +185,7 @@
                             <p><?php if($row['departments'] == "ekpa") { echo "ΕΚΠΑ"; } elseif ($row['departments'] == "assoe"){ echo "ΑΣΣΟΕ"; } else { echo "ΠΑΠΕΙ"; }?></p>
                             <ul class="job-features">
                                 <li><strong>Περιοχή:</strong> <?php echo $row['location']?> </li>
-                                <li><strong>Τύπος απασχόλησης:</strong> <?php echo $row['type']?> </li>
+                                <li><strong>Τύπος απασχόλησης:</strong> <?php if($row['type'] == "part-time") { echo "Μερική Απασχόληση"; } else { echo "Πλήρης Απασχόληση"; }?> </li>
                                 <li><strong>Ημερομηνία ανάρτησης:</strong> <?php echo $row['date']?> </li>
                                 <li><strong>Διάρκεια:</strong> <?php echo $row['duration']?> </li>
                                 <li><strong>Διαθέσιμες θέσεις:</strong> <?php echo $row['positions']?> </li>

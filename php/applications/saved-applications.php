@@ -87,7 +87,9 @@
                     <p><?php echo $ad['subject']?></p>
                     <ul class="job-features" style="columns:1;">
                         <li><strong>Κατάσταση: </strong><p style="color: darkcyan;"><?php echo$row['status']?></p></li>
-                        <li><strong><a href="<?php echo "../../uploads/".$row['grades'].""; ?>">Αναλυτική βαθμολογία</strong></a></li>
+                        <?php if ($row['grades'] != NULL){ ?>
+                            <li><strong><a href="<?php echo "../../uploads/".$row['grades'].""; ?>">Αναλυτική βαθμολογία</strong></a></li>
+                        <?php } ?>
                         <li><strong>Σχόλια: <br> <p></strong><?php echo $row['comments'];?></p></li>
                         <li><strong>Ημερομηνία υποβολής:</strong> <?php echo $row['date']; ?> </li>
                     </ul>

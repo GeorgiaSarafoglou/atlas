@@ -94,7 +94,7 @@
             <div class="details">
                 <ul class="job-features">
                     <li><strong>Τοποθεσία:</strong><?php echo $ad['location']?></li>
-                    <li><strong>Ωράριο</strong>:<?php echo $ad['type']?></li>
+                    <li><strong>Τύπος απασχόλησης:</strong> <?php if($ad['type'] == "part-time") { echo "Μερική Απασχόληση"; } else { echo "Πλήρης Απασχόληση"; }?> </li>
                     <li><strong>Έναρξη</strong>:<?php echo $ad['start']?> - <strong>Λήξη</strong>:<?php echo $ad['end']?></li>
                     <li><strong>Μισθός</strong>:<?php echo $ad['payment']?></li>
                 </ul>

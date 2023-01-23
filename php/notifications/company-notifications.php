@@ -68,7 +68,7 @@
                     <div class="top-line">
                         <!-- TITLE -->
                         <div class="zoom">
-                            <form method="POST" action="job-details.php">
+                            <form method="POST" action="../jobs/job-details.php">
                                 <input type="hidden" name="show-submit-application" value=0>
                                 <input type="hidden" name="ad-id" value="<?php echo $ad['id']; ?>">
                                 <h3><button type="submit" name="show-details" class="job-title-button"> <?php echo $ad['title']?> </button></h3>
@@ -84,7 +84,7 @@
                     <ul class="job-features">
                         <li><strong>Όνομα:</strong><?php echo $stud['fname'];?></li>
                         <li><strong>Επώνυμο:</strong><?php echo $stud['lname'];?></li>
-                        <li><strong>Ίδρυμα:</strong><?php echo $stud['university'];?></li>
+                        <li><strong>Ίδρυμα:</strong><?php if($stud['university'] == "ekpa") { echo "ΕΚΠΑ"; } elseif ($stud['university'] == "assoe"){ echo "ΑΣΣΟΕ"; } else { echo "ΠΑΠΕΙ"; }?></li>
                         <li><strong>Τμήμα:</strong><?php echo $stud['department'];?></li>
                     </ul>
                     <ul class="job-features" style="columns:1;">
