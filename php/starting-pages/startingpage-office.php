@@ -5,14 +5,6 @@
     include "../connection.php"; ?>
 </head>
     <?php include "../office-menu.php" ?>
-    <?php 
-        #get notifications
-        $sql = "SELECT * FROM company_notifications WHERE company_id = " . $_GET['user'] . " AND is_read = 0;";
-        $result = mysqli_query($db, $sql);
-        $num_rows = mysqli_num_rows($result);
-        if($num_rows > 0){
-    ?>
-         <div class="notification"><?php echo $num_rows?></div> <?php } ?>
             <div class="container">
                 <div class="row">
                     <!-- vertical menu left of page -->

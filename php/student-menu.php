@@ -1,7 +1,16 @@
+<?php 
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
-<?php include "includes.php";?>
-<head>
+    <?php include "includes.php";
+    include "../connection.php";?>
+
+
+
+    <head>
     <script>
         $(document).ready(function() {
             $('.sub-menu').hide(); //hide the sub-menu by default
@@ -17,6 +26,13 @@
         });
     </script>
 </head>
+
+<?php 
+        #get notifications
+        $sql = "SELECT * FROM notifications WHERE student_id = " . $_SESSION['user']['id'] . " AND is_read = 0;";
+        $result = mysqli_query($db, $sql);
+        $num_rows = mysqli_num_rows($result); ?>
+
 <body data-spy="scroll" data-target=".fixed-top">
    
     <!-- Navigation -->
@@ -62,10 +78,17 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="http://localhost/sdi1900168/atlas/php/edit-user-details/edit-student.php"><span class="item-text">Επεξεργασία Προφίλ</span></a>
                         <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="http://localhost/sdi1900168/atlas/php/notifications/notifications.php"><span class="item-text">Ειδοποιήσεις</span></a>
+                        <?php if ($num_rows > 0) { ?>
+                        <a class="dropdown-item" href="http://localhost/sdi1900168/atlas/php/notifications/notifications.php"><div class="top-line"> <div><span class="item-text">Ειδοποιήσεις</div> <div class="notification"> <?php echo $num_rows; ?></div> </span></div></a>
+                        <?php }else{ ?>
+                            <a class="dropdown-item" href="http://localhost/sdi1900168/atlas/php/notifications/notifications.php"><span class="item-text">Ειδοποιήσεις</span></a>
+                        <?php } ?>
                         <div class="dropdown-items-divide-hr"></div>
                         <a class="dropdown-item" href="http://localhost/sdi1900168/atlas/php/logout.php"><span class="item-text">Αποσύνδεση</span></a>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <?php if ($num_rows > 0) { ?> <div class="notification"> <?php echo $num_rows;} ?> </div>
                 </li>
                 <!-- end of dropdown menu -->
             </ul>

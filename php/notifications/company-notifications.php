@@ -75,6 +75,28 @@
                             </form>
                         </div>
                         <!-- END OF TITLE -->
+                        <!-- Start of accept-reject buttons -->
+                        <div style=" display:flex; flex-direction:row; order:2;">
+                        <?php 
+                            if($app['status'] != "Εγκεκριμένη" && $app['status'] != "Απορριφθείσα"){
+                        ?>
+                            <button id="accept" name="accept-btn" type="submit" class="accept-button"
+                                >
+                                <?php $status = "Εγκεκριμένη"; ?>
+                                <a href="../jobs/job-functions.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $stud['id'] ?>&ap-id=<?php echo $app['application_id'] ?>&status=<?php echo $status; ?>">
+                                    Αποδοχή <span><i class="icon-check-sign"></i></span>
+                                </a>
+                            </button>
+                            <button id="reject" name="reject-btn" type="submit" class="reject-button"
+                                >
+                                <?php $status = "Απορριφθείσα"; ?>
+                                <a href="../jobs/job-rejection-func.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $stud['id'] ?>&ap-id=<?php echo $app['application_id'] ?>&status=<?php echo $status; ?>">
+                                    Απόρριψη <span><i class="icon-check-sign"></i></span>
+                                </a>
+                            </button>
+                        <?php } ?>
+                        </div>
+                        <!-- End of accept-reject buttons -->
                     </div> 
                     <!-- end of top line -->
 

@@ -127,7 +127,7 @@
                                         </div>
                                         <div class="line"></div>
                                         <ul class="job-features" style="height: 100%; columns: 1;">
-                                            <li><strong>Όνομα Αιτούντα/ουσας:</strong> <?php if(!isset($student)){ echo "-";} else { echo $student['fname']; } ?></li>
+                                            <li><strong>Όνομα Αιτούντα/ουσας:</strong> <?php if(!isset($student)){ echo "-";} else {  ?> <?php echo $student['fname'] ;?> <?php  echo  $student['lname'] ; } ?></li>
                                             <li><strong>Τμήμα:</strong> <?php if(!isset($student)){ echo "-";} else { echo $student['department']; }?> </li>
                                             <li><strong>Περιγραφή:</strong> <?php if(!isset($application)){ echo "-";} else { echo $application['comments']; }?> </li>
                                         </ul>
