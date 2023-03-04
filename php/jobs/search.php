@@ -129,13 +129,13 @@
                             <label for="start">Από:</label>
                             <input type="date" id="start" name="trip-start"
                                 value="2018-07-22"
-                                min="2018-01-01" max="2018-12-31">
+                                min="2018-01-01">
                         </li>
                         <li>
                             <label for="end">Εώς:</label>
                             <input type="date" id="end" name="trip-end"
                                 value="2018-07-22"
-                                min="2018-01-01" max="2018-12-31">
+                                min="2018-01-01">
                         </li>
                         <li>
                             <button id="search_button" name="search_button" type="submit" class="form-control-submit-button" style="height: 20%; margin-top: 15%; width: 60%; margin-left: 40%;">Αναζήτηση</button>

@@ -150,7 +150,7 @@
                             <!-- Sign Up Button -->
                             <div class="modal-footer d-flex justify-content-center">
                             <button type="submit" class="form-control-signup-button" style="border-radius: 2rem; width:90%;">
-                                <a href="signup.php"> 
+                                <a href="http://localhost/sdi1900168/atlas/php/sign-up/signup.php"> 
                                     Εγγραφή
                                 </a>
                             </button>
