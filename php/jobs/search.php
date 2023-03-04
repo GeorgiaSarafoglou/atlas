@@ -127,16 +127,25 @@
                         </li>
                         <li>
                             <label for="start">Από:</label>
-                            <input type="date" id="start" name="trip-start"
-                                value="2018-07-22"
-                                min="2018-01-01">
+                            <input type="date" id="start" name="trip-start" value="" min="2018-01-01">
                         </li>
                         <li>
                             <label for="end">Εώς:</label>
-                            <input type="date" id="end" name="trip-end"
-                                value="2018-07-22"
-                                min="2018-01-01">
+                            <input type="date" id="end" name="trip-end" value="" min="2018-01-01">
                         </li>
+                        <!-- function to get current date -->
+                        <script>
+                            // Get the current date
+                            const currentDate = new Date();
+                            
+                            // Format the date as "YYYY-MM-DD"
+                            const formattedDate = currentDate.toISOString().split('T')[0];
+                            
+                            // Set the value of the date inputs to the formatted date
+                            document.getElementById("start").min = formattedDate;
+                            document.getElementById("end").min = formattedDate;
+                        </script>
+
                         <li>
                             <button id="search_button" name="search_button" type="submit" class="form-control-submit-button" style="height: 20%; margin-top: 15%; width: 60%; margin-left: 40%;">Αναζήτηση</button>
                         </li>
@@ -183,6 +192,17 @@
                         if ($department != "") {
                             $query .= " AND departments = '$department'";
                             echo $duration." ";
+                        }
+                        if ($start_date != ""){
+                            if($end_date != ""){
+                                $query .= " AND start BETWEEN '$start_date' AND '$end_date' ";
+                            }
+                            else{
+                                $query .= " AND start > '$start_date' ";
+                            }
+                        }
+                        elseif ($end_date != ""){
+                            $query .= " AND start < '$end_date' ";
                         }             
                     }
                     else if(isset($searchValue)){
@@ -216,6 +236,7 @@
                                 <li><strong>Ημερομηνία ανάρτησης:</strong> <?php echo $row['date']?> </li>
                                 <li><strong>Διάρκεια:</strong> <?php echo $row['duration']?> μήνες </li>
                                 <li><strong>Διαθέσιμες Θέσεις:</strong> <?php echo $row['positions']?> </li>
+                                <li><strong>Ημερομηνία:</strong> <?php echo $row['start']. " με " . $row['end'] ?> </li>
                             </ul>
                         </div>
                         <!-- end of individual job advertisement-->
