@@ -20,6 +20,20 @@
 <html lang="en">
 <head>
     <?php include "../includes.php" ?>
+    <style>
+		label.label-control:after {
+		  content: "*";
+		  font-size: 1.3rem;
+          margin-left: 2px;
+		}
+        h6:after{
+            content: "*";
+		    font-size: 1.3rem;
+        }
+        .asterisk {
+            font-size: 1.6rem;
+        }
+	</style>
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
     <!-- Preloader -->
@@ -119,7 +133,7 @@
                         <!-- Type -->
                         <div class="row">
                             <div class="col-lg-6" style="right: 63%;">
-                                <h6>Τύπος Απασχόλησης: </h6>
+                                <h6>Τύπος Απασχόλησης : </h6>
                             </div>
                             <div class="col-lg-6" style="right: 70%;">
                                 <div style="margin-left: 15%; width: 200%; left: -10%;">
@@ -163,18 +177,18 @@
                         </div> <!-- end of row -->
 
                         <!-- Διάρκεια Εκτέλεσης Αρχή-Τέλος -->
-                        <div class="row">
+                        <div class="row required">
                             <div class="col-lg-6">
-                                <div class="form-group" style="width: 200%; right:145%; ">
-                                    <label for="start" style="right:170%;">Αρχή Πρακτικής Άσκησης: </label>
+                                <div class="form-group" style="width: 220%; right:145%; ">
+                                    <label for="start" style="right:170%;">Αρχή Πρακτικής Άσκησης:<span class="asterisk">*</span></label>
                                     <input type="date" id="time_period_start" name="time_period_start" value="2023-01-01" min="2023-01-01" max="2024-01-01" style="margin-right: 30%;" required>
                                 </div>    
                             </div>
                             <div class="col-lg-6">
-                                <div class="form-group" style="width: 200%; left: -45%; ">
-                                    <label for="end" style="right:170%;">Τέλος Πρακτικής Άσκησης: </label>
+                                <div class="form-group" style="width: 300%; left: -45%; ">
+                                    <label for="end" style="right:170%;">Τέλος Πρακτικής Άσκησης:<span class="asterisk">*</span></label>
                                     <input type="date" id="time_period_end" name="time_period_end" value="2023-01-31" min="2023-01-31" max="2024-04-01" style="margin-right: 30%;" required>
-                                </div>  
+                                </div>
                             </div> <!-- end of col -->
                         </div> <!-- end of row -->
 
