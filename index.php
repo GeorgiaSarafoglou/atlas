@@ -338,7 +338,7 @@
                     <!-- end of card -->
 
                     <!-- Card -->
-                    <div class="card">
+                    <div class="card" style="left: 2%;">
                         <img class="card-image" src="images/services-icon-2.svg" alt="alternative">
                         <div class="card-body">
                             <h4 class="card-title">Στείλτε Αίτηση</h4>
