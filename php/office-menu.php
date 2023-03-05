@@ -6,7 +6,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include "../includes.php" ?>
+    <?php include "../includes.php";
+    include "../connection.php"; ?>
     <script>
         $(document).ready(function() {
             $('.sub-menu').hide(); //hide the sub-menu by default
