@@ -86,14 +86,14 @@
                                                 if($application['status'] != "Εγκεκριμένη" && $application['status'] != "Απορριφθείσα"){
                                             ?>
                                                 <button id="accept" name="accept-btn" type="submit" class="accept-button"
-                                                    style="height: 30%; margin-left: 68%;">
+                                                    style="height: 30%; margin-left: 65%;">
                                                     <?php $status = "Εγκεκριμένη"; ?>
                                                     <a href="job-functions.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $student['id'] ?>&ap-id=<?php echo $application['application_id'] ?>&status=<?php echo $status; ?>">
                                                         Αποδοχή <span><i class="icon-check-sign"></i></span>
                                                     </a>
                                                 </button>
                                                 <button id="reject" name="reject-btn" type="submit" class="reject-button"
-                                                    style="height: 30%; margin-right: 10%;">
+                                                    style="height: 30%; margin-right: 30%;">
                                                     <?php $status = "Απορριφθείσα"; ?>
                                                     <a href="job-rejection-func.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $student['id'] ?>&ap-id=<?php echo $application['application_id'] ?>&status=<?php echo $status; ?>">
                                                         Απόρριψη <span><i class="icon-check-sign"></i></span>

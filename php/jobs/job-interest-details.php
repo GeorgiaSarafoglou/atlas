@@ -75,7 +75,7 @@
                                 if($application['status'] != "Εγκεκριμένη" && $application['status'] != "Απορριφθείσα"){
                             ?>
                                 <button id="accept" name="accept-btn" type="submit" class="accept-button"
-                                    style="height: 30%; margin-left: 70%;">
+                                    style="height: 30%; margin-left: 68%;">
                                     <?php $status = "Εγκεκριμένη"; ?>
                                     <a href="http://localhost/sdi1900168/atlas/php/jobs/job-functions.php?ad-id=<?php echo $ad['id'] ?>&sid=<?php echo $student['id'] ?>&ap-id=<?php echo $application['application_id'] ?>&status=<?php echo $status; ?>">
                                         Αποδοχή <span><i class="icon-check-sign"></i></span>
